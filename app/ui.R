@@ -26,33 +26,26 @@ shinyUI(
               
                 sidebarMenu(id = "tabs",
                           
-                menuItem("Curva de Rendimiento", icon = icon("chart-area"),
+                menuItem("Consolidado", icon = icon("home"),tabName = "consolidado"
                          
-                            menuSubItem("Datos", tabName = "datos_curvas", icon = icon("folder-open")),
-                         
-                            menuSubItem("Nelson y Siegel", tabName = "subitem1", icon = icon("circle-o")),
-                            
-                            menuSubItem("Svensson", tabName = "subitem2", icon = icon("circle-o")),
-                            
-                            menuSubItem("Diebold-Li", tabName = "subitem3", icon = icon("circle-o")),
-                            
-                            menuSubItem("Splines", tabName = "subitem4", icon = icon("circle-o"))
-                       
                           ),#fin menuitem 
                 
                             #menuItem("Comparativo", icon = icon("circle-o"), tabName = "comparativo"),
-                menuItem("Comparativo", icon = icon("th-list"), 
+                menuItem("Gestión Técnica", icon = icon("wrench"), 
                          
                             #menuSubItem("Datos", tabName = "datos", icon = icon("circle-o")),
                          
-                            menuSubItem("Metodologías", tabName = "metodologias", icon = icon("clipboard-list")),
+                            menuSubItem("Resumen Centro de Atención", tabName = "resumen_ca",icon = icon(" ")),
                          
-                            menuSubItem("Precios estimados", tabName = "precios", icon = icon("coins")),
+                            menuSubItem("Resumen Línea de Negocio", tabName = "resumen_ln",icon = icon(" ")),
                          
-                            menuSubItem("Curvas", tabName = "curvas", icon = icon("chart-line"))
+                            menuSubItem("Detalle de Línea de Negocio", tabName = "detalle_ln",icon = icon(" ")),
+                         
+                            menuSubItem("Siniestralidad Principales Cuentas", tabName = "siniestro",icon = icon(" "))
+                         
                          
                           ),#fin menuitem 
-                menuItem("Valor en Riesgo", icon = icon("coins"), 
+                menuItem("Gestión Comercial", icon = icon("coins"), 
                          
                          menuSubItem("Datos", tabName = "datos_var", icon = icon("folder-open")),
                          
@@ -65,15 +58,21 @@ shinyUI(
                          menuSubItem("Históricos", tabName = "historicos", icon = icon("calendar-alt"))
                          
                 ),#fin menuitem 
-                          menuItem("Backtesting", icon = icon("angle-double-left"), 
+                          menuItem("Indicadores", icon = icon("angle-double-left"), 
                                    menuSubItem("Datos", tabName = "datos_back", icon = icon("folder-open")),
                                    menuSubItem("Resultados", tabName = "resultados_back", icon = icon("file-alt"))
                           ),
-                 menuItem("Valoración", icon = icon("bar-chart-o"), 
+                 menuItem("BBDD", icon = icon("bar-chart-o"), 
                          menuSubItem("Datos", tabName = "datos_val", icon = icon("folder-open")),
                          menuSubItem("Resultados", tabName = "resultados_val", icon = icon("file-alt")),
                          menuSubItem("Resultados Prueba de Estrés", tabName = "resultados_val_estres", icon = icon("file-contract"))
                   ),
+                menuItem("Consultas en Línea", icon = icon("bar-chart-o")
+                         
+                ),
+                menuItem("En Certificación", icon = icon("bar-chart-o")
+                         
+                ),
                 
                             menuItem("Acerca", icon = icon("exclamation-circle"), tabName = "acerca"))
                   
@@ -81,51 +80,31 @@ shinyUI(
     #Body
     dashboardBody(VisionHeader(),
             tabItems(
-              tabItem(tabName = "datos_curvas",
+              tabItem(tabName = "consolidado",
                       #h2(" Descarga de archivos"),
-                      h2(" Archivos a utilizar"),
-                      # Input: Choose dataset ----
-                      # selectInput("dataset", "Elegir un Archivo:",
-                      #             choices = c("0-22", "Caracteristicas"
-                      #             )),
-                      
-                      # Button
-                      #downloadButton("downloadData", "Descargar"),
-                      #h5(" Usted seleccionó"),
-                      #verbatimTextOutput("desc"),
-                      #h5(" Vista previa"),
-                      tabsetPanel(type="pills",
-                                  tabPanel("Características",
-                                           h5("Documento Características"),
-                                           # box(height ="595",width = "12",column(width = 12,DT::dataTableOutput("Ca_leida"),
-                                           #      style="height:500px;overflow-y: scroll;overflow-x: scroll"
-                                           #     ))
-                                           box(style="overflow-x:scroll",width = 12,
-                                               dataTableOutput("Ca_leida"))
-                                           )
-                                  ,
-                                  tabPanel("Operaciones BCV 022",
-                                           h5("Documento 0-22"),
-                                           box(style="overflow-x:scroll",width = 12,
-                                               dataTableOutput("docbcv"))
-                                  )
-                      ),
-                      h2("Calculo precio promedio"),
-                      #tabBox(width = 12, title = "Títulos", height = "50px",
-                      #mainPanel(
-                      tabsetPanel(type="pills",
-                                  tabPanel("TIF",
-                                           verbatimTextOutput("pre_prom_tif")),
-                                  tabPanel("VEBONOS",
-                                           verbatimTextOutput("pre_prom_veb"))
-                      )
-                      #)
-                      #)
-                      
+                      h2(" Información Consolidado")
                       
               ),
-              
-              
+              tabItem(tabName = "resumen_ca",
+                      #h2(" Descarga de archivos"),
+                      h2(" Información Resumen Centro de Atención")
+                      
+              ),
+              tabItem(tabName = "resumen_ln",
+                      #h2(" Descarga de archivos"),
+                      h2(" Información Resumen Línea de Negocio")
+                      
+              ),
+              tabItem(tabName = "detalle_ln",
+                      #h2(" Descarga de archivos"),
+                      h2(" Información Detalle de Línea de Negocio")
+                      
+              ),
+              tabItem(tabName = "siniestro",
+                      #h2(" Descarga de archivos"),
+                      h2("Información Siniestralidad Principales Cuentas")
+                      
+              ),
               
               #NELSON Y SIEGEL
               
@@ -156,20 +135,20 @@ shinyUI(
                                               #                     choices = Carac(paste(getwd(),"data","Caracteristicas.xls",sep = "/"))[which(substr(Carac(paste(getwd(),"data","Caracteristicas.xls",sep = "/"))[,2],1,3)=="TIF"),2])
                                                #htmlOutput("freddy")
                                                 #
-                                                fluidRow(column(width = 4,checkboxGroupInput( inputId = "t1_ns", label = "Corto Plazo",
-                                                                choices=tit[2:9])#final checkboxgroupimput
-                                                                ),#final column
-                                                         column(width = 4,checkboxGroupInput( inputId = "t2_ns", label = "Mediano Plazo",
-                                                                choices=tit[10:20])#final checkboxgroupimput
-                                                                ),#final column
-                                                         column(width = 4,checkboxGroupInput( inputId = "t3_ns", label = "Largo plazo",
-                                                                choices=tit[21:33])#final checkboxgroupimput
-                                                                )
-                                                         #,#final column
-                                                         #column(width = 3,checkboxGroupInput( inputId = "t4_ns", label = " ",
-                                                          #      choices=tit[26:33])#final checkboxgroupimput
-                                                           #     ) #final column
-                                                         )#final fluidrow
+                                                # fluidRow(column(width = 4,checkboxGroupInput( inputId = "t1_ns", label = "Corto Plazo",
+                                                #                 choices=tit[2:9])#final checkboxgroupimput
+                                                #                 ),#final column
+                                                #          column(width = 4,checkboxGroupInput( inputId = "t2_ns", label = "Mediano Plazo",
+                                                #                 choices=tit[10:20])#final checkboxgroupimput
+                                                #                 ),#final column
+                                                #          column(width = 4,checkboxGroupInput( inputId = "t3_ns", label = "Largo plazo",
+                                                #                 choices=tit[21:33])#final checkboxgroupimput
+                                                #                 )
+                                                #          #,#final column
+                                                #          #column(width = 3,checkboxGroupInput( inputId = "t4_ns", label = " ",
+                                                #           #      choices=tit[26:33])#final checkboxgroupimput
+                                                #            #     ) #final column
+                                                #          )#final fluidrow
 
 
                                               )
@@ -314,21 +293,21 @@ shinyUI(
                                                                          wellPanel(
                                                                             #checkboxGroupInput( inputId = "t1_ns2", label = NULL,inline = TRUE,width = '100%',
                                                                             #                    choices = Carac(paste(getwd(),"data","Caracteristicas.xls",sep = "/"))[which(substr(Carac(paste(getwd(),"data","Caracteristicas.xls",sep = "/"))[,2],1,3)=="VEB"),2]),
-                                                                           fluidRow(
-                                                                             column(width = 4,checkboxGroupInput(inputId = "v1_ns", label = "Corto Plazo",
-                                                                                       choices=tit1[3:15])#final checkboxgroupimput
-                                                                                    ),#final column
-                                                                             column(width = 4,checkboxGroupInput( inputId = "v2_ns", label = "Mediano Plazo",
-                                                                                       choices=tit1[16:30])#final checkboxgroupimput
-                                                                                    ),#final column
-                                                                             column(width = 4,checkboxGroupInput( inputId = "v3_ns",label = "Largo Plazo",
-                                                                                       choices=tit1[31:40])#final checkboxgroupimput
-                                                                                    )
-                                                                             #,#final column
-                                                                             #column(width = 3,checkboxGroupInput( inputId = "v4_ns", label = " ",
-                                                                              #         choices=tit1[32:40])#final checkboxgroupimput
-                                                                               #     )#final column
-                                                                                       )#final fluidrow
+                                                                           # fluidRow(
+                                                                           #   column(width = 4,checkboxGroupInput(inputId = "v1_ns", label = "Corto Plazo",
+                                                                           #             choices=tit1[3:15])#final checkboxgroupimput
+                                                                           #          ),#final column
+                                                                           #   column(width = 4,checkboxGroupInput( inputId = "v2_ns", label = "Mediano Plazo",
+                                                                           #             choices=tit1[16:30])#final checkboxgroupimput
+                                                                           #          ),#final column
+                                                                           #   column(width = 4,checkboxGroupInput( inputId = "v3_ns",label = "Largo Plazo",
+                                                                           #             choices=tit1[31:40])#final checkboxgroupimput
+                                                                           #          )
+                                                                           #   #,#final column
+                                                                           #   #column(width = 3,checkboxGroupInput( inputId = "v4_ns", label = " ",
+                                                                           #    #         choices=tit1[32:40])#final checkboxgroupimput
+                                                                           #     #     )#final column
+                                                                           #             )#final fluidrow
                                                                            
                                                                            
                                                                            
@@ -482,20 +461,20 @@ shinyUI(
                                                          tabsetPanel(type="pills",
                                                                      tabPanel("Títulos disponibles",
                                                                               wellPanel(
-                                                                                fluidRow(column(width = 4,checkboxGroupInput( inputId = "t1", label = "Corto Plazo",
-                                                                                                                                             choices=tit[2:9])#final checkboximput
-                                                                                ),#final column
-                                                                                column(width = 4,checkboxGroupInput( inputId = "t2", label = "Mediano Plazo",
-                                                                                                                     choices=tit[10:20])#final checkboximput
-                                                                                ),#final column
-                                                                                column(width = 4,checkboxGroupInput( inputId = "t3",label = "Largo Plazo",
-                                                                                                                     choices=tit[21:33])#final checkboximput
-                                                                                )
-                                                                                #,#final column
-                                                                                #column(width = 3,checkboxGroupInput( inputId = "t4", label = " ",
-                                                                                  #                                   choices=tit[26:33])#final checkboximput
-                                                                                #)#final column
-                                                                                )#final fluidrow
+                                                                                # fluidRow(column(width = 4,checkboxGroupInput( inputId = "t1", label = "Corto Plazo",
+                                                                                #                                                              choices=tit[2:9])#final checkboximput
+                                                                                # ),#final column
+                                                                                # column(width = 4,checkboxGroupInput( inputId = "t2", label = "Mediano Plazo",
+                                                                                #                                      choices=tit[10:20])#final checkboximput
+                                                                                # ),#final column
+                                                                                # column(width = 4,checkboxGroupInput( inputId = "t3",label = "Largo Plazo",
+                                                                                #                                      choices=tit[21:33])#final checkboximput
+                                                                                # )
+                                                                                # #,#final column
+                                                                                # #column(width = 3,checkboxGroupInput( inputId = "t4", label = " ",
+                                                                                #   #                                   choices=tit[26:33])#final checkboximput
+                                                                                # #)#final column
+                                                                                # )#final fluidrow
                                                                                 
                                                                                 )
                                                                      ),
