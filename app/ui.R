@@ -20,7 +20,11 @@ shinyUI(
                           )#final dropdownmenu
                   ),#final dashboardheader
     #Sidebar
-    dashboardSidebar(
+    dashboardSidebar(tags$style(HTML("
+      .main-sidebar{
+                                     width: 250px;
+                                     }
+                                     ")),
       
                 #sidebarSearchForm(label = "Ingrese un Número", "searchText", "searchButton"),
               
@@ -35,42 +39,58 @@ shinyUI(
                          
                             #menuSubItem("Datos", tabName = "datos", icon = icon("circle-o")),
                          
-                            menuSubItem("Resumen Centro de Atención", tabName = "resumen_ca",icon = icon(" ")),
+                            menuSubItem("Resumen Centro de Atención", tabName = "gt_ca",icon = icon(" ")),
                          
-                            menuSubItem("Resumen Línea de Negocio", tabName = "resumen_ln",icon = icon(" ")),
+                            menuSubItem("Resumen Línea de Negocio", tabName = "gt_ln",icon = icon(" ")),
                          
-                            menuSubItem("Detalle de Línea de Negocio", tabName = "detalle_ln",icon = icon(" ")),
+                            menuSubItem("Detalle de Línea de Negocio", tabName = "gt_dln",icon = icon(" ")),
                          
-                            menuSubItem("Siniestralidad Principales Cuentas", tabName = "siniestro",icon = icon(" "))
+                            menuSubItem("Siniestralidad Principales Cuentas", tabName = "gt_siniestro",icon = icon(" "))
                          
                          
                           ),#fin menuitem 
-                menuItem("Gestión Comercial", icon = icon("coins"), 
+                menuItem("Gestión Comercial", icon = icon("briefcase"), 
                          
-                         menuSubItem("Datos", tabName = "datos_var", icon = icon("folder-open")),
+                         menuSubItem("Línea de Negocio", tabName = "gc_ln", icon = icon(" ")),
                          
-                         menuSubItem("Distribución", tabName = "distribucion_var", icon = icon("project-diagram")),
+                         menuSubItem("Centro de atención", tabName = "gc_ca", icon = icon(" ")),
                          
-                         menuSubItem("VaR", tabName = "var", icon = icon("file-invoice-dollar")),
+                         menuItem("Productores", tabName = "gc_prod", icon = icon(" "),
+                                     menuSubItem("Detalle Productor", tabName = "prod_dp", icon = icon(" ")),
+                                     menuSubItem("Fecha Intermediario", tabName = "prod_fi", icon = icon(" "))
+                                     ),
                          
-                         menuSubItem("Gráficos", tabName = "graficos", icon = icon("chart-pie")),
+                         menuSubItem("Detalles de Pólizas", tabName = "gc_dp", icon = icon(" ")),
                          
-                         menuSubItem("Históricos", tabName = "historicos", icon = icon("calendar-alt"))
+                         menuSubItem("Detalles de Siniestros", tabName = "gc_ds", icon = icon(" ")),
+                         
+                         menuSubItem("Detalle de Consolidado", tabName = "gc_dc", icon = icon(" ")),
+                         
+                         menuItem("Incentivos", tabName = "gc_inc", icon = icon("trophy"),
+                                  menuSubItem("Concursos Mensuales", tabName = "inc_cm", icon = icon(" ")),
+                                  menuSubItem("Concursos Generales", tabName = "inc_cg", icon = icon(" "))
+                                  )
+                         
                          
                 ),#fin menuitem 
-                          menuItem("Indicadores", icon = icon("angle-double-left"), 
+                          menuItem("Indicadores", icon = icon("chart-line"), 
                                    menuSubItem("Datos", tabName = "datos_back", icon = icon("folder-open")),
                                    menuSubItem("Resultados", tabName = "resultados_back", icon = icon("file-alt"))
                           ),
-                 menuItem("BBDD", icon = icon("bar-chart-o"), 
-                         menuSubItem("Datos", tabName = "datos_val", icon = icon("folder-open")),
-                         menuSubItem("Resultados", tabName = "resultados_val", icon = icon("file-alt")),
-                         menuSubItem("Resultados Prueba de Estrés", tabName = "resultados_val_estres", icon = icon("file-contract"))
+                 menuItem("BBDD", icon = icon("database"), 
+                         menuSubItem("Cartera", tabName = "bbdd_c", icon = icon(" ")),
+                         menuSubItem("Siniestros", tabName = "bbdd_s", icon = icon(" "))
                   ),
-                menuItem("Consultas en Línea", icon = icon("bar-chart-o")
+                menuItem("Proyección", tabName = "proy",icon = icon("forward")
                          
                 ),
-                menuItem("En Certificación", icon = icon("bar-chart-o")
+                menuItem("Simulación", tabName = "sim",icon = icon("bullseye")
+                         
+                ),
+                menuItem("Consultas en Línea", icon = icon("file")
+                         
+                ),
+                menuItem("En Certificación", icon = icon("file")
                          
                 ),
                 
@@ -85,26 +105,96 @@ shinyUI(
                       h2(" Información Consolidado")
                       
               ),
-              tabItem(tabName = "resumen_ca",
+              tabItem(tabName = "gt_ca",
                       #h2(" Descarga de archivos"),
                       h2(" Información Resumen Centro de Atención")
                       
               ),
-              tabItem(tabName = "resumen_ln",
+              tabItem(tabName = "gt_ln",
                       #h2(" Descarga de archivos"),
                       h2(" Información Resumen Línea de Negocio")
                       
               ),
-              tabItem(tabName = "detalle_ln",
+              tabItem(tabName = "gt_dln",
                       #h2(" Descarga de archivos"),
                       h2(" Información Detalle de Línea de Negocio")
                       
               ),
-              tabItem(tabName = "siniestro",
+              tabItem(tabName = "gt_siniestro",
                       #h2(" Descarga de archivos"),
                       h2("Información Siniestralidad Principales Cuentas")
                       
               ),
+              tabItem(tabName = "gc_ln",
+                      #h2(" Descarga de archivos"),
+                      h2("Información Línea de Negocio")
+                      
+              ),
+              tabItem(tabName = "gc_ca",
+                      #h2(" Descarga de archivos"),
+                      h2("Información Centro de Atención")
+                      
+              ),
+              tabItem(tabName = "prod_dp",
+                      #h2(" Descarga de archivos"),
+                      h2("Información detalle productor")
+                      
+              ),
+              tabItem(tabName = "prod_fi",
+                      #h2(" Descarga de archivos"),
+                      h2("Información fecha intermediario")
+                      
+              ),
+              tabItem(tabName = "gc_dp",
+                      #h2(" Descarga de archivos"),
+                      h2("Información detalle póliza")
+                      
+              ),
+              tabItem(tabName = "gc_ds",
+                      #h2(" Descarga de archivos"),
+                      h2("Información detalle siniestros")
+                      
+              ),
+              tabItem(tabName = "gc_dc",
+                      #h2(" Descarga de archivos"),
+                      h2("Información detalle consolidado")
+                      
+              ),
+              tabItem(tabName = "inc_cm",
+                      #h2(" Descarga de archivos"),
+                      h2("Información concursos mensuales")
+                      
+              ),
+              tabItem(tabName = "inc_cg",
+                      #h2(" Descarga de archivos"),
+                      h2("Información concursos generales")
+                      
+              ),
+              
+              
+              tabItem(tabName = "bbdd_c",
+                      #h2(" Descarga de archivos"),
+                      h2("Información BBDD Cartera")
+                      
+              ),
+              tabItem(tabName = "bbdd_s",
+                      #h2(" Descarga de archivos"),
+                      h2("Información BBDD Siniestros")
+                      
+              ),
+              tabItem(tabName = "proy",
+                      #h2(" Descarga de archivos"),
+                      h2("Información Proyección")
+                      
+              ),
+              tabItem(tabName = "sim",
+                      #h2(" Descarga de archivos"),
+                      h2("Información Simulación")
+                      
+              ),
+              
+              
+              
               
               #NELSON Y SIEGEL
               
