@@ -5,7 +5,7 @@ shinyUI(
     #/// HEADER ///#
     #//////////////#
     
-    dashboardHeader(title = NULL, titleWidth = 250,#188,
+    dashboardHeader(title = NULL, titleWidth = 188,#188,
               dropdownMenu(type = "messages",
                            messageItem(
                                       from = "Alerta",
@@ -24,7 +24,9 @@ shinyUI(
                           )#final dropdownmenu
                   ),#final dashboardheader
     #Sidebar
-    dashboardSidebar( tags$style(HTML(".main-sidebar{width: 250px;}")),
+    dashboardSidebar( 
+      
+      #tags$style(HTML(".main-sidebar{width: 250px;}")),
       
                 #sidebarSearchForm(label = "Ingrese un Número", "searchText", "searchButton"),
               
@@ -45,7 +47,7 @@ shinyUI(
                          
                             menuSubItem("Detalle de Línea de Negocio", tabName = "gt_dln",icon = icon(" ")),
                          
-                            menuSubItem("Siniestralidad Principales Cuentas", tabName = "gt_siniestro",icon = icon(" "))
+                            menuSubItem("Siniestralidad Ppal Cuentas", tabName = "gt_siniestro",icon = icon(" "))
                          
                          
                           ),#fin menuitem 
@@ -107,6 +109,19 @@ shinyUI(
     #////////////#
     
     dashboardBody(VisionHeader(), #tags$style(HTML(".main-sidebar{width: 250px;}")),
+                  tags$style(HTML("
+    .box.box-solid.box-primary>.box-header {
+    color:#fff;
+    background:#024A86;
+    
+                      }
+
+    .box.box-solid.box-primary{
+    border-bottom-color:#00FF00;
+    border-left-color:#00FF00;
+    border-right-color:#00FF00;
+    border-top-color:#00FF00;
+    }")),
             tabItems(
               
               #///////////////////#
@@ -114,7 +129,56 @@ shinyUI(
               #///////////////////#
               
               tabItem(tabName = "consolidado",
-                      h2(" Información Consolidado")
+                      h2(" Información Consolidado"),
+                      
+                      box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                                         dateInput(inputId="fecha1", label="Desde:", language= "es",
+                                                                   width = "100%")#final dateimput 
+                          #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                                dateInput(inputId="fecha2", label="Hasta:", language= "es",
+                                                          width = "100%")#final dateimput 
+                          #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                         
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("centro_atencion", "Centro de Atención:",
+                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("cuentas_esp", "Cuentas Especiales:",
+                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("consultar", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ), # final box
+                      
+                      verbatimTextOutput('fecha_ini'),
+                      verbatimTextOutput('fecha_fin'),
+                      verbatimTextOutput('sucursal'),
+                      verbatimTextOutput('cuenta')
+                      
+                      
                       
               ),
               
