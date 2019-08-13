@@ -122,6 +122,7 @@ shinyUI(
     border-right-color:#00FF00;
     border-top-color:#00FF00;
     }")),
+                  
             tabItems(
               
               #///////////////////#
@@ -131,6 +132,7 @@ shinyUI(
               tabItem(tabName = "consolidado",
                       h2(" Información Consolidado"),
                       
+                     
                       box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
                           column(width = 6,
                                  #box( width = 6, background = "navy",
@@ -176,8 +178,20 @@ shinyUI(
                       verbatimTextOutput('fecha_ini'),
                       verbatimTextOutput('fecha_fin'),
                       verbatimTextOutput('sucursal'),
-                      verbatimTextOutput('cuenta')
+                      verbatimTextOutput('cuenta'),
                       
+                      #TABLA 1
+                      fluidRow(
+                      box(style="overflow-x:scroll",width = 12,title="Inventario por Centros de Atención",status="primary",solidHeader=TRUE,
+                          dataTableOutput("tabla1_con")),
+                      
+                      
+                      
+                      #TABLA 2
+                      box(style="overflow-x:scroll",width = 12,title="Prima Cobrada por Centros de Atención",status="primary",solidHeader=TRUE,
+                          dataTableOutput("tabla2_con"))
+                      
+                      )
                       
                       
               ),
