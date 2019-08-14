@@ -1,10 +1,26 @@
 shinyUI(
+  
+  # fluidPage(
+  # # Add Javascript
+  # tags$head(
+  #   tags$link(rel="stylesheet", type="text/css",href="style.css"),
+  #   tags$script(type="text/javascript", src = "md5.js"),
+  #   tags$script(type="text/javascript", src = "passwdInputBinding.js")
+  # ),
+  # useShinyjs(),
+  # 
+  # titlePanel("Favor ingresar credenciales"),
+  # 
+  # uiOutput("app")
+  # 
+  # )
+
   dashboardPage(
-    
+
     #//////////////#
     #/// HEADER ///#
     #//////////////#
-    
+
     dashboardHeader(title = NULL, titleWidth = 188,#188,
               dropdownMenu(type = "messages",
                            messageItem(
@@ -14,7 +30,7 @@ shinyUI(
                                       time = "2018-05-12"
                                       )
                            #,#final messageitem
-                          
+
                           # messageItem(
                           #            from = "Señal",
                           #            message = "Volatilidad Anormal",
@@ -24,96 +40,96 @@ shinyUI(
                           )#final dropdownmenu
                   ),#final dashboardheader
     #Sidebar
-    dashboardSidebar( 
-      
+    dashboardSidebar(
+
       #tags$style(HTML(".main-sidebar{width: 250px;}")),
-      
+
                 #sidebarSearchForm(label = "Ingrese un Número", "searchText", "searchButton"),
-              
+
                 sidebarMenu(id = "tabs",
-                          
+
                 menuItem("Consolidado", icon = icon("home"),tabName = "consolidado"
-                         
-                          ),#fin menuitem 
-                
+
+                          ),#fin menuitem
+
                             #menuItem("Comparativo", icon = icon("circle-o"), tabName = "comparativo"),
-                menuItem("Gestión Técnica", icon = icon("wrench"), 
-                         
+                menuItem("Gestión Técnica", icon = icon("wrench"),
+
                             #menuSubItem("Datos", tabName = "datos", icon = icon("circle-o")),
-                         
+
                             menuSubItem("Resumen Centro de Atención", tabName = "gt_ca",icon = icon(" ")),
-                         
+
                             menuSubItem("Resumen Línea de Negocio", tabName = "gt_ln",icon = icon(" ")),
-                         
+
                             menuSubItem("Detalle de Línea de Negocio", tabName = "gt_dln",icon = icon(" ")),
-                         
+
                             menuSubItem("Siniestralidad Ppal Cuentas", tabName = "gt_siniestro",icon = icon(" "))
-                         
-                         
-                          ),#fin menuitem 
-                menuItem("Gestión Comercial", icon = icon("briefcase"), 
-                         
+
+
+                          ),#fin menuitem
+                menuItem("Gestión Comercial", icon = icon("briefcase"),
+
                          menuSubItem("Línea de Negocio", tabName = "gc_ln", icon = icon(" ")),
-                         
+
                          menuSubItem("Centro de atención", tabName = "gc_ca", icon = icon(" ")),
-                         
+
                          menuItem("Productores", tabName = "gc_prod", icon = icon(" "),
                                      menuSubItem("Detalle Productor", tabName = "prod_dp", icon = icon(" ")),
                                      menuSubItem("Fecha Intermediario", tabName = "prod_fi", icon = icon(" "))
                                      ),
-                         
+
                          menuSubItem("Detalles de Pólizas", tabName = "gc_dp", icon = icon(" ")),
-                         
+
                          menuSubItem("Detalles de Siniestros", tabName = "gc_ds", icon = icon(" ")),
-                         
+
                          menuSubItem("Detalle de Consolidado", tabName = "gc_dc", icon = icon(" ")),
-                         
+
                          menuItem("Incentivos", tabName = "gc_inc", icon = icon("trophy"),
                                   menuSubItem("Concursos Mensuales", tabName = "inc_cm", icon = icon(" ")),
                                   menuSubItem("Concursos Generales", tabName = "inc_cg", icon = icon(" "))
                                   )
-                         
-                         
-                ),#fin menuitem 
-                
+
+
+                ),#fin menuitem
+
                 menuItem("Gestión Financiera", icon = icon("wallet"),tabName = "gf",badgeLabel = "Nuevo", badgeColor = "green"),
-                          
-                menuItem("Indicadores", icon = icon("chart-line"), 
+
+                menuItem("Indicadores", icon = icon("chart-line"),
                                    menuSubItem("Indicadores Macro", tabName = "ind_macro", icon = icon(" ")),
                                    menuSubItem("Indicadores Micro", tabName = "ind_micro", icon = icon(" "))
                           ),
-                 menuItem("BBDD", icon = icon("database"), 
+                 menuItem("BBDD", icon = icon("database"),
                          menuSubItem("Cartera", tabName = "bbdd_c", icon = icon(" ")),
                          menuSubItem("Siniestros", tabName = "bbdd_s", icon = icon(" "))
                   ),
                 menuItem("Proyección", tabName = "proy",icon = icon("forward"),badgeLabel = "Nuevo", badgeColor = "green"
-                         
+
                 ),
                 menuItem("Simulación", tabName = "sim",icon = icon("bullseye"),badgeLabel = "Nuevo", badgeColor = "green"
-                         
+
                 ),
                 menuItem("Carga de Información", icon = icon("upload"),tabName = "ci"),
                 menuItem("Consultas en Línea", icon = icon("file"),tabName = "cl"
-                         
+
                 ),
                 menuItem("En Certificación", icon = icon("file"),tabName = "ec"
-                         
+
                 ),
-                
+
                             menuItem("Acerca", icon = icon("exclamation-circle"), tabName = "acerca"))
-                  
+
                 ), #final dashboardsidebar
-    
+
     #////////////#
     #/// BODY ///#
     #////////////#
-    
+
     dashboardBody(VisionHeader(), #tags$style(HTML(".main-sidebar{width: 250px;}")),
                   tags$style(HTML("
     .box.box-solid.box-primary>.box-header {
     color:#fff;
     background:#024A86;
-    
+
                       }
 
     .box.box-solid.box-primary{
@@ -122,34 +138,34 @@ shinyUI(
     border-right-color:#00FF00;
     border-top-color:#00FF00;
     }")),
-                  
+
             tabItems(
-              
+
               #///////////////////#
               #/// CONSOLIDADO ///#
               #///////////////////#
-              
+
               tabItem(tabName = "consolidado",
                       h2(" Información Consolidado"),
-                      
-                     
+
+
                       box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
                           column(width = 6,
                                  #box( width = 6, background = "navy",
                                                          dateInput(inputId="fecha1", label="Desde:", language= "es",
-                                                                   width = "100%")#final dateimput 
+                                                                   width = "100%")#final dateimput
                           #),#final box
                           ),#final column
                           #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
+
                           column(width = 6,
                                  #box( width = 6, background = "navy",
                                                 dateInput(inputId="fecha2", label="Hasta:", language= "es",
-                                                          width = "100%")#final dateimput 
+                                                          width = "100%")#final dateimput
                           #)#final box
                           ),#final column
                           #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                         
+
                           column(width = 6,
                                  #box( width = 6, background = "navy",
                                  selectInput("centro_atencion", "Centro de Atención:",
@@ -167,255 +183,255 @@ shinyUI(
                                  actionButton("consultar", "Consultar",
                                               style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
                           )
-                          
-                          
+
+
                           #)#final fluidrow
-                          
-                          
-                          
+
+
+
                       ), # final box
-                      
+
                       verbatimTextOutput('fecha_ini'),
                       verbatimTextOutput('fecha_fin'),
                       verbatimTextOutput('sucursal'),
                       verbatimTextOutput('cuenta'),
-                      
+
                       #TABLA 1
                       fluidRow(
                       box(style="overflow-x:scroll",width = 12,title="Inventario por Centros de Atención",status="primary",solidHeader=TRUE,
                           dataTableOutput("tabla1_con")),
-                      
-                      
-                      
+
+
+
                       #TABLA 2
                       box(style="overflow-x:scroll",width = 12,title="Prima Cobrada por Centros de Atención",status="primary",solidHeader=TRUE,
                           dataTableOutput("tabla2_con"))
-                      
+
                       )
-                      
-                      
+
+
               ),
-              
+
               #///////////////////////#
               #/// GESTIÓN TÉCNICA ///#
               #///////////////////////#
-              
+
               #||||||||||||||||||||||||||||||||||#
               #||| RESUMEN CENTRO DE ATENCIÓN |||#
               #||||||||||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gt_ca",
                       h2(" Información Resumen Centro de Atención")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||||||||||||#
               #||| RESUMEN LÍNEA DE NEGOCIO |||#
               #||||||||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gt_ln",
                       h2(" Información Resumen Línea de Negocio")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||||||||||||#
               #||| DETALLE LÍNEA DE NEGOCIO |||#
               #||||||||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gt_dln",
                       h2(" Información Detalle de Línea de Negocio")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||||||||||||||||||||||#
               #||| SINIESTRALIDAD PRINCIPALES CUENTAS |||#
               #||||||||||||||||||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gt_siniestro",
                       h2("Información Siniestralidad Principales Cuentas")
-                      
+
               ),
-              
+
               #/////////////////////////#
               #/// GESTIÓN COMERCIAL ///#
               #/////////////////////////#
-              
+
               #|||||||||||||||||||||||||#
               #|||  LÍNEA DE NEGOCIO |||#
               #|||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gc_ln",
                       h2("Información Línea de Negocio")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||||||#
               #||| CENTRO DE ATENCIÓN |||#
               #||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gc_ca",
                       h2("Información Centro de Atención")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||||#
               #||| DETALLE PRODUCTOR |||#
               #|||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "prod_dp",
                       h2("Información detalle productor")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||||||#
               #||| FECHA INTERMEDIARIO |||#
               #|||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "prod_fi",
                       h2("Información fecha intermediario")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||#
               #||| DETALLE PÓLIZA |||#
               #||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gc_dp",
                       h2("Información detalle póliza")
-                      
+
               ),
-              
+
               #||||||||||||||||||||||||||#
               #||| DETALLE SINIESTROS |||#
               #||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gc_ds",
                       h2("Información detalle siniestros")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||||||#
               #||| DETALLE CONSOLIDADO |||#
               #|||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "gc_dc",
                       h2("Información detalle consolidado")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||||||#
               #||| CONCURSOS MENSUALES |||#
               #|||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "inc_cm",
                       h2("Información concursos mensuales")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||||||#
               #||| CONCURSOS GENERALES |||#
               #|||||||||||||||||||||||||||#
-              
+
               tabItem(tabName = "inc_cg",
                       h2("Información concursos generales")
-                      
+
               ),
-              
+
               #//////////////////////////#
               #/// GESTIÓN FINANCIERA ///#
               #//////////////////////////#
-              
+
               tabItem(tabName = "gf",
                       h2("Información Gestión Financiera")
-                      
+
               ),
-              
+
               #////////////////////#
               #///  INDICADORES ///#
               #////////////////////#
-              
+
               tabItem(tabName = "ind_macro",
                       h2("Información indicadores macro")
-                      
+
               ),
-              
+
               tabItem(tabName = "ind_micro",
                       h2("Información indicadores micro")
-                      
+
               ),
-              
-              
+
+
               #/////////////#
               #///  BBDD ///#
               #/////////////#
-              
+
               #||||||||||||||||||||#
               #||| BBDD CARTERA |||#
               #||||||||||||||||||||#
-              
+
               tabItem(tabName = "bbdd_c",
                       h2("Información BBDD Cartera")
-                      
+
               ),
-              
+
               #|||||||||||||||||||||||#
               #||| BBDD SINIESTROS |||#
               #|||||||||||||||||||||||#
-              
+
               tabItem(tabName = "bbdd_s",
                       h2("Información BBDD Siniestros")
-                      
+
               ),
-              
+
               #////////////////////////////#
               #/// CARGA DE INFORMACIÓN ///#
               #////////////////////////////#
-              
+
               tabItem(tabName = "ci",
                       h2("Información carga información")
-                      
+
               ),
-              
+
               #///////////////////#
               #///  PROYECCIÓN ///#
               #///////////////////#
-              
+
               tabItem(tabName = "proy",
                       h2("Información Proyección")
-                      
+
               ),
-              
+
               #///////////////////#
               #///  SIMULACIÓN ///#
               #///////////////////#
-              
+
               tabItem(tabName = "sim",
                       h2("Información Simulación")
-                      
+
               ),
-              
+
               #//////////////////////////#
               #/// CONSULTAR EN LÍNEA ///#
               #//////////////////////////#
-              
+
               tabItem(tabName = "cl",
                       h2("Información consultas en línea")
-                      
+
               ),
-              
+
               #////////////////////////#
               #/// EN CERTIFICACIÓN ///#
               #////////////////////////#
-              
+
               tabItem(tabName = "ec",
                       h2("Información en certificación")
-                      
+
               ),
-            
+
               #//////////////#
               #/// ACERCA ///#
               #//////////////#
-              
+
                        tabItem(tabName = "acerca",
                               box( width = 9, status="warning",
                                    h3(ACERTITLE_TEXT),
@@ -437,5 +453,7 @@ shinyUI(
                     )#final tabitems
                   )#final dashboardbody
                 )#final dashboardpage
-        )#final shinyui
+        
+
+  )#final shinyui
 

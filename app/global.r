@@ -30,6 +30,9 @@ library(rvest)
 library(VaRES)
 library(lmomco)
 
+#libreria contraseña
+library(shinyjs)
+library(shinyURL)
 
 options(OutDec = ",")
 
