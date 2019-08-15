@@ -95,12 +95,28 @@ shinyUI(
                 menuItem("Gestión Financiera", icon = icon("wallet"),tabName = "gf",badgeLabel = "Nuevo", badgeColor = "green"),
 
                 menuItem("Indicadores", icon = icon("chart-line"),
-                                   menuSubItem("Indicadores Macro", tabName = "ind_macro", icon = icon(" ")),
-                                   menuSubItem("Indicadores Micro", tabName = "ind_micro", icon = icon(" "))
+                                   menuItem("Indicadores Macro", tabName = "ind_macro", icon = icon(" "),
+                                            menuSubItem("Detalle Centro de Atención", tabName = "ind_macro_dca", icon = icon(" ")),
+                                            menuSubItem("Resumen Línea de Negocio", tabName = "ind_macro_ln", icon = icon(" ")),
+                                            menuSubItem("Detalle Línea de Negocio", tabName = "ind_macro_dln", icon = icon(" "))
+                                            ),
+                                   menuItem("Indicadores Micro", tabName = "ind_micro", icon = icon(" "),
+                                            menuItem("Auto", tabName = "ind_micro_a", icon = icon(" "),
+                                                     menuSubItem("Cartera", tabName = "ind_micro_a_c", icon = icon(" "))
+                                                        ),
+                                               
+                                            menuItem("Salud", tabName = "ind_micro_s", icon = icon(" "),
+                                                     menuSubItem("Cartera", tabName = "ind_micro_s_c", icon = icon(" ")),
+                                                     menuSubItem("Siniestro", tabName = "ind_micro_s_s", icon = icon(" "))
+                                                     )
+                                               )
                           ),
                  menuItem("BBDD", icon = icon("database"),
                          menuSubItem("Cartera", tabName = "bbdd_c", icon = icon(" ")),
-                         menuSubItem("Siniestros", tabName = "bbdd_s", icon = icon(" "))
+                         menuSubItem("Siniestros", tabName = "bbdd_s", icon = icon(" ")),
+                         menuSubItem("Detalle por Intermediario", tabName = "bbdd_di", icon = icon(" ")),
+                         menuSubItem("Cartera por Coberturas", tabName = "bbdd_cc", icon = icon(" ")),
+                         menuSubItem("Pólizas SEUS", tabName = "bbdd_ps", icon = icon(" "))
                   ),
                 menuItem("Proyección", tabName = "proy",icon = icon("forward"),badgeLabel = "Nuevo", badgeColor = "green"
 
@@ -109,11 +125,12 @@ shinyUI(
 
                 ),
                 menuItem("Carga de Información", icon = icon("upload"),tabName = "ci"),
-                menuItem("Consultas en Línea", icon = icon("file"),tabName = "cl"
-
+                menuItem("Consultas en Línea", icon = icon("file"),tabName = "cl",
+                         menuSubItem("Cobrado Diario", tabName = "cl_cd", icon = icon(" ")),
+                         menuSubItem("Recibos Pendientes", tabName = "cl_rp", icon = icon(" "))
                 ),
-                menuItem("En Certificación", icon = icon("file"),tabName = "ec"
-
+                menuItem("En Certificación", icon = icon("file"),tabName = "ec",
+                         menuSubItem("Resultado Técnico por Cliente", tabName = "ec_rtc", icon = icon(" "))
                 ),
 
                             menuItem("Acerca", icon = icon("exclamation-circle"), tabName = "acerca"))
@@ -349,17 +366,86 @@ shinyUI(
               #////////////////////#
               #///  INDICADORES ///#
               #////////////////////#
+              
+              #//////////////////////////#
+              #///  INDICADORES MACRO ///#
+              #//////////////////////////#
 
               tabItem(tabName = "ind_macro",
                       h2("Información indicadores macro")
 
               ),
+              
+              #|||||||||||||||||||||||||||||||||||#
+              #|||  DETALLE CENTRO DE ATENCION |||#
+              #|||||||||||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "ind_macro_dca",
+                      h2("Detalle Centro de Atención")
+                      
+              ),
+              
+              #|||||||||||||||||||||||||||||||||#
+              #|||  RESUMEN LÍNEA DE NEGOCIO |||#
+              #|||||||||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "ind_macro_ln",
+                      h2("Resumen Línea de Negocio")
+                      
+              ),
+              
+              #|||||||||||||||||||||||||||||||||#
+              #|||  DETALLE LÍNEA DE NEGOCIO |||#
+              #|||||||||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "ind_macro_dln",
+                      h2("Detalle Línea de Negocio")
+                      
+              ),
 
+              #//////////////////////////#
+              #///  INDICADORES MICRO ///#
+              #//////////////////////////#
+              
               tabItem(tabName = "ind_micro",
                       h2("Información indicadores micro")
 
               ),
+              
+              #/////////////#
+              #///  AUTO ///#
+              #/////////////#
+              
+              #||||||||||||||||#
+              #|||  CARTERA |||#
+              #||||||||||||||||#
+              
+              tabItem(tabName = "ind_micro_a_c",
+                      h2("Información Auto-Cartera")
+                      
+              ),
+              
+              #//////////////#
+              #///  SALUD ///#
+              #//////////////#
 
+              #||||||||||||||||#
+              #|||  CARTERA |||#
+              #||||||||||||||||#
+              
+              tabItem(tabName = "ind_micro_s_c",
+                      h2("Información Salud-Cartera")
+                      
+              ),
+              
+              #||||||||||||||||||#
+              #|||  SINIESTRO |||#
+              #||||||||||||||||||#
+              
+              tabItem(tabName = "ind_micro_s_s",
+                      h2("Información Salud-Siniestro")
+                      
+              ),
 
               #/////////////#
               #///  BBDD ///#
@@ -383,6 +469,33 @@ shinyUI(
 
               ),
 
+              #|||||||||||||||||||||||||||||||||||||||#
+              #||| BBDD DETALLE POR INTERMEDIARIOS |||#
+              #|||||||||||||||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "bbdd_di",
+                      h2("Información BBDD Detalles por Intermediarios")
+                      
+              ),
+              
+              #|||||||||||||||||||||||||||||||||||#
+              #||| BBDD CARTERA POR COBERTURAS |||#
+              #|||||||||||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "bbdd_cc",
+                      h2("Información BBDD Cartera por Coberturas")
+                      
+              ),
+              
+              #|||||||||||||||||||||||||#
+              #||| BBDD PÓLIZAS SEUS |||#
+              #|||||||||||||||||||||||||#
+              
+              tabItem(tabName = "bbdd_ps",
+                      h2("Información BBDD Pólizas SEUS")
+                      
+              ),
+              
               #////////////////////////////#
               #/// CARGA DE INFORMACIÓN ///#
               #////////////////////////////#
@@ -418,7 +531,25 @@ shinyUI(
                       h2("Información consultas en línea")
 
               ),
-
+              
+              #||||||||||||||||||||||#
+              #||| COBRADO DIARIO |||#
+              #||||||||||||||||||||||#
+              
+              tabItem(tabName = "cl_cd",
+                      h2("Información Cobrado Diario")
+                      
+              ),
+              
+              #||||||||||||||||||||||||||#
+              #||| RECIBOS PENDIENTES |||#
+              #||||||||||||||||||||||||||#
+              
+              tabItem(tabName = "cl_rp",
+                      h2("Información Recibos Pendientes")
+                      
+              ),
+              
               #////////////////////////#
               #/// EN CERTIFICACIÓN ///#
               #////////////////////////#
@@ -427,7 +558,16 @@ shinyUI(
                       h2("Información en certificación")
 
               ),
+              
+              #|||||||||||||||||||||||||||||||||||||#
+              #||| RESULTADO TÉCNICO POR CLIENTE |||#
+              #|||||||||||||||||||||||||||||||||||||#
 
+              tabItem(tabName = "ec_rtc",
+                      h2("Información Resultado Técnico por Cliente")
+                      
+              ),
+              
               #//////////////#
               #/// ACERCA ///#
               #//////////////#
