@@ -478,47 +478,81 @@ shinyServer(function(input, output) {
   #/// CONSOLIDADO ///#
   #///////////////////#
   
+  observeEvent(input$consultar, {
   output$fecha_ini<-renderPrint({
-    #agrego dependencia 
+    #agrego dependencia
     input$consultar
     #
-    isolate({ 
+    isolate({
     paste(substr(input$fecha1,9,10),substr(input$fecha1,6,7),substr(input$fecha1,1,4),sep = "/")
     })
+    
+     #paste(substr(input$fecha1,9,10),substr(input$fecha1,6,7),substr(input$fecha1,1,4),sep = "/")
+    
       })
+  }) #final observeevent
   
+  
+  observeEvent(input$consultar, {
   output$fecha_fin<-renderPrint({
-    #agrego dependencia 
-    input$consultar
-    #
-    isolate({ 
-      paste(substr(input$fecha2,9,10),substr(input$fecha2,6,7),substr(input$fecha2,1,4),sep = "/")
-    }) 
+    # #agrego dependencia 
+    # input$consultar
+    # #
+    # isolate({ 
+    #   paste(substr(input$fecha2,9,10),substr(input$fecha2,6,7),substr(input$fecha2,1,4),sep = "/")
+    # }) 
+       paste(substr(input$fecha2,9,10),substr(input$fecha2,6,7),substr(input$fecha2,1,4),sep = "/")
+    
+    
       })
+  })#final observeevent
   
+  
+  observeEvent(input$consultar, {
   output$sucursal<-renderPrint({
-    #agrego dependencia 
-    input$consultar
-    #
-    isolate({ 
-      input$centro_atencion
-    })
+    # #agrego dependencia 
+    # input$consultar
+    # #
+    # isolate({ 
+    #   input$centro_atencion
+    # })
+    input$centro_atencion
+    
       })
+  })#final observeevent
   
   
+  observeEvent(input$consultar, {
   output$cuenta<-renderPrint({
-    #agrego dependencia 
-    input$consultar
-    #
-    isolate({ 
+    # #agrego dependencia 
+    # input$consultar
+    # #
+    # isolate({ 
+    # input$cuentas_esp
+    # })
     input$cuentas_esp
-    })
+    
       })
+  })#final observeevent
   
+  #tabla 1
+  
+  observeEvent(input$consultar, {
+  output$t1 <-  renderUI(
+    
+     box(style="overflow-x:scroll",width = 12,title="Inventario por Centros de Atención",status="primary",solidHeader=TRUE,
+         dataTableOutput("tabla1_con"))
+  )
+  })#final observeevent
   
   #tabla 1  consolidado
-  
-  output$tabla1_con <- renderDataTable({
+  output$tabla1_con <- renderDataTable(
+    {
+    #agrego dependencia 
+    input$consultar
+    #
+    isolate({ 
+    
     a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
     names(a) <- c("Centro De Atención","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
                   "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
@@ -533,17 +567,29 @@ shinyServer(function(input, output) {
                   "Pólizas Nuevas General","Pólizas Renovadas General",
                   "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
                   )
-    return(a)
-      },rownames = FALSE,options = list(
+    #return(datatable(a, options = list(paging = FALSE)))
+    return(a)  
+    
+    })#final isolate
+    
+    },rownames = FALSE,options = list(
         language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
         initComplete = JS(
           "function(settings, json) {",
           "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
           "}")
         ))
+  
+  #tabla 2
+  
+  observeEvent(input$consultar, {
+    output$t2 <-  renderUI(
+       box(style="overflow-x:scroll",width = 12,title="Prima Cobrada por Centros de Atención",status="primary",solidHeader=TRUE,
+           dataTableOutput("tabla2_con"))
+    )
+  })#final observeevent
 
   #tabla 2  consolidado
-  
   output$tabla2_con <- renderDataTable({
     b <- data.frame(matrix(0,nrow = 10,ncol = 37))
     names(b) <- c("Centro De Atención","Prima Cobrada Auto","% Ppto Auto","% Sin. Auto",
@@ -568,4 +614,210 @@ shinyServer(function(input, output) {
       "}")
   ))
  
-})
+
+  
+#GESTON COMERCIAL
+
+#LÍNEA DE NEGOCIO
+#tabla 1 LÍNEA DE NEGOCIO
+
+observeEvent(input$consultar_ca, {
+  output$t1_ca <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Productores por Centros de Atención",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_ca"))
+  )
+})#final observeevent
+
+#tabla 1  
+output$tabla1_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_ca
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
+      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
+                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
+                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
+                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
+                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
+                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
+                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
+                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
+                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
+                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
+                    "Pólizas Nuevas General","Pólizas Renovadas General",
+                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
+      )
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2 LÍNEA DE NEGOCIO
+
+observeEvent(input$consultar_ca, {
+  output$t2_ca <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Inventario de Pólizas",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla2_ca"))
+  )
+})#final observeevent
+
+#tabla 2  
+output$tabla2_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_ca
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
+      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
+                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
+                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
+                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
+                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
+                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
+                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
+                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
+                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
+                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
+                    "Pólizas Nuevas General","Pólizas Renovadas General",
+                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
+      )
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#PRODUCTORES
+
+#tabla 1 PRODUCTORES
+
+observeEvent(input$consultar_prod, {
+  output$t1_prod <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Productores Centros de Atención",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_prod"))
+  )
+})#final observeevent
+
+#tabla 1  
+output$tabla1_prod <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
+      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
+                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
+                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
+                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
+                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
+                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
+                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
+                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
+                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
+                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
+                    "Pólizas Nuevas General","Pólizas Renovadas General",
+                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
+      )
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2 productores
+
+observeEvent(input$consultar_prod, {
+  output$t2_prod <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Gráficos",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla2_prod"))
+  )
+})#final observeevent
+
+#tabla 2  
+output$tabla2_prod <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod
+    #
+    isolate({ 
+      
+    
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 3 productores
+
+observeEvent(input$consultar_prod, {
+  output$t3_prod <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Inventario de Pólizas",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla3_prod"))
+  )
+})#final observeevent
+
+#tabla 2  
+output$tabla3_prod <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod
+    #
+    isolate({ 
+      
+      
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+
+
+
+
+}) #final Shinyserver
