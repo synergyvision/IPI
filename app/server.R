@@ -637,20 +637,15 @@ output$tabla1_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
-      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
-                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
-                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
-                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
-                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
-                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
-                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
-                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
-                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
-                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
-                    "Pólizas Nuevas General","Pólizas Renovadas General",
-                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
-      )
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 21))
+      names(a) <- c("Centro De Atención","Código Productor","Productor",
+                    "Cobrado Auto","% Auto","% Sin Auto",
+                    "Cobrado Fianza","% Fianza","% Sin Fianza",
+                    "Cobrado Patrimoniales","% Patrimoniales","% Sin Patrimoniales",
+                    "Cobrado Personas","% Personas","% Sin Personas",
+                    "Cobrado Salud","% Salud","% Sin Salud",
+                    "Cobrado General","% General","% Sin General"
+                    )
       #return(datatable(a, options = list(paging = FALSE)))
       return(a)  
       
@@ -682,20 +677,15 @@ output$tabla2_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
-      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
-                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
-                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
-                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
-                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
-                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
-                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
-                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
-                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
-                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
-                    "Pólizas Nuevas General","Pólizas Renovadas General",
-                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
-      )
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 20))
+      names(a) <- c("Código Productor","Nombre Productor",
+                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto",
+                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza",
+                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales",
+                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas",
+                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud",
+                    "Pólizas General","% Ppto General","Cartera Activa General"
+                    )
       #return(datatable(a, options = list(paging = FALSE)))
       return(a)  
       
@@ -729,20 +719,13 @@ output$tabla1_prod <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 37))
-      names(a) <- c("Centro De Atención 1","Pólizas Nuevas Auto","Pólizas Renovadas Auto",
-                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto","Interm Activos Auto",
-                    "Pólizas Nuevas Fianza","Pólizas Renovadas Fianza",
-                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza","Interm Activos Fianza",
-                    "Pólizas Nuevas Patrimoniales","Pólizas Renovadas Patrimoniales",
-                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales","Interm Activos Patrimoniales",
-                    "Pólizas Nuevas Personas","Pólizas Renovadas Personas",
-                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas","Interm Activos Personas",
-                    "Pólizas Nuevas Salud","Pólizas Renovadas Salud",
-                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud","Interm Activos Salud",
-                    "Pólizas Nuevas General","Pólizas Renovadas General",
-                    "Pólizas General","% Ppto General","Cartera Activa General","Interm Activos General"
-      )
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 8))
+      names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
+                    "Siniestros Pagados","Siniestros Pendientes",
+                    "Siniestros Incurridos","Cantidad Siniestros",
+                    "Siniestralidad")
+      a[,1] <- c("Auto","Fianza","Patrimoniales","Personas","Salud","Totales:")
+      
       #return(datatable(a, options = list(paging = FALSE)))
       return(a)  
       
@@ -803,7 +786,16 @@ output$tabla3_prod <- renderDataTable(
     input$consultar_prod
     #
     isolate({ 
-      
+      a <- as.data.frame(matrix(0,nrow = 10,ncol = 20))
+      names(a) <- c("Código Productor","Nombre Productor",
+                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto",
+                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza",
+                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales",
+                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas",
+                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud",
+                    "Pólizas General","% Ppto General","Cartera Activa General"
+      )
+      return(a) 
       
       
     })#final isolate
