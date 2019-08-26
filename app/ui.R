@@ -75,7 +75,7 @@ shinyUI(
 
                          menuItem("Productores", tabName = "gc_prod", icon = icon(" "),
                                      menuSubItem("Detalle Productor", tabName = "prod_dp", icon = icon(" ")),
-                                     menuSubItem("Fecha Intermediario", tabName = "prod_fi", icon = icon(" "))
+                                     menuSubItem("Ficha Intermediario", tabName = "prod_fi", icon = icon(" "))
                                      ),
 
                          menuSubItem("Detalles de Pólizas", tabName = "gc_dp", icon = icon(" ")),
@@ -408,12 +408,66 @@ shinyUI(
               ),
 
               #|||||||||||||||||||||||||||#
-              #||| FECHA INTERMEDIARIO |||#
+              #||| FiCHA INTERMEDIARIO |||#
               #|||||||||||||||||||||||||||#
 
               tabItem(tabName = "prod_fi",
-                      h2("Información fecha intermediario")
-
+                      h2("Información ficha intermediario"),
+                      
+                      box(width=12,title="Productores",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("prod_fi_a", "Asesor: ",
+                                             choices = c("20050-CARLOS ENRIQUE SILVERA","20051-JOSÉ CANALES","20052-EDUARDO CARDONA"))
+                                 
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="prod_fi_fh", label="Fecha hasta:", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("consultar_prod_fi1", "Ver Resumen",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("consultar_prod_fi2", "Ver PDF",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("consultar_prod_fi3", "Cancelar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                      ), #final box
+                      
+                      #TABLA 1
+                      fluidRow(
+                        uiOutput("t1_prod_fi")
+                      ),
+                      
+                      #TABLA 2
+                      fluidRow(
+                        uiOutput("t2_prod_fi")
+                      ),
+                      
+                      #TABLA 3
+                      fluidRow(
+                        uiOutput("t3_prod_fi")
+                      ),
+                      
+                      #TABLA 4
+                      fluidRow(
+                        uiOutput("t4_prod_fi")
+                      )
+                      
+                      
+                      
               ),
 
               #||||||||||||||||||||||#

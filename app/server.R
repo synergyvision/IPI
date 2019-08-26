@@ -809,6 +809,149 @@ output$tabla3_prod <- renderDataTable(
   ))
 
 
+#tabla 1 PRODUCTORES - FICHA INTERMEDIARIO
+observeEvent(input$consultar_prod_fi1, {
+  output$t1_prod_fi <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Datos de Identificación",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_prod_fi"))
+  )
+})#final observeevent
+
+#tabla 1  
+output$tabla1_prod_fi <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod_fi1
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 5))
+      names(a) <- c("Nombre","Tipo","Sucursal",
+                    "Código","Fecha")
+
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2 PRODUCTORES - FICHA INTERMEDIARIO
+observeEvent(input$consultar_prod_fi1, {
+  output$t2_prod_fi <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Datos Cartera",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla2_prod_fi"))
+  )
+})#final observeevent
+
+#tabla 2
+output$tabla2_prod_fi <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod_fi1
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
+      names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
+                    "Siniestros Pagados","Comisiones Bonos",
+                    "Siniestros Incurridos","Cantidad Siniestros",
+                    "% Siniestralidad","% Persistencia","Rentabilidad",
+                    "% Cumplimiento Presupuesto Inventario",
+                    "% Cumplimiento Presupuesto Primas Cobradas")
+
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 3 PRODUCTORES - FICHA INTERMEDIARIO
+observeEvent(input$consultar_prod_fi1, {
+  output$t3_prod_fi <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Información Detallada de las Principales Cuentas",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla3_prod_fi"))
+  )
+})#final observeevent
+
+#tabla 3
+output$tabla3_prod_fi <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod_fi1
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 11))
+      names(a) <- c("Cliente","Línea Negocio","Póliza","Prima Cobrada",
+                    "Fecha Suscipción","Vigencia Desde","Vigencia Hasta",
+                    "Prima Devengada","Siniestros Pagados","Siniestros Incurridos",
+                    "% Siniestralidad")
+
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 4 PRODUCTORES - FICHA INTERMEDIARIO
+observeEvent(input$consultar_prod_fi1, {
+  output$t4_prod_fi <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Información Detallada de los Principales Siniestros",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla4_prod_fi"))
+  )
+})#final observeevent
+
+#tabla 4
+output$tabla4_prod_fi <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$consultar_prod_fi1
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 8))
+      names(a) <- c("Cliente","Póliza","Línea Negocio","Siniestro",
+                    "Fecha Declaración","Fecha Ocurrencia",
+                    "Total Pagado","Reserva")
+
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
 
 
 
