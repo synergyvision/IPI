@@ -952,6 +952,121 @@ output$tabla4_prod_fi <- renderDataTable(
       "}")
   ))
 
+#tabla 1 DETALLE PÓLIZAS 
+observeEvent(input$gc_dp_consultar, {
+  output$t1_gc_dp <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Detalle de Pólizas",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gc_dp"))
+  )
+})#final observeevent
+
+#tabla 4
+output$tabla1_gc_dp <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gc_dp_consultar
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 10))
+      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
+                    "Número Póliza","Prima Cobrada","Prima Devengada",
+                    "Comisión","Fecha Inicio Vigencia",
+                    "Fecha Fin Vigencia")
+      
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 1 DETALLE SINIESTROS 
+observeEvent(input$gc_ds_consultar, {
+  output$t1_gc_ds <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Detalle de Siniestros",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gc_ds"))
+  )
+})#final observeevent
+
+#tabla 4
+output$tabla1_gc_ds <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gc_ds_consultar
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 10))
+      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
+                    "Centro de Atención Receptor","Número Póliza",
+                    "Número Siniestro","Siniestros Pagados",
+                    "Siniestros Pendientes","Siniestros Incurridos")
+      
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+
+#tabla 1 DETALLE CONSOLIDADO 
+observeEvent(input$gc_dc_consultar, {
+  output$t1_gc_dc <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Detalle Consolidado",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gc_dc"))
+  )
+})#final observeevent
+
+#tabla 4
+output$tabla1_gc_dc <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gc_dc_consultar
+    #
+    isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 15))
+      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
+                    "Número Póliza","Prima Cobrada","Prima Devengada",
+                    "Siniestros Pagados","Siniestros Pendientes",
+                    "Siniestros Incurridos","Recuperaciones",
+                    "Comisiones e Incentivos Pagados","Gastos Directos del Ramo",
+                    "Resultado Técnico Antes de Gasto","Siniestralidad"
+                    )
+      
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+
+
+
 
 
 
