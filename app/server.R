@@ -1065,8 +1065,237 @@ output$tabla1_gc_dc <- renderDataTable(
   ))
 
 
+#GESTION TÉCNICA
+#CENTRO DE ATENCIÓN
 
+#tabla 1
+  output$t1_gt_ca <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gt_ca"))
+  )
 
+#tabla 1
+output$tabla1_gt_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+      
+      a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
+      names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
+                    "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+                    "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+                    "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
+                    "Primas Cobradas Netas de Devolución Cumplimiento (%)",
+                    "Reservas de Primas al Inicio Real"
+      )
+      
+      #return(datatable(a, options = list(paging = FALSE)))
+      return(a)  
+      
+   # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2
+output$t2_gt_ca <-  renderUI(
+  
+  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+      dataTableOutput("tabla2_gt_ca"))
+)
+
+#tabla 2
+output$tabla2_gt_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+    
+    a <- as.data.frame(matrix(0,nrow = 6,ncol = 13))
+    names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+                  "Persistencia (%)","Persistencia Rolling 12 (%)",
+                  "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+                  "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+    )
+    
+    #return(datatable(a, options = list(paging = FALSE)))
+    return(a)  
+    
+    # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#LÍNEA DE NEGOCIO
+
+#tabla 1
+output$t1_gt_ln <-  renderUI(
+  
+  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+      dataTableOutput("tabla1_gt_ln"))
+)
+
+#tabla 1
+output$tabla1_gt_ln <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+    
+    a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
+    names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
+                  "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+                  "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+                  "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
+                  "Primas Cobradas Netas de Devolución Cumplimiento (%)",
+                  "Reservas de Primas al Inicio Real"
+    )
+    
+    #return(datatable(a, options = list(paging = FALSE)))
+    a[,1] <- c("Auto","Fianzas","Patrimoniales","Personas","Salud","Totales")
+    return(a)  
+    
+    # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2
+output$t2_gt_ln <-  renderUI(
+  
+  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+      dataTableOutput("tabla2_gt_ln"))
+)
+
+#tabla 2
+output$tabla2_gt_ln <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+    
+    a <- as.data.frame(matrix(0,nrow = 6,ncol = 13))
+    names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+                  "Persistencia (%)","Persistencia Rolling 12 (%)",
+                  "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+                  "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+    )
+    
+    #return(datatable(a, options = list(paging = FALSE)))
+    a[,1] <- c("Auto","Fianzas","Patrimoniales","Personas","Salud","Totales")
+    return(a)  
+    
+    # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#DETALLE POR LÍNEA DE NEGOCIO
+
+#tabla 1
+output$t1_gt_dln <-  renderUI(
+  
+  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+      dataTableOutput("tabla1_gt_dln"))
+)
+
+#tabla 1
+output$tabla1_gt_dln <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+    
+    a <- as.data.frame(matrix(0,nrow = 4,ncol = 12))
+    names(a) <- c("Ramo","Pólizas Nuevas","Pólizas Renovadas","Cantidad de Asegurados",
+                  "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+                  "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+                  "Primas Cobradas Netas de Devolución Nueva","Primas Cobradas Netas de Devolución Renovada",
+                  "Primas Cobradas Netas de Devolución Real"
+    )
+    
+    #return(datatable(a, options = list(paging = FALSE)))
+    a[,1] <- c("AUTOMOVIL","AUTOMIVIL CASCO FLOTA","RESPONSABILIDAD CIVIL DE VEHICULOS","TOTAL")
+    return(a)  
+    
+    # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+#tabla 2
+output$t2_gt_dln <-  renderUI(
+  
+  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+      dataTableOutput("tabla2_gt_dln"))
+)
+
+#tabla 2
+output$tabla2_gt_dln <- renderDataTable(
+  {
+    #agrego dependencia 
+    #input$gc_dc_consultar
+    #
+    #isolate({ 
+    
+    a <- as.data.frame(matrix(0,nrow = 4,ncol = 13))
+    names(a) <- c("Ramo","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+                  "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+                  "Persistencia (%)","Persistencia Rolling 12 (%)",
+                  "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+                  "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+    )
+    
+    #return(datatable(a, options = list(paging = FALSE)))
+    a[,1] <- c("AUTOMOVIL","AUTOMIVIL CASCO FLOTA","RESPONSABILIDAD CIVIL DE VEHICULOS","TOTAL")
+    return(a)  
+    
+    # })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
 
 
 

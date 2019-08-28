@@ -237,7 +237,21 @@ shinyUI(
               #||||||||||||||||||||||||||||||||||#
 
               tabItem(tabName = "gt_ca",
-                      h2(" Información Resumen Centro de Atención")
+                      h2(" Información Resumen Centro de Atención"),
+                      fluidRow(
+                     
+                      box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
+                          #TABLA 1
+                       
+                        uiOutput("t1_gt_ca"),
+                        
+                        #TABLA 2
+                        uiOutput("t2_gt_ca")
+                         
+                        
+                      ) #final box
+                      
+                      )#final fluidRow
 
               ),
 
@@ -246,7 +260,21 @@ shinyUI(
               #||||||||||||||||||||||||||||||||#
 
               tabItem(tabName = "gt_ln",
-                      h2(" Información Resumen Línea de Negocio")
+                      h2(" Información Resumen Línea de Negocio"),
+                      fluidRow(
+                        
+                        box(width=12,title="Resumen Gestión Técnica Línea de Negocio",status="primary",solidHeader=TRUE ,
+                            #TABLA 1
+                            
+                            uiOutput("t1_gt_ln"),
+                            
+                            #TABLA 2
+                            uiOutput("t2_gt_ln")
+                            
+                            
+                        ) #final box
+                        
+                      )#final fluidRow
 
               ),
 
@@ -255,7 +283,21 @@ shinyUI(
               #||||||||||||||||||||||||||||||||#
 
               tabItem(tabName = "gt_dln",
-                      h2(" Información Detalle de Línea de Negocio")
+                      h2(" Información Detalle de Línea de Negocio"),
+                      fluidRow(
+                        
+                        box(width=12,title="Detalle por Línea de Negocio",status="primary",solidHeader=TRUE ,
+                            #TABLA 1
+                            
+                            uiOutput("t1_gt_dln"),
+                            
+                            #TABLA 2
+                            uiOutput("t2_gt_dln")
+                            
+                            
+                        ) #final box
+                        
+                      )#final fluidRow
 
               ),
 
