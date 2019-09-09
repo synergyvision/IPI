@@ -7,32 +7,33 @@ rm(list = ls())
 #cargo librerias a usar
 library(shiny)
 library(readr)
-library(rriskDistributions)
-library(fitdistrplus)
+#library(rriskDistributions)
+#library(fitdistrplus)
 library(shinydashboard)
 library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(reshape2)
-library(jrvFinance)
-library(plotly)
-library(rbokeh)
+#library(jrvFinance)
+#library(plotly)
+#library(rbokeh)
 #library(reshape2)
 #library(xlsx)
-library(nloptr)
-library(alabama)
+#library(nloptr)
+#library(alabama)
 library(DT)
 library(xtable)
 library(webshot)
 library(readxl)
 library(xml2)
-library(rvest)
-library(VaRES)
-library(lmomco)
+#library(rvest)
+#library(VaRES)
+#library(lmomco)
 
 #libreria contraseña
 library(shinyjs)
 library(shinyURL)
+library(sodium)
 
 options(OutDec = ",")
 
@@ -58,32 +59,9 @@ ACERTLF_TEXT<-"0212-2630808 / 0414-2769752"
 ACERCORR_TEXT<-"contacto@synergy.vision"
 
 
-tit <- c("TIF042019", "TIF082019", "TIF112019", "TIF102020", "TIF112020", "TIF022021",
-         "TIF032022", "TIF042023", "TIF012024", "TIF062025", "TIF012026", "TIF112027",
-         "TIF032028", "TIF052028", "TIF082028", "TIF122028", "TIF022029", "TIF032029",
-         "TIF112029", "TIF122029", "TIF022030", "TIF032030", "TIF102030", "TIF022031",
-         "TIF032031", "TIF022032", "TIF032032", "TIF032033", "TIF052034", "TIF092034",
-         "TIF092035", "TIF052036", "TIF012037")
 
 
-#VEBONOS iniciales
-# tit1=c("VEBONO072018","VEBONO022019","VEBONO032019","VEBONO042019","VEBONO102019","VEBONO012020",
-#        "VEBONO062020","VEBONO092020","VEBONO112020","VEBONO012021","VEBONO052021",
-#        "VEBONO122021","VEBONO022022","VEBONO012023","VEBONO022024","VEBONO042024",
-#        "VEBONO012025","VEBONO022025","VEBONO062026","VEBONO032027","VEBONO042028",
-#        "VEBONO102028","VEBONO052029","VEBONO102029","VEBONO072030","VEBONO032031",
-#        "VEBONO062032","VEBONO072033","VEBONO022034")
-#VEBONOS ACTUALIZADOS FEBRERO 2019
-tit1 <- c("VEBONO032019", "VEBONO042019", "VEBONO102019", "VEBONO012020", "VEBONO062020",
-          "VEBONO092020", "VEBONO112020", "VEBONO012021", "VEBONO052021", "VEBONO122021",
-          "VEBONO022022", "VEBONO012023", "VEBONO122023", "VEBONO022024", "VEBONO042024",
-          "VEBONO012025", "VEBONO022025", "VEBONO082025", "VEBONO062026", "VEBONO032027",
-          "VEBONO042028", "VEBONO052028", "VEBONO062028", "VEBONO102028", "VEBONO112028",
-          "VEBONO012029", "VEBONO042029", "VEBONO052029", "VEBONO092029", "VEBONO102029",
-          "VEBONO072030", "VEBONO102030", "VEBONO032031", "VEBONO062032", "VEBONO072033",
-          "VEBONO022034", "VEBONO032034a", "VEBONO032034b", "VEBONO032035", "VEBONO122036",
-          #          "VEBONO022034", "VEBONO032034", "VEBONO032035", "VEBONO122036",
-          "VEBONO082037")
+
 
 #TEXTOS
 ############################################# DATA ###############################################
@@ -212,3 +190,41 @@ VARTINWEI_TEXT<- "Formulación del TVaR para la Distribución Weibull $$TVaR_p(X
 VARTINF_TEXT<- "Formulación del TVaR para la Distribución F $$TVaR_p(X) = \\mu + \\int_{0}^{p}F^{-1}(v)\\sigma dv$$"
 VARTINTST_TEXT<- "Formulación del TVaR para la Distribución T student $$TVaR_p(X) = \\mu + \\int_{0}^{p}T^{-1}(v)\\sigma dv$$"
 VARTINGOM_TEXT<- "Formulación del TVaR para la Distribución Gompertz"
+
+
+#################################### LOG IN ###############################################
+
+# Main login screen
+loginpage <- div(id = "loginpage", style = "width: 500px; max-width: 100%; margin: 0 auto; padding: 20px;",
+                 wellPanel(
+                   tags$h2("Autenticación", class = "text-center", style = "padding-top: 0;color:#333; font-weight:600;"),
+                   textInput("userName", placeholder="Usuario", label = tagList(icon("user"), "Usuario")),
+                   passwordInput("passwd", placeholder="Contraseña", label = tagList(icon("unlock-alt"), "Contraseña")),
+                   br(),
+                   div(
+                     style = "text-align: center;",
+                     actionButton("login", "Ingresar", style = "color: white; background-color:#3c8dbc;
+                                  padding: 10px 15px; width: 150px; cursor: pointer;
+                                  font-size: 18px; font-weight: 600;"),
+                     shinyjs::hidden(
+                       div(id = "nomatch",
+                           tags$p("¡Contraseña errónea!",
+                                  style = "color: red; font-weight: 600; 
+                                  padding-top: 5px;font-size:16px;", 
+                                  class = "text-center"))),
+                     br(),
+                     br(),
+                     tags$code("Usuario: myuser  Contraseña: mypass"),
+                     br(),
+                     tags$code("Usuario: myuser1  Contraseña: mypass1")
+                     ))
+                     )
+
+credentials = data.frame(
+  username_id = c("myuser", "myuser1"),
+  passod   = sapply(c("mypass", "mypass1"),password_store),
+  permission  = c("basic", "advanced"), 
+  stringsAsFactors = F
+)
+
+
