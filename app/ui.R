@@ -829,7 +829,59 @@ shinyUI(
               #||||||||||||||||#
               
               tabItem(tabName = "ind_micro_a_c",
-                      h2("Información Auto-Cartera")
+                      h2("Información Auto-Cartera"),
+                      
+                      box(width=12,title="Indicadores",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="ind_mi_a_c1", label="Desde:", language= "es",
+                                           width = "100%")#final dateimput
+                                 
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="ind_mi_a_c2", label="Desde:", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_mi_a_c3", "Centro de Atención:",
+                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_mi_a_c4", "Área de Negocio:",
+                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                 #)#final box
+                          ),
+                          
+                          
+                          
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("ind_mi_a_c_boton", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ) # final box
+                      
+                      
+                      
+                      
+                      
                       
               ),
               
