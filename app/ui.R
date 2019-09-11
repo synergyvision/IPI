@@ -238,6 +238,53 @@ shinyUI(
 
               tabItem(tabName = "gt_ca",
                       h2(" Información Resumen Centro de Atención"),
+                      
+                      box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="gt_ca_1", label="Desde", language= "es",
+                                           width = "100%")#final dateimput
+                                 
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="gt_ca_2", label="Hasta", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_ca_3", "Área de Negocio",
+                                             choices = c("Auto","Fianza","Patrinomiales","Personas",
+                                                         "Salud"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_ca_4", "Cuentas Especiales",
+                                             choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4"))
+                                 #)#final box
+                          ),
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gt_ca_boton", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ), # final box
+                      
+                      
                       fluidRow(
                      
                       box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
@@ -284,6 +331,60 @@ shinyUI(
 
               tabItem(tabName = "gt_dln",
                       h2(" Información Detalle de Línea de Negocio"),
+                      
+                      box(width=12,title="Indicadores",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="gt_dln_1", label="Desde", language= "es",
+                                           width = "100%")#final dateimput
+                                 
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="gt_dln_2", label="Hasta", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_dln_3", "Centro de Atención",
+                                             choices = c("Universal de Seguros","Centro 2","Centro 3","Centro 4"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_dln_4", "Área de Negocio",
+                                             choices = c("Auto","Fianza","Patrinomiales","Personas",
+                                                         "Salud"))
+                                 #)#final box
+                          ),
+                          column(width = 12,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_dln_5", "Cuentas Especiales",
+                                             choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4"))
+                                 #)#final box
+                          ),
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gt_dln_boton", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ), # final box
+                      
+                      
+                      
                       fluidRow(
                         
                         box(width=12,title="Detalle por Línea de Negocio",status="primary",solidHeader=TRUE ,
@@ -306,7 +407,65 @@ shinyUI(
               #||||||||||||||||||||||||||||||||||||||||||#
 
               tabItem(tabName = "gt_siniestro",
-                      h2("Información Siniestralidad Principales Cuentas")
+                      h2("Información Siniestralidad Principales Cuentas"),
+                      
+                      
+                      box(width=12,title="Siniestralidad Principales Cuentas",status="primary",solidHeader=TRUE ,
+                          column(width = 12,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_sin_1", "Asesor",
+                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                 
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_sin_2", "Ramo",
+                                             choices = c("Ramo 1","Ramo 2","Ramo 3","Ramo 4"))
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_sin_3", "Número de Póliza",
+                                             choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="gt_sin_4", label="Fecha Hasta", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gt_sin_5", "Contrato",
+                                             choices = c("Contrato 1","Contrato 2","Contrato 3","Contrato 4"))
+                                 #)#final box
+                          ),
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gt_sin_boton1", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          ),
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gt_sin_boton2", "Cancelar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ) #final box
 
               ),
 
@@ -758,7 +917,63 @@ shinyUI(
               #|||||||||||||||||||||||||||#
 
               tabItem(tabName = "inc_cg",
-                      h2("Información concursos generales")
+                      h2("Información concursos generales"),
+                      
+                      box(width=12,title="Período Concurso: Desde - Hasta",status="primary",solidHeader=TRUE ,
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gc_inc_cg_1", "Tipo Concursos",
+                                             choices = c("Concurso 1","Concurso 2","Concurso 3","Concurso 4"))
+                                 
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gc_inc_cg_2", "Concurso",
+                                             choices = c("Concurso 1","Concurso 2","Concurso 3","Concurso 4"))
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gc_inc_cg_3", "Sucursal",
+                                             choices = c("Sucursal 1","Sucursal 2","Sucursal 3","Sucursal 4"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gc_inc_cg_4", "Asesor",
+                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                 #)#final box
+                          ),
+                          column(width = 12,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("gc_inc_cg_5", "Observaciones",
+                                             choices = c("Observación 1","Observación 2","Observación 3","Observación 4"))
+                                 #)#final box
+                          ),
+                          
+                      
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gc_inc_cg_boton1", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("gc_inc_cg_boton2", "Cancelar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ) # final box
 
               ),
 
@@ -843,7 +1058,7 @@ shinyUI(
                           
                           column(width = 6,
                                  #box( width = 6, background = "navy",
-                                 dateInput(inputId="ind_mi_a_c2", label="Desde:", language= "es",
+                                 dateInput(inputId="ind_mi_a_c2", label="Hasta:", language= "es",
                                            width = "100%")#final dateimput
                                  #)#final box
                           ),#final column
@@ -852,18 +1067,35 @@ shinyUI(
                           column(width = 6,
                                  #box( width = 6, background = "navy",
                                  selectInput("ind_mi_a_c3", "Centro de Atención:",
-                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                             choices = c("Centro 1","Centro 2","Centro 3","Centro 4"))
                                  #)#final box
                           ),
                           column(width = 6,
                                  #box( width = 6, background = "navy",
                                  selectInput("ind_mi_a_c4", "Área de Negocio:",
-                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                                             choices = c("Auto","Fianza","Patrinomiales","Personas",
+                                                         "Salud"))
                                  #)#final box
                           ),
-                          
-                          
-                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_mi_a_c5", "Tipo de Póliza:",
+                                             choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+                                 #)#final box
+                          ),
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_mi_a_c6", "Pólizas Nuevas:",
+                                             choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+                                 #)#final box
+                          ),
+                          column(width = 12,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_mi_a_c7", "Plan:",
+                                             choices = c("Plan 1","Plan 2","Plan 3","Plan 4"))
+                                 #)#final box
+                          ),
+                        
                           
                           column(width = 6,
                                  #box( width = 6, background = "navy",
@@ -903,7 +1135,64 @@ shinyUI(
               #||||||||||||||||||#
               
               tabItem(tabName = "ind_micro_s_s",
-                      h2("Información Salud-Siniestro")
+                      h2("Información Salud-Siniestro"),
+                      
+                      
+                      box(width=12,title="Indicadores Micro Siniestros",status="primary",solidHeader=TRUE ,
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="ind_m_sin_1", label="Desde", language= "es",
+                                           width = "100%")#final dateimput
+                                 #),#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                          
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 dateInput(inputId="ind_m_sin_2", label="Hasta", language= "es",
+                                           width = "100%")#final dateimput
+                                 #)#final box
+                          ),#final column
+                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                          
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_m_sin_3", "Tipo de Estudio",
+                                             choices = c("Estudio 1","Estudio 2","Estudio 3","Estudio 4"))
+                                 #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_m_sin_4", "Entidad",
+                                             choices = c("Entidad 1","Entidad 2","Entidad 3","Entidad 4"))
+                                 #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_m_sin_5", "Ramo",
+                                             choices = c("Ramo 1","Ramo 2","Ramo 3","Ramo 4"))
+                                 #)#final box
+                          ),
+                          column(width = 4,
+                                 #box( width = 6, background = "navy",
+                                 selectInput("ind_m_sin_6", "Póliza",
+                                             choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+                                 #)#final box
+                          ),
+                          
+                          column(width = 6,
+                                 #box( width = 6, background = "navy",
+                                 actionButton("ind_m_sin_boton", "Consultar",
+                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                          )
+                          
+                          
+                          
+                          #)#final fluidrow
+                          
+                          
+                          
+                      ) #final box
                       
               ),
 
