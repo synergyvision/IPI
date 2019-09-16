@@ -187,7 +187,7 @@ server = (function(input, output,session) {
       output$page <- renderUI({
         div(class="outer",do.call(navbarPage,c(inverse=TRUE,title = "Contratulations you got in!",ui2())))
       })
-      print(ui)
+      #print(ui)
     }
   })
 })
