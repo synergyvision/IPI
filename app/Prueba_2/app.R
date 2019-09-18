@@ -10,7 +10,7 @@ user_base <- data_frame(
   password = c("pass1", "pass2"), 
   password_hash = sapply(c("pass1", "pass2"), sodium::password_store), 
   permissions = c("admin", "standard"),
-  name = c("User One", "User Two")
+  name = c("Usuario 1", "Usuario 2")
 )
 
 ui <- dashboardPage(
@@ -66,8 +66,9 @@ server <- function(input, output, session) {
     if(credentials()$user_auth) return(NULL)
     
     tagList(
-      tags$p("test the different outputs from the sample logins below 
-             as well as an invalid login attempt.", class = "text-center"),
+      #tags$p("test the different outputs from the sample logins below 
+      #       as well as an invalid login attempt.", class = "text-center"),
+      tags$p("Probar con los diferentes usuarios y ver resultados.", class = "text-center"),
       
       renderTable({user_base[, -3]})
     )

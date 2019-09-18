@@ -43,11 +43,11 @@ options(OutDec = ",")
 # Encabezado Vision
 VisionHeader <- function(){tags$head(
   tags$link(rel = "stylesheet", type = "text/css", href = "app.css"),
-  tags$img(src="app/www/img/vision1.png" , id = "VisionLogo", width = 130 ),
-  singleton(includeScript("app/www/js/d3.js")),
-  singleton(includeScript("app/www/js/underscore.js")),
-  singleton(includeScript("app/www/js/jquery-ui.js")),
-  singleton(includeCSS("app/www/css/app.css"))
+  tags$img(src="www/vision1.png" , id = "VisionLogo", width = 130 ),
+  # singleton(includeScript("app/www/js/d3.js")),
+  # singleton(includeScript("app/www/js/underscore.js")),
+  # singleton(includeScript("app/www/js/jquery-ui.js")),
+   singleton(includeCSS("app/www/css/app.css"))
 )}
 
 ACERTITLE_TEXT<-"Acerca de VisionRisk™"
@@ -233,9 +233,9 @@ credentials = data.frame(
   stringsAsFactors = F
 )
 
-header <- dashboardHeader( title = NULL, uiOutput("logoutbtn"))
+header <- dashboardHeader(title = NULL, uiOutput("logoutbtn"))
 
-sidebar <- dashboardSidebar(uiOutput("sidebarpanel")) 
+sidebar <- dashboardSidebar(uiOutput("sidebarpanel"),collapsed = TRUE) 
 body <- dashboardBody(VisionHeader(),shinyjs::useShinyjs(),tags$style(HTML("
     .box.box-solid.box-primary>.box-header {
                                                             color:#fff;
@@ -267,6 +267,7 @@ server <- function(input, output, session) {
             pasverify <- password_verify(pasmatch, Password)
             if(pasverify) {
               USER$login <- TRUE
+              shinyjs::removeClass(selector = "body", class = "sidebar-collapse")
             } else {
               shinyjs::toggle(id = "nomatch", anim = TRUE, time = 1, animType = "fade")
               shinyjs::delay(3000, shinyjs::toggle(id = "nomatch", anim = TRUE, time = 1, animType = "fade"))
@@ -279,6 +280,15 @@ server <- function(input, output, session) {
       }
     }    
   })
+  
+  #modulo para mostrar y quitar el siderbarpanel
+  # observe({
+  #   if(USER$login == TRUE) {
+  #     shinyjs::removeClass(selector = "body", class = "sidebar-collapse")
+  #   } else {
+  #     #shinyjs::addClass(selector = "body", class = "sidebar-collapse")
+  #   }
+  # })
   
   output$logoutbtn <- renderUI({
     req(USER$login)
@@ -1233,10 +1243,10 @@ server <- function(input, output, session) {
     }
   })
   
-  output$results <-  DT::renderDataTable({
-    datatable(iris, options = list(autoWidth = TRUE,
-                                   searching = FALSE))
-  })
+  # output$results <-  DT::renderDataTable({
+  #   datatable(iris, options = list(autoWidth = TRUE,
+  #                                  searching = FALSE))
+  # })
   
   
   observeEvent(input$consultar, {
