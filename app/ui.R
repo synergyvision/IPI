@@ -166,64 +166,77 @@ shinyUI(
                       h2(" Información Consolidado"),
 
 
-                      box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                                         dateInput(inputId="fecha1", label="Desde:", language= "es",
-                                                                   width = "100%")#final dateimput
-                          #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                      # box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #                                    dateInput(inputId="fecha1", label="Desde:", language= "es",
+                      #                                              width = "100%")#final dateimput
+                      #     #),#final box
+                      #     ),#final column
+                      #     #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                      # 
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #                           dateInput(inputId="fecha2", label="Hasta:", language= "es",
+                      #                                     width = "100%")#final dateimput
+                      #     #)#final box
+                      #     ),#final column
+                      #     #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                      # 
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            selectInput("centro_atencion", "Centro de Atención:",
+                      #                        choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+                      #            #)#final box
+                      #     ),
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            selectInput("cuentas_esp", "Cuentas Especiales:",
+                      #                        choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+                      #            #)#final box
+                      #     ),
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            actionButton("consultar", "Consultar",
+                      #                         style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                      #     )
+                      # 
+                      # 
+                      #     #)#final fluidrow
+                      # 
+                      # 
+                      # 
+                      # ), # final box
 
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                                dateInput(inputId="fecha2", label="Hasta:", language= "es",
-                                                          width = "100%")#final dateimput
-                          #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("centro_atencion", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("cuentas_esp", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-
-
-                          #)#final fluidrow
-
-
-
-                      ), # final box
-
-                      verbatimTextOutput('fecha_ini'),
-                      verbatimTextOutput('fecha_fin'),
-                      verbatimTextOutput('sucursal'),
-                      verbatimTextOutput('cuenta'),
+                      #Prueba nuevos imputs
+                      htmlOutput("consolidado_opc"),
+                      
+                      #mensaje de disponibilidad de fechas
+                      verbatimTextOutput('fechas_disp_cons'),
+                      
+                      #verbatimTextOutput('fecha_ini'),
+                      #verbatimTextOutput('fecha_fin'),
+                      #verbatimTextOutput('sucursal'),
+                      #verbatimTextOutput('cuenta'),
 
                       #TABLA 1
                       fluidRow(
-                      uiOutput("t1"),
+                     # uiOutput("t1"),
 
  
 
                       #TABLA 2
                       # box(style="overflow-x:scroll",width = 12,title="Prima Cobrada por Centros de Atención",status="primary",solidHeader=TRUE,
                       #     dataTableOutput("tabla2_con"))
-                      uiOutput("t2")
+                      #uiOutput("t2"),
+                      
+                      #TABLA 3 - DATA DE PRUEBA
+                      uiOutput("t3")
+                      
+                      
                       )
+                      
+                      
 
 
               ),

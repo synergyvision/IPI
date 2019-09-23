@@ -588,6 +588,7 @@ shinyServer(function(input, output) {
            dataTableOutput("tabla2_con"))
     )
   })#final observeevent
+  
 
   #tabla 2  consolidado
   output$tabla2_con <- renderDataTable({
@@ -615,6 +616,126 @@ shinyServer(function(input, output) {
   ))
  
 
+  #tabla 3
+  
+  observeEvent(input$consultar, {
+    output$t3 <-  renderUI(
+      box(style="overflow-x:scroll",width = 12,title="Data de prueba",status="primary",solidHeader=TRUE,
+          dataTableOutput("tabla3_con"))
+    )
+  })#final observeevent
+  
+  
+  #tabla 2  consolidado
+  output$tabla3_con <- renderDataTable({
+    #leo data de la carpeta datos
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    
+    #veo filtros a aplicar
+    # if(is.null(input$centro_atencion) &is.null(input$cuentas_esp)){
+    #  head(iris)
+    # }else{
+    #   return(b)
+    #   }
+    b[,1] <- as.Date(b[,1])
+    #a <- seq.Date(as.Date(input$fecha1),as.Date(input$fecha2),by="days")
+    
+    #b <- b[which(b[,1]==a),]
+    b <- b[b[,2]==input$centro_atencion,]
+    b <- b[b[,3]==input$cuentas_esp,]
+    
+    return(b)
+
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+      "}")
+  ))
+  
+  #Nuevos botones Consolidado
+  output$consolidado_opc <- renderUI({ 
+    
+    #selectInput("obs_tif", "Seleccionar títulos", obs_elim_tif(),multiple = TRUE)
+    box(width=12,title="Consolidado",status="primary",solidHeader=TRUE ,
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="fecha1", label="Desde:", language= "es",
+                         width = "100%")#final dateimput
+               #),#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+        
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="fecha2", label="Hasta:", language= "es",
+                         width = "100%")#final dateimput
+               #)#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+        
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("centro_atencion", "Centro de Atención:",
+                           choices = centro_aten_cons())
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("cuentas_esp", "Cuentas Especiales:",
+                           choices = c("Todas",cuentas_esp_cons()))
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               actionButton("consultar", "Consultar",
+                            style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+        )
+        
+        
+        #)#final fluidrow
+        
+        
+        
+    ) # final box
+  })
+  
+  #funcion que me extrae las opciones/nieveles de los centro de atencion
+  centro_aten_cons <- reactive({
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    b[,2] <- as.factor(b[,2])
+    return(levels(b[,2]))
+  })
+  
+  #funcion que me extrae las opciones/nieveles de los centro de atencion
+  cuentas_esp_cons <- reactive({
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    b[,3] <- as.factor(b[,3])
+    return(levels(b[,3]))
+  })
+  
+  #mensaje de fechas disponibles
+  observeEvent(input$consultar, {
+    output$fechas_disp_cons<-renderPrint({
+      #agrego dependencia
+      input$consultar
+      #
+      isolate({
+        b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+        b[,1] <- as.Date(b[,1])
+        fechas <- range(b[,1])
+        f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
+        f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
+                                                  
+        print(paste0("Las fechas disponibles se encuentran entre el ",f1," y el ",f2))
+        
+      })
+      
+
+    })
+  }) #final observeevent
+  
   
 #GESTON COMERCIAL
 
