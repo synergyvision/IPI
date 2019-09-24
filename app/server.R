@@ -620,31 +620,55 @@ shinyServer(function(input, output) {
   
   observeEvent(input$consultar, {
     output$t3 <-  renderUI(
+
       box(style="overflow-x:scroll",width = 12,title="Data de prueba",status="primary",solidHeader=TRUE,
           dataTableOutput("tabla3_con"))
+      
     )
   })#final observeevent
   
   
   #tabla 2  consolidado
   output$tabla3_con <- renderDataTable({
+    #agrego dependencia
+    input$consultar
+    
+    #
+    isolate({ 
     #leo data de la carpeta datos
     b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-    
+    str(b)
     #veo filtros a aplicar
     # if(is.null(input$centro_atencion) &is.null(input$cuentas_esp)){
     #  head(iris)
     # }else{
     #   return(b)
     #   }
-    b[,1] <- as.Date(b[,1])
+    
     #a <- seq.Date(as.Date(input$fecha1),as.Date(input$fecha2),by="days")
     
     #b <- b[which(b[,1]==a),]
+    
+    #condicional para filtrar por fecha
+    b[,1] <- as.character(b[,1])
+    lim1 <- which(b[,1]==input$fecha1)
+    lim2 <- which(b[,1]==input$fecha2)
+    b <- b[lim1:lim2,]
+    
+    
+    #condicional para filtrar por centro de atencion
     b <- b[b[,2]==input$centro_atencion,]
-    b <- b[b[,3]==input$cuentas_esp,]
+    
+    #condicional para filtrar por cuentas especiales
+    if(input$cuentas_esp=="Todas"){
+      b <- b[1:nrow(b),]
+    }else{
+      b <- b[b[,3]==input$cuentas_esp,]
+    }
     
     return(b)
+    
+    }) #final isolate
 
   },rownames = FALSE,options = list(
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
