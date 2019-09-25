@@ -228,11 +228,13 @@ shinyUI(
                       #TABLA 2
                       # box(style="overflow-x:scroll",width = 12,title="Prima Cobrada por Centros de Atención",status="primary",solidHeader=TRUE,
                       #     dataTableOutput("tabla2_con"))
-                      #uiOutput("t2"),
+                      
                       
                       #TABLA 3 - DATA DE PRUEBA
-                      uiOutput("t3")
+                      uiOutput("t3"),
                       
+                      
+                      uiOutput("t2")
                       
                       )
                       

@@ -592,21 +592,52 @@ shinyServer(function(input, output) {
 
   #tabla 2  consolidado
   output$tabla2_con <- renderDataTable({
-    b <- data.frame(matrix(0,nrow = 10,ncol = 37))
-    names(b) <- c("Centro De Atención","Prima Cobrada Auto","% Ppto Auto","% Sin. Auto",
-                  "% Sin Rolling 12 Auto","% Persistencia Auto","% Persistencia Rolling 12 Auto",
-                  "Prima Cobrada Fianza","% Ppto Fianza","% Sin. Fianza",
-                  "% Sin Rolling 12 Fianza","% Persistencia Fianza","% Persistencia Rolling 12 Fianza",
-                  "Prima Cobrada Patrimoniales","% Ppto Patrimoniales","% Sin. Patrimoniales",
-                  "% Sin Rolling 12 Patrimoniales","% Persistencia Patrimoniales","% Persistencia Rolling 12 Patrimoniales",
-                  "Prima Cobrada Personas","% Ppto Personas","% Sin. Personas",
-                  "% Sin Rolling 12 Personas","% Persistencia Personas","% Persistencia Rolling 12 Personas",
-                  "Prima Cobrada Salud","% Ppto Salud","% Sin. Salud",
-                  "% Sin Rolling 12 Salud","% Persistencia Salud","% Persistencia Rolling 12 Salud",
-                  "Prima Cobrada General","% Ppto General","% Sin. General",
-                  "% Sin Rolling 12 General","% Persistencia General","% Persistencia Rolling 12 General"
-                  )
-    return(b)
+    #agrego dependencia
+    input$consultar
+    
+    #
+    isolate({ 
+      b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_tabla2.txt"), sep="")
+      
+  
+    # names(b) <- c("Centro De Atención","Prima Cobrada Auto","% Ppto Auto","% Sin. Auto",
+    #               "% Sin Rolling 12 Auto","% Persistencia Auto","% Persistencia Rolling 12 Auto",
+    #               "Prima Cobrada Fianza","% Ppto Fianza","% Sin. Fianza",
+    #               "% Sin Rolling 12 Fianza","% Persistencia Fianza","% Persistencia Rolling 12 Fianza",
+    #               "Prima Cobrada Patrimoniales","% Ppto Patrimoniales","% Sin. Patrimoniales",
+    #               "% Sin Rolling 12 Patrimoniales","% Persistencia Patrimoniales","% Persistencia Rolling 12 Patrimoniales",
+    #               "Prima Cobrada Personas","% Ppto Personas","% Sin. Personas",
+    #               "% Sin Rolling 12 Personas","% Persistencia Personas","% Persistencia Rolling 12 Personas",
+    #               "Prima Cobrada Salud","% Ppto Salud","% Sin. Salud",
+    #               "% Sin Rolling 12 Salud","% Persistencia Salud","% Persistencia Rolling 12 Salud",
+    #               "Prima Cobrada General","% Ppto General","% Sin. General",
+    #               "% Sin Rolling 12 General","% Persistencia General","% Persistencia Rolling 12 General"
+    #               )
+    # 
+    
+    
+      #condicional para filtrar por fecha
+      b[,38] <- as.character(b[,38])
+      lim1 <- which(b[,38]==input$fecha1)
+      lim2 <- which(b[,38]==input$fecha2)
+      b <- b[lim1:lim2,]
+      
+      
+      #condicional para filtrar por centro de atencion
+      b <- b[b[,1]==input$centro_atencion,]
+      
+      #condicional para filtrar por cuentas especiales
+      if(input$cuentas_esp=="Todas"){
+        b <- b[1:nrow(b),]
+      }else{
+        b <- b[b[,39]==input$cuentas_esp,]
+      }
+      
+      return(b[,-c(38,39)])
+      
+    
+    }) #final isolate
+    
   },rownames = FALSE,options = list(
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
     initComplete = JS(
@@ -621,7 +652,7 @@ shinyServer(function(input, output) {
   observeEvent(input$consultar, {
     output$t3 <-  renderUI(
 
-      box(style="overflow-x:scroll",width = 12,title="Data de prueba",status="primary",solidHeader=TRUE,
+      box(style="overflow-x:scroll",width = 12,title="Inventario por Centros de Atención",status="primary",solidHeader=TRUE,
           dataTableOutput("tabla3_con"))
       
     )
@@ -636,8 +667,9 @@ shinyServer(function(input, output) {
     #
     isolate({ 
     #leo data de la carpeta datos
-    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-    str(b)
+    #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+      
     #veo filtros a aplicar
     # if(is.null(input$centro_atencion) &is.null(input$cuentas_esp)){
     #  head(iris)
@@ -650,23 +682,28 @@ shinyServer(function(input, output) {
     #b <- b[which(b[,1]==a),]
     
     #condicional para filtrar por fecha
-    b[,1] <- as.character(b[,1])
-    lim1 <- which(b[,1]==input$fecha1)
-    lim2 <- which(b[,1]==input$fecha2)
+    # b[,1] <- as.character(b[,1])
+    # lim1 <- which(b[,1]==input$fecha1)
+    # lim2 <- which(b[,1]==input$fecha2)
+     b[,38] <- as.character(b[,38])
+     lim1 <- which(b[,38]==input$fecha1)
+     lim2 <- which(b[,38]==input$fecha2)
     b <- b[lim1:lim2,]
     
     
     #condicional para filtrar por centro de atencion
-    b <- b[b[,2]==input$centro_atencion,]
+    #b <- b[b[,2]==input$centro_atencion,]
+    b <- b[b[,1]==input$centro_atencion,]
     
     #condicional para filtrar por cuentas especiales
     if(input$cuentas_esp=="Todas"){
       b <- b[1:nrow(b),]
     }else{
-      b <- b[b[,3]==input$cuentas_esp,]
+      #b <- b[b[,3]==input$cuentas_esp,]
+      b <- b[b[,39]==input$cuentas_esp,]
     }
     
-    return(b)
+    return(b[,-c(38,39)])
     
     }) #final isolate
 
@@ -727,16 +764,22 @@ shinyServer(function(input, output) {
   
   #funcion que me extrae las opciones/nieveles de los centro de atencion
   centro_aten_cons <- reactive({
-    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-    b[,2] <- as.factor(b[,2])
-    return(levels(b[,2]))
+    #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    #b[,2] <- as.factor(b[,2])
+    #return(levels(b[,2]))
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+    b[,1] <- as.factor(b[,1])
+    return(levels(b[,1]))
   })
   
   #funcion que me extrae las opciones/nieveles de los centro de atencion
   cuentas_esp_cons <- reactive({
-    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-    b[,3] <- as.factor(b[,3])
-    return(levels(b[,3]))
+    # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+    # b[,3] <- as.factor(b[,3])
+    # return(levels(b[,3]))
+     b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+     b[,39] <- as.factor(b[,39])
+     return(levels(b[,39]))
   })
   
   #mensaje de fechas disponibles
@@ -746,12 +789,18 @@ shinyServer(function(input, output) {
       input$consultar
       #
       isolate({
-        b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-        b[,1] <- as.Date(b[,1])
-        fechas <- range(b[,1])
+        # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+        # b[,1] <- as.Date(b[,1])
+        # fechas <- range(b[,1])
+        # f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
+        # f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
+        #                                           
+        b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+        b[,38] <- as.Date(b[,38])
+        fechas <- range(b[,38])
         f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
         f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
-                                                  
+        
         print(paste0("Las fechas disponibles se encuentran entre el ",f1," y el ",f2))
         
       })
