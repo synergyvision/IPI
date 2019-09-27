@@ -254,51 +254,56 @@ shinyUI(
               tabItem(tabName = "gt_ca",
                       h2(" Información Resumen Centro de Atención"),
                       
-                      box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gt_ca_1", label="Desde", language= "es",
-                                           width = "100%")#final dateimput
-                                 
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gt_ca_2", label="Hasta", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_ca_3", "Área de Negocio",
-                                             choices = c("Auto","Fianza","Patrinomiales","Personas",
-                                                         "Salud"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_ca_4", "Cuentas Especiales",
-                                             choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4"))
-                                 #)#final box
-                          ),
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gt_ca_boton", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ), # final box
+                      # box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            dateInput(inputId="gt_ca_1", label="Desde", language= "es",
+                      #                      width = "100%")#final dateimput
+                      #            
+                      #            #),#final box
+                      #     ),#final column
+                      #     #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                      #     
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            dateInput(inputId="gt_ca_2", label="Hasta", language= "es",
+                      #                      width = "100%")#final dateimput
+                      #            #)#final box
+                      #     ),#final column
+                      #     #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                      #     
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            selectInput("gt_ca_3", "Área de Negocio",
+                      #                        choices = c("Auto","Fianza","Patrinomiales","Personas",
+                      #                                    "Salud"))
+                      #            #)#final box
+                      #     ),
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            selectInput("gt_ca_4", "Cuentas Especiales",
+                      #                        choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4"))
+                      #            #)#final box
+                      #     ),
+                      #     
+                      #     column(width = 6,
+                      #            #box( width = 6, background = "navy",
+                      #            actionButton("gt_ca_boton", "Consultar",
+                      #                         style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                      #     )
+                      #     
+                      #     
+                      #     #)#final fluidrow
+                      #     
+                      #     
+                      #     
+                      # ), # final box
                       
+                      #nuevos imputs
+                      htmlOutput("gt_rsa_opc"),
+                      
+                      #mensaje de disponibilidad de fechas
+                      verbatimTextOutput('fechas_disp_gt_rca'),
                       
                       fluidRow(
                      

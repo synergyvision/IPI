@@ -218,4 +218,97 @@ b$cuentas_esp <- cuentas[ind1]
 #
 write.table(x = b,file = paste0(getwd(),"/app/Datos/","data_consolidado_tabla2.txt"))
 
+#SECCION GESTION TECNICA
+#RESUMEN CENTRO DE ATENCION
+#Tabla 1
+
+a <- as.data.frame(matrix(0,nrow =365,ncol = 12))
+names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
+              "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+              "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+              "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
+              "Primas Cobradas Netas de Devolución Cumplimiento (%)",
+              "Reservas de Primas al Inicio Real")
+
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+#relleno primeras filas
+ind <- ch_integer(365,1,20)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5","Centro 6","Centro 7",
+            "Centro 8","Centro 9","Centro 10","Centro 11","Centro 12","Centro 13","Centro 14",
+            "Centro 15","Centro 16","Centro 17","Centro 18","Centro 19","Centro 20")
+
+#
+a$fecha <- fecha
+a$`Centro Atención` <- centro[ind]
+
+#
+a[,2] <- ch_integer(365,1,2000)
+a[,3] <- ch_integer(365,1,700)
+a[,4] <- ch_integer(365,1,800)
+a[,5] <- ch_integer(365,1,2000)
+a[,6] <- ch_unif(n = 365, min = 0, max = 150)
+a[,7] <- ch_unif(n = 365, min = 0, max = 100)
+a[,8] <- ch_unif(n = 365, min = 0, max = 100)
+a[,9] <- ch_integer(365,1,100000000)
+a[,10] <- ch_integer(365,1,100000000)
+a[,11] <- ch_unif(n = 365, min = 0, max = 600)
+a[,12] <-  ch_integer(365,1,100000000)
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_rca1.txt"))
+
+
+#tabla 2
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 13))
+names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+              "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+              "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+              "Persistencia (%)","Persistencia Rolling 12 (%)",
+              "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+              "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)")
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+#relleno primeras filas
+ind <- ch_integer(365,1,20)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5","Centro 6","Centro 7",
+            "Centro 8","Centro 9","Centro 10","Centro 11","Centro 12","Centro 13","Centro 14",
+            "Centro 15","Centro 16","Centro 17","Centro 18","Centro 19","Centro 20")
+
+#
+a$fecha <- fecha
+a$`Centro Atención` <- centro[ind]
+
+#
+a[,2] <- ch_unif(n = 365, min = 0, max = 150)
+a[,3] <- ch_unif(n = 365, min = 0, max = 100)
+a[,4] <- ch_unif(n = 365, min = 0, max = 200)
+a[,5] <- ch_unif(n = 365, min = 0, max = 100)
+a[,6] <- ch_unif(n = 365, min = 0, max = 150)
+a[,7] <- ch_unif(n = 365, min = 0, max = 150)
+a[,8] <- ch_unif(n = 365, min = 0, max = 50)
+a[,9] <- ch_unif(n = 365, min = 0, max = 50)
+a[,10] <- ch_unif(n = 365, min = 0, max = 50)
+a[,11] <- ch_unif(n = 365, min = 0, max = 50)
+a[,12] <-  ch_unif(n = 365, min = 0, max = 100)
+a[,13] <-  ch_unif(n = 365, min = 0, max = 100)
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_rca2.txt"))
 

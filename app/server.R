@@ -811,6 +811,8 @@ shinyServer(function(input, output) {
   
   
 #GESTON COMERCIAL
+  
+  
 
 #LÍNEA DE NEGOCIO
 #tabla 1 LÍNEA DE NEGOCIO
@@ -1262,6 +1264,104 @@ output$tabla1_gc_dc <- renderDataTable(
 #GESTION TÉCNICA
 #CENTRO DE ATENCIÓN
 
+output$gt_rsa_opc <- renderUI({ 
+  
+  box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gt_ca_1", label="Desde", language= "es",
+                       width = "100%")#final dateimput
+             
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gt_ca_2", label="Hasta", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gt_ca_3", "Centro de Atención",
+                         choices = gt_rca_b1())
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gt_ca_4", "Cuentas Especiales",
+                         choices = gt_rca_b2())
+             #)#final box
+      ),
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gt_ca_boton", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+      
+      
+      #)#final fluidrow
+      
+      
+      
+  ) # final box
+  
+  
+}) #final renderUI
+
+#funcion que me extrae las opciones/nieveles de los centro de atencion
+gt_rca_b1 <- reactive({
+  #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+  #b[,2] <- as.factor(b[,2])
+  #return(levels(b[,2]))
+  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+  b[,1] <- as.factor(b[,1])
+  return(levels(b[,1]))
+})
+
+#funcion que me extrae las opciones/nieveles de las cuentas especiales
+gt_rca_b2 <- reactive({
+  # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+  # b[,3] <- as.factor(b[,3])
+  # return(levels(b[,3]))
+  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+  b[,14] <- as.factor(b[,14])
+  return(levels(b[,14]))
+})
+
+#mensaje de fechas disponibles
+observeEvent(input$gt_ca_boton, {
+  output$fechas_disp_gt_rca<-renderPrint({
+    #agrego dependencia
+    input$gt_ca_boton
+    #
+    isolate({
+      # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
+      # b[,1] <- as.Date(b[,1])
+      # fechas <- range(b[,1])
+      # f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
+      # f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
+      #                                           
+      b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+      b[,13] <- as.Date(b[,13])
+      fechas <- range(b[,13])
+      f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
+      f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
+      
+      print(paste0("Las fechas disponibles se encuentran entre el ",f1," y el ",f2))
+      
+    })
+    
+    
+  })
+}) #final observeevent
+
+
+
 #tabla 1
   output$t1_gt_ca <-  renderUI(
     
@@ -1270,6 +1370,7 @@ output$tabla1_gc_dc <- renderDataTable(
   )
 
 #tabla 1
+  
 output$tabla1_gt_ca <- renderDataTable(
   {
     #agrego dependencia 
