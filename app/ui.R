@@ -307,7 +307,7 @@ shinyUI(
                       
                       fluidRow(
                      
-                      box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
+                      #box(width=12,title="Gestión Técnica Centro de Atención",status="primary",solidHeader=TRUE ,
                           #TABLA 1
                        
                         uiOutput("t1_gt_ca"),
@@ -316,7 +316,7 @@ shinyUI(
                         uiOutput("t2_gt_ca")
                          
                         
-                      ) #final box
+                      #) #final box
                       
                       )#final fluidRow
 
@@ -328,50 +328,57 @@ shinyUI(
 
               tabItem(tabName = "gt_ln",
                       h2(" Información Resumen Línea de Negocio"),
+                      # fluidRow(
+                      #   
+                      #   box(width=12,title="Resumen Línea de Negocio",status="primary",solidHeader=TRUE ,
+                      #       column(width = 6,
+                      #              #box( width = 6, background = "navy",
+                      #              dateInput(inputId="gt_rln1", label="Desde:", language= "es",
+                      #                        width = "100%")#final dateimput
+                      #              #),#final box
+                      #       ),#final column
+                      #       #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+                      #       
+                      #       column(width = 6,
+                      #              #box( width = 6, background = "navy",
+                      #              dateInput(inputId="gt_rln2", label="Hasta:", language= "es",
+                      #                        width = "100%")#final dateimput
+                      #              #)#final box
+                      #       ),#final column
+                      #       #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+                      #       
+                      #       column(width = 6,
+                      #              #box( width = 6, background = "navy",
+                      #              selectInput("gt_rln3", "Centro de Atención:",
+                      #                          choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+                      #              #)#final box
+                      #       ),
+                      #       column(width = 6,
+                      #              #box( width = 6, background = "navy",
+                      #              selectInput("gt_rln4", "Cuentas Especiales:",
+                      #                          choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+                      #              #)#final box
+                      #       ),
+                      #       column(width = 6,
+                      #              #box( width = 6, background = "navy",
+                      #              actionButton("gt_rln_boton", "Consultar",
+                      #                           style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+                      #       )
+                      #       
+                      #       
+                      #       #)#final fluidrow
+                      #       
+                      #       
+                      #       
+                      #   ), # final box
+                      #nuevos imputs
+                      htmlOutput("gt_rln_opc"),
+                      
+                      #mensaje de disponibilidad de fechas
                       fluidRow(
-                        
-                        box(width=12,title="Resumen Línea de Negocio",status="primary",solidHeader=TRUE ,
-                            column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   dateInput(inputId="gt_rln1", label="Desde:", language= "es",
-                                             width = "100%")#final dateimput
-                                   #),#final box
-                            ),#final column
-                            #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                            
-                            column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   dateInput(inputId="gt_rln2", label="Hasta:", language= "es",
-                                             width = "100%")#final dateimput
-                                   #)#final box
-                            ),#final column
-                            #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                            
-                            column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   selectInput("gt_rln3", "Centro de Atención:",
-                                               choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                   #)#final box
-                            ),
-                            column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   selectInput("gt_rln4", "Cuentas Especiales:",
-                                               choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                   #)#final box
-                            ),
-                            column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   actionButton("gt_rln_boton", "Consultar",
-                                                style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                            )
-                            
-                            
-                            #)#final fluidrow
-                            
-                            
-                            
-                        ), # final box
-                        
+                      verbatimTextOutput('fechas_disp_gt_rln'),
+                      
+                      
                         box(width=12,title="Resumen Gestión Técnica Línea de Negocio",status="primary",solidHeader=TRUE ,
                             #TABLA 1
                             

@@ -1293,7 +1293,7 @@ output$gt_rsa_opc <- renderUI({
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gt_ca_4", "Cuentas Especiales",
-                         choices = gt_rca_b2())
+                         choices = c("Todas",gt_rca_b2()))
              #)#final box
       ),
       
@@ -1363,34 +1363,60 @@ observeEvent(input$gt_ca_boton, {
 
 
 #tabla 1
+observeEvent(input$gt_ca_boton, {
   output$t1_gt_ca <-  renderUI(
     
-    box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
-        dataTableOutput("tabla1_gt_ca"))
+    box(style="overflow-x:scroll",title = "Gestión Técnica Centro de Atención",width = 12,status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gt_ca")
+        )
   )
-
+})#final observeEvent
+  
 #tabla 1
   
 output$tabla1_gt_ca <- renderDataTable(
   {
     #agrego dependencia 
-    #input$gc_dc_consultar
-    #
-    #isolate({ 
+    input$gt_ca_boton
+    
+    isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
-      names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
-                    "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
-                    "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
-                    "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
-                    "Primas Cobradas Netas de Devolución Cumplimiento (%)",
-                    "Reservas de Primas al Inicio Real"
-      )
+      # a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
+      # names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
+      #               "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+      #               "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+      #               "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
+      #               "Primas Cobradas Netas de Devolución Cumplimiento (%)",
+      #               "Reservas de Primas al Inicio Real"
+      # )
       
       #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+    
+    #veo filtros a aplicar
+  
+     b[,13] <- as.character(b[,13])
+     lim1 <- which(b[,13]==input$gt_ca_1)
+     lim2 <- which(b[,13]==input$gt_ca_2)
+     b <- b[lim1:lim2,]
+     
+     
+    #condicional para filtrar por centro de atencion
+    # #b <- b[b[,2]==input$centro_atencion,]
+     b <- b[b[,1]==input$gt_ca_3,]
+     
+    #condicional para filtrar por cuentas especiales
+     if(input$gt_ca_4=="Todas"){
+       b <- b[1:nrow(b),]
+     }else{
+       #b <- b[b[,3]==input$cuentas_esp,]
+       b <- b[b[,14]==input$gt_ca_4,]
+     }
+     
+    # return(b[,-c(38,39)])
+      return(b[,-c(13,14)])  
       
-   # })#final isolate
+    })#final isolate
     
   },rownames = FALSE,options = list(
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
@@ -1401,33 +1427,58 @@ output$tabla1_gt_ca <- renderDataTable(
   ))
 
 #tabla 2
+observeEvent(input$gt_ca_boton, {
 output$t2_gt_ca <-  renderUI(
   
-  box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+  box(style="overflow-x:scroll",title = "Gestión Técnica Centro de Atención",width = 12,status="primary",solidHeader=TRUE,
       dataTableOutput("tabla2_gt_ca"))
 )
+})#final observeEvent
+
 
 #tabla 2
 output$tabla2_gt_ca <- renderDataTable(
   {
     #agrego dependencia 
-    #input$gc_dc_consultar
+    input$gt_ca_boton
     #
-    #isolate({ 
+    isolate({ 
     
-    a <- as.data.frame(matrix(0,nrow = 6,ncol = 13))
-    names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
-                  "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
-                  "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
-                  "Persistencia (%)","Persistencia Rolling 12 (%)",
-                  "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
-                  "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
-    )
+    # a <- as.data.frame(matrix(0,nrow = 6,ncol = 13))
+    # names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+    #               "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+    #               "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+    #               "Persistencia (%)","Persistencia Rolling 12 (%)",
+    #               "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+    #               "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+    # )
     
     #return(datatable(a, options = list(paging = FALSE)))
-    return(a)  
+    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca2.txt"), sep="")
     
-    # })#final isolate
+    #veo filtros a aplicar
+    
+     b[,14] <- as.character(b[,14])
+     lim1 <- which(b[,14]==input$gt_ca_1)
+     lim2 <- which(b[,14]==input$gt_ca_2)
+     b <- b[lim1:lim2,]
+
+    #condicional para filtrar por centro de atencion
+     #b <- b[b[,2]==input$centro_atencion,]
+    b <- b[b[,1]==input$gt_ca_3,]
+     
+    #condicional para filtrar por cuentas especiales
+    if(input$gt_ca_4=="Todas"){
+       b <- b[1:nrow(b),]
+    }else{
+       #b <- b[b[,3]==input$cuentas_esp,]
+       b <- b[b[,15]==input$gt_ca_4,]
+     }
+    # 
+    # return(b[,-c(38,39)])
+    return(b[,-c(14,15)])  
+    
+     })#final isolate
     
   },rownames = FALSE,options = list(
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
@@ -1438,6 +1489,56 @@ output$tabla2_gt_ca <- renderDataTable(
   ))
 
 #LÍNEA DE NEGOCIO
+
+output$gt_rln_opc <- renderUI({ 
+  fluidRow(
+
+    box(width=12,title="Resumen Línea de Negocio",status="primary",solidHeader=TRUE ,
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="gt_rln1", label="Desde:", language= "es",
+                         width = "100%")#final dateimput
+               #),#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="gt_rln2", label="Hasta:", language= "es",
+                         width = "100%")#final dateimput
+               #)#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("gt_rln3", "Centro de Atención:",
+                           choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("gt_rln4", "Cuentas Especiales:",
+                           choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               actionButton("gt_rln_boton", "Consultar",
+                            style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+        )
+
+
+        )#final box
+
+
+
+    ) # final fluidrow
+
+  
+  
+  
+})
 
 #tabla 1
 output$t1_gt_ln <-  renderUI(
