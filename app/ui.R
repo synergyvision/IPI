@@ -379,7 +379,7 @@ shinyUI(
                       verbatimTextOutput('fechas_disp_gt_rln'),
                       
                       
-                        box(width=12,title="Resumen Gestión Técnica Línea de Negocio",status="primary",solidHeader=TRUE ,
+                        #box(width=12,title="Resumen Gestión Técnica Línea de Negocio",status="primary",solidHeader=TRUE ,
                             #TABLA 1
                             
                             uiOutput("t1_gt_ln"),
@@ -388,7 +388,7 @@ shinyUI(
                             uiOutput("t2_gt_ln")
                             
                             
-                        ) #final box
+                        #) #final box
                         
                       )#final fluidRow
 
@@ -401,62 +401,14 @@ shinyUI(
               tabItem(tabName = "gt_dln",
                       h2("Información Detalle de Línea de Negocio"),
                       
-                      box(width=12,title="Información Detalle de Línea de Negocio",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gt_dln_1", label="Desde", language= "es",
-                                           width = "100%")#final dateimput
-                                 
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gt_dln_2", label="Hasta", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_dln_3", "Centro de Atención",
-                                             choices = c("Universal de Seguros","Centro 2","Centro 3","Centro 4"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_dln_4", "Área de Negocio",
-                                             choices = c("Auto","Fianza","Patrinomiales","Personas",
-                                                         "Salud"))
-                                 #)#final box
-                          ),
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_dln_5", "Cuentas Especiales",
-                                             choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4"))
-                                 #)#final box
-                          ),
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gt_dln_boton", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ), # final box
-                      
+                    
+                      #nuevos imputs
+                      htmlOutput("gt_dln_opc"),
                       
                       
                       fluidRow(
                         
-                        box(width=12,title="Detalle por Línea de Negocio",status="primary",solidHeader=TRUE ,
+                       # box(width=12,title="Detalle por Línea de Negocio",status="primary",solidHeader=TRUE ,
                             #TABLA 1
                             
                             uiOutput("t1_gt_dln"),
@@ -465,7 +417,7 @@ shinyUI(
                             uiOutput("t2_gt_dln")
                             
                             
-                        ) #final box
+                        #) #final box
                         
                       )#final fluidRow
 

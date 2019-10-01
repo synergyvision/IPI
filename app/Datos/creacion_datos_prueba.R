@@ -312,3 +312,197 @@ a$cuentas_esp <- cuentas[ind1]
 #
 write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_rca2.txt"))
 
+#SECCION GESTION TECNICA
+#RESUMEN LINEA DE NEGOCIO
+#TABLA 1
+
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 12))
+names(a) <- c("Línea Negocio","Pólizas Nuevas","Pólizas Renovadas",
+              "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+              "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+              "Primas Cobradas Netas de Devolución Real","Primas Cobradas Netas de Devolución Presupuesto",
+              "Primas Cobradas Netas de Devolución Cumplimiento (%)",
+              "Reservas de Primas al Inicio Real"
+)
+
+#
+ind <- ch_integer(365,1,5)
+lineas <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+
+a[,1] <- lineas[ind]
+
+
+#RELLENO COLUMNAS
+a[,2] <- ch_integer(n = 365, min = 0, max = 400)
+a[,3] <- ch_integer(n = 365, min = 1, max = 200)
+a[,4] <- ch_integer(n = 365, min = 0, max = 400)
+a[,5] <- ch_integer(n = 365, min = 0, max = 600)
+a[,6] <- ch_unif(n = 365, min = 0, max = 200)
+a[,7] <- ch_unif(n = 365, min = 0, max = 100)
+a[,8] <- ch_unif(n = 365, min = 0, max = 100)
+a[,9] <- ch_integer(n = 365, min = 0, max = 50000000000)
+a[,10] <- ch_integer(n = 365, min = 0, max = 50000000000)
+a[,11] <- ch_unif(n = 365, min = 0, max = 1000)
+a[,12] <-  ch_unif(n = 365, min = 0, max = 50000000000)
+
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$fecha <- fecha
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_rln1.txt"))
+
+
+#TABLA 2
+
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 13))
+names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+              "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+              "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+              "Persistencia (%)","Persistencia Rolling 12 (%)",
+              "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+              "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+)
+
+#
+ind <- ch_integer(365,1,5)
+lineas <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+
+a[,1] <- lineas[ind]
+
+#RELLENO COLUMNAS
+a[,2] <- ch_unif(n = 365, min = 0, max = 400)
+a[,3] <- ch_unif(n = 365, min = 1, max = 200)
+a[,4] <- ch_unif(n = 365, min = 0, max = 400)
+a[,5] <- ch_unif(n = 365, min = 0, max = 600)
+a[,6] <- ch_unif(n = 365, min = 0, max = 200)
+a[,7] <- ch_unif(n = 365, min = 0, max = 100)
+a[,8] <- ch_unif(n = 365, min = 0, max = 100)
+a[,9] <- ch_unif(n = 365, min = 0, max = 200)
+a[,10] <- ch_unif(n = 365, min = 0, max = 500)
+a[,11] <- ch_unif(n = 365, min = 0, max = 1000)
+a[,12] <-  ch_unif(n = 365, min = 0, max = 200)
+a[,13] <-  ch_unif(n = 365, min = 0, max = 300)
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$fecha <- fecha
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_rln2.txt"))
+
+#SECCION GESTION TECNICA
+#DETALLE LINEA DE NEGOCIO
+#TABLA 1
+
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 12))
+names(a) <- c("Ramo","Pólizas Nuevas","Pólizas Renovadas","Cantidad de Asegurados",
+              "Inventario Real","Inventario Presupuesto","Inventario Cumplimiento (%)",
+              "Participación Primas Real (%)","Participación Primas Presupuesto (%)",
+              "Primas Cobradas Netas de Devolución Nueva","Primas Cobradas Netas de Devolución Renovada",
+              "Primas Cobradas Netas de Devolución Real"
+)
+
+#return(datatable(a, options = list(paging = FALSE)))
+casos <- c("AUTOMOVIL","AUTOMOVIL CASCO FLOTA","RESPONSABILIDAD CIVIL DE VEHICULOS")
+ind <- ch_integer(365,1,3)
+
+a[,1] <- casos[ind]
+
+#RELLENO COLUMNAS
+a[,2] <- ch_integer(n = 365, min = 0, max = 200)
+a[,3] <- ch_integer(n = 365, min = 1, max = 100)
+a[,4] <- ch_integer(n = 365, min = 0, max = 4000)
+a[,5] <- ch_integer(n = 365, min = 0, max = 300)
+a[,6] <- ch_integer(n = 365, min = 0, max = 200)
+a[,7] <- ch_unif(n = 365, min = 0, max = 200)
+a[,8] <- ch_unif(n = 365, min = 0, max = 100)
+a[,9] <- ch_unif(n = 365, min = 0, max = 100)
+a[,10] <- ch_unif(n = 365, min = 0, max = 50000000000)
+a[,11] <- ch_unif(n = 365, min = 0, max = 50000000000)
+a[,12] <-  ch_unif(n = 365, min = 0, max = 50000000000)
+
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$fecha <- fecha
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#agrego centro de atencion
+ind2 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+a$centro <- centro[ind2]
+
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_dln1.txt"))
+
+
+#TABLA 2
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 13))
+names(a) <- c("Ramo","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
+              "(*) Siniestralidad Incurrida sin IBNR Real (%)","Siniestralidad Incurrida sin IBNR Presupuesto (%)",
+              "(*) Siniestralidad Incurrida Rolling 12 Real (%)","Siniestralidad Incurrida Rolling 12 Presupuesto (%)",
+              "Persistencia (%)","Persistencia Rolling 12 (%)",
+              "Comisiones sobre Devengada Real (%)","Comisiones sobre Devengada Presupuesto (%)",
+              "Comisiones sobre Cobrado Real (%)","Comisiones sobre Cobrado Presupuesto (%)"
+)
+
+#return(datatable(a, options = list(paging = FALSE)))
+casos <- c("AUTOMOVIL","AUTOMOVIL CASCO FLOTA","RESPONSABILIDAD CIVIL DE VEHICULOS")
+ind <- ch_integer(365,1,3)
+
+a[,1] <- casos[ind]
+
+#RELLENO COLUMNAS
+a[,2] <- ch_unif(n = 365, min = 0, max = 200)
+a[,3] <- ch_unif(n = 365, min = 1, max = 100)
+a[,4] <- ch_unif(n = 365, min = 0, max = 400)
+a[,5] <- ch_unif(n = 365, min = 0, max = 300)
+a[,6] <- ch_unif(n = 365, min = 0, max = 200)
+a[,7] <- ch_unif(n = 365, min = 0, max = 200)
+a[,8] <- ch_unif(n = 365, min = 0, max = 100)
+a[,9] <- ch_unif(n = 365, min = 0, max = 100)
+a[,10] <- ch_unif(n = 365, min = 0, max = 200)
+a[,11] <- ch_unif(n = 365, min = 0, max = 300)
+a[,12] <-  ch_unif(n = 365, min = 0, max = 400)
+a[,13] <-  ch_unif(n = 365, min = 0, max = 200)
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$fecha <- fecha
+
+#agrego cuentas especiales
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#agrego centro de atencion
+ind2 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a$centro <- centro[ind2]
+
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_dln2.txt"))
+
