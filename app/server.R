@@ -1843,7 +1843,7 @@ output$tabla2_gt_dln <- renderDataTable(
       # return(b[,-c(38,39)])
       return(a[,-c(14,15,16)])  
       
-      return(a)  
+      #return(a)  
     
      })#final isolate
     
@@ -1854,6 +1854,126 @@ output$tabla2_gt_dln <- renderDataTable(
       "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
       "}")
   ))
+
+
+#GESTION TECNICA
+#SINIESTRALIDAD PRINCIPALES CUENTAS
+
+output$gt_sin_opc <- renderUI({ 
+  
+  box(width=12,title="Siniestralidad Principales Cuentas",status="primary",solidHeader=TRUE ,
+      column(width = 12,
+             #box( width = 6, background = "navy",
+             selectInput("gt_sin_1", "Asesor",
+                         choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gt_sin_2", "Ramo",
+                         choices = c("Ramo 1","Ramo 2","Ramo 3","Ramo 4"))
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gt_sin_3", "Número de Póliza",
+                         choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gt_sin_4", label="Fecha Hasta", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gt_sin_5", "Contrato",
+                         choices = c("Contrato 1","Contrato 2","Contrato 3","Contrato 4"))
+             #)#final box
+      ),
+
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gt_sin_boton1", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      ),
+
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gt_sin_boton2", "Cancelar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+
+
+
+      #)#final fluidrow
+
+
+
+  ) #final box
+
+})
+
+#tabla 
+observeEvent(input$gt_sin_boton1, {
+  output$t1_gt_sin <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla2_gt_sin"))
+  )
+}) #final ObserveEvent
+
+
+#tabla 
+output$tabla2_gt_sin <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gt_sin_boton1
+    #
+    isolate({ 
+      a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+      
+      # a[,14] <- as.character(a[,14])
+      # lim1 <- which(a[,14]==input$gt_dln_1)
+      # lim2 <- which(a[,14]==input$gt_dln_2)
+      # a <- a[lim1:lim2,]
+      # 
+      # #filtro centro de atencion
+      # a <- a[a[,16]==input$gt_dln_3,]
+      # 
+      # #condicional para filtrar por linea de negocio
+      # 
+      # a <- a[a[,1]==input$gt_dln_4,]
+      # 
+      # #condicional para filtrar por cuentas especiales
+      # if(input$gt_dln_5=="Todas"){
+      #   a <- a[1:nrow(a),]
+      # }else{
+      #   #b <- b[b[,3]==input$cuentas_esp,]
+      #   a <- a[a[,15]==input$gt_dln_5,]
+      # }
+      # # 
+      # # return(b[,-c(38,39)])
+      # return(a[,-c(14,15,16)])  
+      
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
 
 
 

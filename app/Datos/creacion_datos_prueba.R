@@ -506,3 +506,37 @@ a$centro <- centro[ind2]
 
 write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_dln2.txt"))
 
+
+#SECCION GESTION TECNICA
+#SINIESTRALIDAD PPAL CUENTAS
+#TABLA 1
+
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 5))
+names(a) <- c("Asesor","Ramo","Número de Póliza","Fecha","Contrato")
+
+#creo fecha
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#
+ind <- ch_integer(365,1,5)
+lineas <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+
+a$Ramo <- lineas[ind]
+
+#
+ind1 <- ch_integer(365,1,5)
+asesor <- c("Asesor 1","Asesor 2","Asesor 3","Asesor 4","Asesor 5")
+
+a$Asesor <- asesor[ind1]
+
+#RELLENO COLUMNAS
+a[,3] <- ch_integer(n = 365, min = 1, max = 100)
+a[,5] <- ch_integer(n = 365, min = 1, max = 300)
+
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_sinpc.txt"))
+
+
+

@@ -430,63 +430,17 @@ shinyUI(
               tabItem(tabName = "gt_siniestro",
                       h2("Información Siniestralidad Principales Cuentas"),
                       
+                      #nuevos imputs
+                      htmlOutput("gt_sin_opc"),
                       
-                      box(width=12,title="Siniestralidad Principales Cuentas",status="primary",solidHeader=TRUE ,
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_sin_1", "Asesor",
-                                             choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
-                                 
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_sin_2", "Ramo",
-                                             choices = c("Ramo 1","Ramo 2","Ramo 3","Ramo 4"))
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_sin_3", "Número de Póliza",
-                                             choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gt_sin_4", label="Fecha Hasta", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gt_sin_5", "Contrato",
-                                             choices = c("Contrato 1","Contrato 2","Contrato 3","Contrato 4"))
-                                 #)#final box
-                          ),
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gt_sin_boton1", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          ),
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gt_sin_boton2", "Cancelar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ) #final box
+                      fluidRow(
+                        
+                        # box(width=12,title="Detalle por Línea de Negocio",status="primary",solidHeader=TRUE ,
+                        #TABLA 1
+                        
+                        uiOutput("t1_gt_sin")
+                        
+                      )#final FluidRow
 
               ),
 
