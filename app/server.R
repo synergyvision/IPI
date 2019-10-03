@@ -1865,7 +1865,7 @@ output$gt_sin_opc <- renderUI({
       column(width = 12,
              #box( width = 6, background = "navy",
              selectInput("gt_sin_1", "Asesor",
-                         choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4"))
+                         choices = c("Asesor 1","Asesor 2","Asesor 3","Asesor 4","Asesor 5"))
 
              #),#final box
       ),#final column
@@ -1874,7 +1874,7 @@ output$gt_sin_opc <- renderUI({
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gt_sin_2", "Ramo",
-                         choices = c("Ramo 1","Ramo 2","Ramo 3","Ramo 4"))
+                         choices = c("Auto","Fianzas","Patrimoniales","Personas","Salud"))
              #)#final box
       ),#final column
       #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
@@ -1882,7 +1882,7 @@ output$gt_sin_opc <- renderUI({
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gt_sin_3", "Número de Póliza",
-                         choices = c("Póliza 1","Póliza 2","Póliza 3","Póliza 4"))
+                         choices = n_poliza())
              #)#final box
       ),
       column(width = 6,
@@ -1894,7 +1894,7 @@ output$gt_sin_opc <- renderUI({
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gt_sin_5", "Contrato",
-                         choices = c("Contrato 1","Contrato 2","Contrato 3","Contrato 4"))
+                         choices = con())
              #)#final box
       ),
 
@@ -1920,6 +1920,26 @@ output$gt_sin_opc <- renderUI({
 
 })
 
+#creo funcion para extraer nombre de polizas
+n_poliza <- reactive({
+  
+  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+
+  return(levels(as.factor(as.character(a$Número.de.Póliza))))
+  
+})
+
+#creo funcion para extraer nombre de contratos
+con <- reactive({
+  
+  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+  
+  return(levels(as.factor(as.character(a$Contrato))))
+  
+})
+
+
+
 #tabla 
 observeEvent(input$gt_sin_boton1, {
   output$t1_gt_sin <-  renderUI(
@@ -1944,13 +1964,28 @@ output$tabla2_gt_sin <- renderDataTable(
       # lim2 <- which(a[,14]==input$gt_dln_2)
       # a <- a[lim1:lim2,]
       # 
-      # #filtro centro de atencion
-      # a <- a[a[,16]==input$gt_dln_3,]
-      # 
-      # #condicional para filtrar por linea de negocio
-      # 
-      # a <- a[a[,1]==input$gt_dln_4,]
-      # 
+      #filtro por asesor
+      a <- a[a[,1]==input$gt_sin_1,]
+       
+      #filtro por linea de ramo
+      a <- a[a[,2]==input$gt_sin_2,]
+      
+      #filtro por numero de poliza
+      a <- a[a[,3]==input$gt_sin_3,]
+      
+      #filtro por contrato
+      a <- a[a[,5]==input$gt_sin_5,]
+      
+      #filtro por fecha
+       #a[,4] <- as.character(a[,4])
+       #print(head(a[,4]))
+       # lim1 <- which(a[,4]=="2019-01-01")
+       # print(lim1)
+       # lim2 <- which(a[,4]==input$gt_sin_4)
+       # print(lim2)
+       # a <- a[lim1:lim2,]
+       # 
+      
       # #condicional para filtrar por cuentas especiales
       # if(input$gt_dln_5=="Todas"){
       #   a <- a[1:nrow(a),]

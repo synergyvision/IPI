@@ -532,8 +532,8 @@ asesor <- c("Asesor 1","Asesor 2","Asesor 3","Asesor 4","Asesor 5")
 a$Asesor <- asesor[ind1]
 
 #RELLENO COLUMNAS
-a[,3] <- ch_integer(n = 365, min = 1, max = 100)
-a[,5] <- ch_integer(n = 365, min = 1, max = 300)
+a[,3] <- ch_integer(n = 365, min = 1, max = 10)
+a[,5] <- ch_integer(n = 365, min = 1, max = 10)
 
 
 write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gt_sinpc.txt"))
