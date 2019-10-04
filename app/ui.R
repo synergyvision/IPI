@@ -455,42 +455,10 @@ shinyUI(
               tabItem(tabName = "gc_ln",
                       h2("Información Línea de Negocio"),
                       
-                      box(width=12,title="Información Línea de Negocio",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="fecha1_ca", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="fecha2_ca", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("centro_atencion_ca", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("cuentas_esp_ca", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar_ca", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                      ) #final box
-                          ,
+                  
+                      #nuevos imputs
+                      htmlOutput("gc_ln_opc"),    
+                      
                           #TABLA 1
                           fluidRow(
                             uiOutput("t1_ca")

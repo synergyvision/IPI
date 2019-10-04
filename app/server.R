@@ -811,10 +811,50 @@ shinyServer(function(input, output) {
   
   
 #GESTON COMERCIAL
-  
-  
-
 #LÍNEA DE NEGOCIO
+  
+  #OPCIONES
+  output$gc_ln_opc <- renderUI({ 
+    
+    box(width=12,title="Información Línea de Negocio",status="primary",solidHeader=TRUE ,
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="fecha1_ca", label="Desde:", language= "es",
+                         width = "100%")#final dateimput
+               #),#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+        
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               dateInput(inputId="fecha2_ca", label="Hasta:", language= "es",
+                         width = "100%")#final dateimput
+               #)#final box
+        ),#final column
+        #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+        
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("centro_atencion_ca", "Centro de Atención:",
+                           choices = c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("cuentas_esp_ca", "Cuentas Especiales:",
+                           choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
+               #)#final box
+        ),
+        column(width = 6,
+               #box( width = 6, background = "navy",
+               actionButton("consultar_ca", "Consultar",
+                            style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+        )
+    ) #final box
+    
+  })
+  
+  
 #tabla 1 LÍNEA DE NEGOCIO
 
 observeEvent(input$consultar_ca, {
@@ -833,17 +873,26 @@ output$tabla1_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 21))
-      names(a) <- c("Centro De Atención","Código Productor","Productor",
-                    "Cobrado Auto","% Auto","% Sin Auto",
-                    "Cobrado Fianza","% Fianza","% Sin Fianza",
-                    "Cobrado Patrimoniales","% Patrimoniales","% Sin Patrimoniales",
-                    "Cobrado Personas","% Personas","% Sin Personas",
-                    "Cobrado Salud","% Salud","% Sin Salud",
-                    "Cobrado General","% General","% Sin General"
-                    )
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln1.txt"), sep="")
+
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # #print(head(a[,4]))
+      #print(str(a))
+      lim1 <- which(a$Fecha==input$fecha1_ca)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$fecha2_ca)
+      # # print(lim2)
+      a <- a[lim1:lim2,]
+      
+      #filtro por ATENCION
+      a <- a[a[,1]==input$centro_atencion_ca,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,23]==input$cuentas_esp_ca,]
+      
+  
+      return(a[,-c(22,23)])  
       
     })#final isolate
     
@@ -873,17 +922,26 @@ output$tabla2_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 20))
-      names(a) <- c("Código Productor","Nombre Productor",
-                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto",
-                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza",
-                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales",
-                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas",
-                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud",
-                    "Pólizas General","% Ppto General","Cartera Activa General"
-                    )
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln2.txt"), sep="")
+      
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # #print(head(a[,4]))
+      #print(str(a))
+      lim1 <- which(a$Fecha==input$fecha1_ca)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$fecha2_ca)
+      # # print(lim2)
+      a <- a[lim1:lim2,]
+      
+      #filtro por ATENCION
+      a <- a[a[,23]==input$centro_atencion_ca,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,22]==input$cuentas_esp_ca,]
+      
+      
+      return(a[,-c(21,22,23)])  
       
     })#final isolate
     
@@ -1959,11 +2017,17 @@ output$tabla2_gt_sin <- renderDataTable(
     isolate({ 
       a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
       
-      # a[,14] <- as.character(a[,14])
-      # lim1 <- which(a[,14]==input$gt_dln_1)
-      # lim2 <- which(a[,14]==input$gt_dln_2)
-      # a <- a[lim1:lim2,]
-      # 
+      #filtro por fecha
+      #print(input$gt_sin_4)
+      a$Fecha <- as.character(a$Fecha)
+      # #print(head(a[,4]))
+      #print(str(a))
+      lim1 <- which(a$Fecha=="2019-01-01")
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$gt_sin_4)
+      # # print(lim2)
+      a <- a[lim1:lim2,]
+      
       #filtro por asesor
       a <- a[a[,1]==input$gt_sin_1,]
        
@@ -1976,15 +2040,8 @@ output$tabla2_gt_sin <- renderDataTable(
       #filtro por contrato
       a <- a[a[,5]==input$gt_sin_5,]
       
-      #filtro por fecha
-       #a[,4] <- as.character(a[,4])
-       #print(head(a[,4]))
-       # lim1 <- which(a[,4]=="2019-01-01")
-       # print(lim1)
-       # lim2 <- which(a[,4]==input$gt_sin_4)
-       # print(lim2)
-       # a <- a[lim1:lim2,]
-       # 
+     
+       
       
       # #condicional para filtrar por cuentas especiales
       # if(input$gt_dln_5=="Todas"){
@@ -2008,6 +2065,10 @@ output$tabla2_gt_sin <- renderDataTable(
       "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
       "}")
   ))
+
+
+
+
 
 
 
