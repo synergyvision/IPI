@@ -486,47 +486,19 @@ shinyUI(
               tabItem(tabName = "gc_ca",
                       h2("Información Centro de Atención"),
                       
-                      box(width=12,title="Centro de Atención",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_ca1", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_ca2", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_ca3", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_ca4", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gc_ca_boton", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ) # final box
+                      #nuevos imputs
+                      htmlOutput("gc_ca_opc"),    
+                      
+                      #TABLA 1
+                      fluidRow(
+                        uiOutput("t1_gc_ca")
+                      ),
+                      
+                      #TABLA 2
+                      fluidRow(
+                        uiOutput("t2_gc_ca")
+                      )
+                      
                       
        
 

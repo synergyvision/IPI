@@ -953,6 +953,159 @@ output$tabla2_ca <- renderDataTable(
       "}")
   ))
 
+
+#CENTRO DE ATENCION
+#OPCIONES
+output$gc_ca_opc <- renderUI({ 
+  
+  box(width=12,title="Centro de Atención",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_ca1", label="Desde:", language= "es",
+                       width = "100%")#final dateimput
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_ca2", label="Hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_ca3", "Centro de Atención:",
+                         choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_ca4", "Cuentas Especiales:",
+                         choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gc_ca_boton", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+      
+      
+      #)#final fluidrow
+      
+      
+      
+  ) # final box
+  
+  
+})
+
+
+#tabla 1 CENTRO DE ATENCION
+
+observeEvent(input$gc_ca_boton, {
+  output$t1_gc_ca <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Productores por Centros de Atención",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla1_gc_ca"))
+  )
+})#final observeevent
+
+#tabla 1  
+output$tabla1_gc_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gc_ca_boton
+    #
+    isolate({ 
+      
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca1.txt"), sep="")
+      
+      # #filtro por fecha
+      # a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      # lim1 <- which(a$Fecha==input$fecha1_ca)
+      # #  print(lim1)
+      # lim2 <- which(a$Fecha==input$fecha2_ca)
+      # # # print(lim2)
+      # a <- a[lim1:lim2,]
+      # 
+      # #filtro por ATENCION
+      # a <- a[a[,1]==input$centro_atencion_ca,]
+      # 
+      # #filtro por CUENTA ESPECIAL
+      # a <- a[a[,23]==input$cuentas_esp_ca,]
+      # 
+      
+      return(a[,-c(22,23)])  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+
+#tabla 2 CENTRO DE ATENCION
+
+observeEvent(input$gc_ca_boton, {
+  output$t2_gc_ca <-  renderUI(
+    
+    box(style="overflow-x:scroll",width = 12,title="Productores por Centros de Atención",status="primary",solidHeader=TRUE,
+        dataTableOutput("tabla2_gc_ca"))
+  )
+})#final observeevent
+
+#tabla 1  
+output$tabla2_gc_ca <- renderDataTable(
+  {
+    #agrego dependencia 
+    input$gc_ca_boton
+    #
+    isolate({ 
+      
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca2.txt"), sep="")
+      
+      # #filtro por fecha
+      # a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      # lim1 <- which(a$Fecha==input$fecha1_ca)
+      # #  print(lim1)
+      # lim2 <- which(a$Fecha==input$fecha2_ca)
+      # # # print(lim2)
+      # a <- a[lim1:lim2,]
+      # 
+      # #filtro por ATENCION
+      # a <- a[a[,1]==input$centro_atencion_ca,]
+      # 
+      # #filtro por CUENTA ESPECIAL
+      # a <- a[a[,23]==input$cuentas_esp_ca,]
+      # 
+      
+      return(a)  
+      
+    })#final isolate
+    
+  },rownames = FALSE,options = list(
+    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
+      "}")
+  ))
+
+
+
+
 #PRODUCTORES
 
 #tabla 1 PRODUCTORES
