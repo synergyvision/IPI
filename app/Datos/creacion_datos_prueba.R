@@ -769,5 +769,219 @@ a$cuentas_esp <- cuentas[ind1]
 write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_ca2.txt"))
 
 
+#GESTION COMERCIAL
+#PRODUCTORES
+#DETALLE PRODUCTOR
+
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 8))
+names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
+              "Siniestros Pagados","Siniestros Pendientes",
+              "Siniestros Incurridos","Cantidad Siniestros",
+              "Siniestralidad")
+
+
+#RELLENO RAMO
+ramo <- c("Auto","Fianza","Patrimoniales","Personas","Salud")
+ind <- ch_integer(365,1,5)
+
+a[,1] <- ramo[ind]
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#RELLENO CUENTAS ESPECIALES
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#RELLENO PRODUCTORES
+ind2 <- ch_integer(365,1,5)
+prod <- c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5")
+
+a$productores <- prod[ind2]
+
+#CENTRO DE ATENCION
+ind3 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a$centro_atencion <- centro[ind3]
+
+#RELLENO COLUMNAS
+a[,2] <- ch_integer(n = 365, min = 0, max = 600)
+a[,3] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+a[,5] <- ch_integer(n = 365, min = 0, max = 300)
+a[,6] <- ch_integer(n = 365, min = 0, max = 200)
+a[,7] <- ch_integer(n = 365, min = 0, max = 200)
+a[,8] <- ch_integer(n = 365, min = 0, max = 100)
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_dp1.txt"))
+
+#TABLA 3
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 20))
+names(a) <- c("Código Productor","Nombre Productor",
+              "Pólizas Auto","% Ppto Auto","Cartera Activa Auto",
+              "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza",
+              "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales",
+              "Pólizas Personas","% Ppto Personas","Cartera Activa Personas",
+              "Pólizas Salud","% Ppto Salud","Cartera Activa Salud",
+              "Pólizas General","% Ppto General","Cartera Activa General"
+)
+
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#RELLENO CUENTAS ESPECIALES
+ind1 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind1]
+
+#RELLENO PRODUCTORES
+ind2 <- ch_integer(365,1,5)
+prod <- c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5")
+
+a$productores <- prod[ind2]
+
+#CENTRO DE ATENCION
+ind3 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a$centro_atencion <- centro[ind3]
+
+#RELLENO COLUMNAS
+a[,1] <- ch_integer(n = 365, min = 0, max = 600)
+a[,2] <- ch_name(n = 365)
+a[,3] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+a[,5] <- ch_integer(n = 365, min = 0, max = 300)
+a[,6] <- ch_integer(n = 365, min = 0, max = 200)
+a[,7] <- ch_unif(n = 365, min = 0, max = 200)
+a[,8] <- ch_integer(n = 365, min = 0, max = 100)
+a[,9] <- ch_integer(n = 365, min = 0, max = 100)
+a[,10] <- ch_unif(n = 365, min = 0, max = 100)
+a[,11] <- ch_integer(n = 365, min = 0, max = 100)
+a[,12] <- ch_integer(n = 365, min = 0, max = 100)
+a[,13] <- ch_unif(n = 365, min = 0, max = 100)
+a[,14] <- ch_integer(n = 365, min = 0, max = 100)
+a[,15] <- ch_integer(n = 365, min = 0, max = 100)
+a[,16] <- ch_unif(n = 365, min = 0, max = 100)
+a[,17] <- ch_integer(n = 365, min = 0, max = 100)
+a[,18] <- ch_integer(n = 365, min = 0, max = 100)
+a[,19] <- ch_unif(n = 365, min = 0, max = 100)
+a[,20] <- ch_integer(n = 365, min = 0, max = 100)
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_dp3.txt"))
+
+
+#GESTION COMERCIAL
+#PRODUCTORES
+#FICHA INTERMEDIARIO
+#TABLA 1
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 5))
+names(a) <- c("Nombre","Tipo","Sucursal",
+              "Código","Fecha")
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#CENTRO DE ATENCION - SUCURSAL
+ind3 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a[,3] <- centro[ind3]
+
+
+#RELLENO ASESOR - NOMBRE
+asesor <- ch_name(n = 10)
+ind <- ch_integer(365,1,10)
+a[,1] <- asesor[ind]
+
+#RELLENO COLUMNAS
+a[,2] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_fi1.txt"))
+
+D <- a[,1]
+
+#TABLA 2
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 12))
+names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
+              "Siniestros Pagados","Comisiones Bonos",
+              "Siniestros Incurridos","Cantidad Siniestros",
+              "% Siniestralidad","% Persistencia","Rentabilidad",
+              "% Cumplimiento Presupuesto Inventario",
+              "% Cumplimiento Presupuesto Primas Cobradas")
+
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#CENTRO DE ATENCION - SUCURSAL
+ind3 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a$centro_atencion <- centro[ind3]
+
+
+#RELLENO ASESOR - NOMBRE
+a$asesor <- D
+
+#RELLENO LINEA DE NEGOCIO - RAMO
+ramo <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+ind <- ch_integer(365,1,5)
+a[,1] <- ramo[ind]
+
+
+#RELLENO COLUMNAS
+a[,2] <- ch_integer(n = 365, min = 0, max = 600)
+a[,3] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+a[,5] <- ch_integer(n = 365, min = 0, max = 600)
+a[,6] <- ch_integer(n = 365, min = 0, max = 600)
+a[,7] <- ch_integer(n = 365, min = 0, max = 600)
+a[,8] <- ch_unif(n = 365, min = 0, max = 600)
+a[,9] <- ch_unif(n = 365, min = 0, max = 600)
+a[,10] <- ch_integer(n = 365, min = 0, max = 600)
+a[,11] <- ch_unif(n = 365, min = 0, max = 600)
+a[,12] <- ch_unif(n = 365, min = 0, max = 600)
+
+#
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_fi2.txt"))
+
+
+#TABLA 3
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 11))
+names(a) <- c("Cliente","Línea Negocio","Póliza","Prima Cobrada",
+              "Fecha Suscipción","Vigencia Desde","Vigencia Hasta",
+              "Prima Devengada","Siniestros Pagados","Siniestros Incurridos",
+              "% Siniestralidad")
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+
+
+
+
+
+#TABLA 4
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 8))
+names(a) <- c("Cliente","Póliza","Línea Negocio","Siniestro",
+              "Fecha Declaración","Fecha Ocurrencia",
+              "Total Pagado","Reserva")
 
 

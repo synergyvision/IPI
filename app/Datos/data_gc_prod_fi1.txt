@@ -1,0 +1,366 @@
+"Nombre" "Tipo" "Sucursal" "Código" "Fecha"
+"1" "Angel Towne" 454 "Centro 1" 285 2019-01-01
+"2" "Dr. Jeremie Kohler" 29 "Centro 5" 341 2019-01-02
+"3" "Harper Tromp-Miller" 594 "Centro 5" 474 2019-01-03
+"4" "Dr. Jeremie Kohler" 351 "Centro 2" 187 2019-01-04
+"5" "Mr. Kymani Welch" 27 "Centro 4" 76 2019-01-05
+"6" "Emiliano Skiles V" 190 "Centro 5" 332 2019-01-06
+"7" "Omar Lind" 84 "Centro 3" 335 2019-01-07
+"8" "Angel Towne" 63 "Centro 4" 531 2019-01-08
+"9" "Vicky Schuppe" 218 "Centro 1" 22 2019-01-09
+"10" "Dr. Jeremie Kohler" 209 "Centro 3" 37 2019-01-10
+"11" "Emiliano Skiles V" 505 "Centro 1" 182 2019-01-11
+"12" "Emiliano Skiles V" 502 "Centro 1" 118 2019-01-12
+"13" "Vicky Schuppe" 483 "Centro 4" 245 2019-01-13
+"14" "Santana Conroy" 254 "Centro 5" 350 2019-01-14
+"15" "Angel Towne" 357 "Centro 4" 127 2019-01-15
+"16" "Santana Conroy" 426 "Centro 2" 83 2019-01-16
+"17" "Santana Conroy" 101 "Centro 4" 239 2019-01-17
+"18" "Dr. Jeremie Kohler" 307 "Centro 4" 415 2019-01-18
+"19" "Vicky Schuppe" 96 "Centro 2" 73 2019-01-19
+"20" "Omar Lind" 37 "Centro 1" 257 2019-01-20
+"21" "Khalid Stokes II" 144 "Centro 4" 271 2019-01-21
+"22" "Khalid Stokes II" 279 "Centro 2" 460 2019-01-22
+"23" "Emiliano Skiles V" 391 "Centro 4" 50 2019-01-23
+"24" "Harper Tromp-Miller" 459 "Centro 2" 127 2019-01-24
+"25" "Vicky Schuppe" 125 "Centro 4" 538 2019-01-25
+"26" "Nathanael Waelchi" 229 "Centro 2" 501 2019-01-26
+"27" "Angel Towne" 266 "Centro 5" 420 2019-01-27
+"28" "Harper Tromp-Miller" 535 "Centro 1" 568 2019-01-28
+"29" "Emiliano Skiles V" 600 "Centro 2" 567 2019-01-29
+"30" "Mr. Kymani Welch" 272 "Centro 5" 570 2019-01-30
+"31" "Khalid Stokes II" 518 "Centro 4" 496 2019-01-31
+"32" "Dr. Jeremie Kohler" 294 "Centro 2" 549 2019-02-01
+"33" "Santana Conroy" 588 "Centro 4" 76 2019-02-02
+"34" "Angel Towne" 204 "Centro 5" 124 2019-02-03
+"35" "Santana Conroy" 381 "Centro 2" 42 2019-02-04
+"36" "Mr. Kymani Welch" 19 "Centro 2" 510 2019-02-05
+"37" "Mr. Kymani Welch" 482 "Centro 1" 197 2019-02-06
+"38" "Santana Conroy" 408 "Centro 3" 394 2019-02-07
+"39" "Dr. Jeremie Kohler" 96 "Centro 2" 326 2019-02-08
+"40" "Omar Lind" 292 "Centro 2" 258 2019-02-09
+"41" "Emiliano Skiles V" 536 "Centro 2" 295 2019-02-10
+"42" "Emiliano Skiles V" 122 "Centro 4" 471 2019-02-11
+"43" "Emiliano Skiles V" 258 "Centro 1" 552 2019-02-12
+"44" "Emiliano Skiles V" 165 "Centro 3" 281 2019-02-13
+"45" "Vicky Schuppe" 491 "Centro 3" 146 2019-02-14
+"46" "Emiliano Skiles V" 126 "Centro 2" 92 2019-02-15
+"47" "Emiliano Skiles V" 202 "Centro 3" 398 2019-02-16
+"48" "Khalid Stokes II" 451 "Centro 3" 599 2019-02-17
+"49" "Harper Tromp-Miller" 45 "Centro 4" 517 2019-02-18
+"50" "Emiliano Skiles V" 510 "Centro 2" 374 2019-02-19
+"51" "Mr. Kymani Welch" 550 "Centro 2" 472 2019-02-20
+"52" "Vicky Schuppe" 488 "Centro 1" 454 2019-02-21
+"53" "Santana Conroy" 493 "Centro 1" 6 2019-02-22
+"54" "Mr. Kymani Welch" 367 "Centro 1" 379 2019-02-23
+"55" "Angel Towne" 325 "Centro 4" 131 2019-02-24
+"56" "Santana Conroy" 207 "Centro 4" 337 2019-02-25
+"57" "Harper Tromp-Miller" 351 "Centro 1" 263 2019-02-26
+"58" "Emiliano Skiles V" 7 "Centro 2" 56 2019-02-27
+"59" "Nathanael Waelchi" 518 "Centro 4" 66 2019-02-28
+"60" "Nathanael Waelchi" 250 "Centro 4" 97 2019-03-01
+"61" "Nathanael Waelchi" 2 "Centro 4" 295 2019-03-02
+"62" "Khalid Stokes II" 473 "Centro 5" 255 2019-03-03
+"63" "Vicky Schuppe" 246 "Centro 2" 142 2019-03-04
+"64" "Khalid Stokes II" 236 "Centro 1" 249 2019-03-05
+"65" "Harper Tromp-Miller" 27 "Centro 2" 511 2019-03-06
+"66" "Santana Conroy" 473 "Centro 4" 395 2019-03-07
+"67" "Khalid Stokes II" 15 "Centro 2" 459 2019-03-08
+"68" "Santana Conroy" 273 "Centro 2" 200 2019-03-09
+"69" "Omar Lind" 368 "Centro 5" 497 2019-03-10
+"70" "Emiliano Skiles V" 208 "Centro 1" 159 2019-03-11
+"71" "Dr. Jeremie Kohler" 460 "Centro 4" 319 2019-03-12
+"72" "Mr. Kymani Welch" 132 "Centro 2" 369 2019-03-13
+"73" "Santana Conroy" 391 "Centro 5" 41 2019-03-14
+"74" "Santana Conroy" 522 "Centro 1" 418 2019-03-15
+"75" "Angel Towne" 386 "Centro 5" 66 2019-03-16
+"76" "Nathanael Waelchi" 0 "Centro 4" 392 2019-03-17
+"77" "Nathanael Waelchi" 243 "Centro 4" 244 2019-03-18
+"78" "Vicky Schuppe" 233 "Centro 3" 519 2019-03-19
+"79" "Omar Lind" 378 "Centro 2" 500 2019-03-20
+"80" "Dr. Jeremie Kohler" 198 "Centro 4" 89 2019-03-21
+"81" "Khalid Stokes II" 401 "Centro 5" 147 2019-03-22
+"82" "Khalid Stokes II" 96 "Centro 1" 504 2019-03-23
+"83" "Angel Towne" 446 "Centro 4" 509 2019-03-24
+"84" "Dr. Jeremie Kohler" 226 "Centro 3" 34 2019-03-25
+"85" "Emiliano Skiles V" 220 "Centro 4" 135 2019-03-26
+"86" "Nathanael Waelchi" 218 "Centro 2" 514 2019-03-27
+"87" "Khalid Stokes II" 533 "Centro 5" 351 2019-03-28
+"88" "Khalid Stokes II" 589 "Centro 3" 443 2019-03-29
+"89" "Mr. Kymani Welch" 124 "Centro 4" 328 2019-03-30
+"90" "Omar Lind" 518 "Centro 1" 395 2019-03-31
+"91" "Omar Lind" 220 "Centro 4" 248 2019-04-01
+"92" "Mr. Kymani Welch" 555 "Centro 4" 367 2019-04-02
+"93" "Mr. Kymani Welch" 485 "Centro 3" 275 2019-04-03
+"94" "Emiliano Skiles V" 292 "Centro 3" 270 2019-04-04
+"95" "Emiliano Skiles V" 527 "Centro 1" 160 2019-04-05
+"96" "Omar Lind" 527 "Centro 2" 205 2019-04-06
+"97" "Omar Lind" 49 "Centro 2" 202 2019-04-07
+"98" "Nathanael Waelchi" 195 "Centro 2" 60 2019-04-08
+"99" "Mr. Kymani Welch" 42 "Centro 4" 528 2019-04-09
+"100" "Khalid Stokes II" 373 "Centro 3" 416 2019-04-10
+"101" "Santana Conroy" 520 "Centro 3" 205 2019-04-11
+"102" "Vicky Schuppe" 6 "Centro 3" 128 2019-04-12
+"103" "Dr. Jeremie Kohler" 540 "Centro 3" 125 2019-04-13
+"104" "Vicky Schuppe" 429 "Centro 1" 568 2019-04-14
+"105" "Nathanael Waelchi" 230 "Centro 1" 577 2019-04-15
+"106" "Nathanael Waelchi" 394 "Centro 1" 231 2019-04-16
+"107" "Dr. Jeremie Kohler" 168 "Centro 3" 577 2019-04-17
+"108" "Omar Lind" 436 "Centro 3" 425 2019-04-18
+"109" "Mr. Kymani Welch" 321 "Centro 3" 511 2019-04-19
+"110" "Nathanael Waelchi" 202 "Centro 3" 88 2019-04-20
+"111" "Santana Conroy" 52 "Centro 4" 226 2019-04-21
+"112" "Santana Conroy" 504 "Centro 1" 236 2019-04-22
+"113" "Mr. Kymani Welch" 131 "Centro 1" 446 2019-04-23
+"114" "Santana Conroy" 145 "Centro 1" 277 2019-04-24
+"115" "Omar Lind" 146 "Centro 1" 109 2019-04-25
+"116" "Dr. Jeremie Kohler" 79 "Centro 3" 520 2019-04-26
+"117" "Dr. Jeremie Kohler" 582 "Centro 4" 46 2019-04-27
+"118" "Angel Towne" 142 "Centro 1" 237 2019-04-28
+"119" "Nathanael Waelchi" 555 "Centro 5" 532 2019-04-29
+"120" "Omar Lind" 509 "Centro 1" 583 2019-04-30
+"121" "Harper Tromp-Miller" 238 "Centro 3" 219 2019-05-01
+"122" "Omar Lind" 468 "Centro 4" 137 2019-05-02
+"123" "Vicky Schuppe" 77 "Centro 4" 437 2019-05-03
+"124" "Dr. Jeremie Kohler" 381 "Centro 1" 115 2019-05-04
+"125" "Mr. Kymani Welch" 27 "Centro 3" 303 2019-05-05
+"126" "Emiliano Skiles V" 550 "Centro 2" 589 2019-05-06
+"127" "Vicky Schuppe" 120 "Centro 5" 483 2019-05-07
+"128" "Dr. Jeremie Kohler" 327 "Centro 4" 62 2019-05-08
+"129" "Harper Tromp-Miller" 455 "Centro 2" 33 2019-05-09
+"130" "Vicky Schuppe" 15 "Centro 5" 301 2019-05-10
+"131" "Khalid Stokes II" 159 "Centro 1" 483 2019-05-11
+"132" "Nathanael Waelchi" 572 "Centro 4" 79 2019-05-12
+"133" "Nathanael Waelchi" 123 "Centro 4" 278 2019-05-13
+"134" "Vicky Schuppe" 405 "Centro 4" 293 2019-05-14
+"135" "Khalid Stokes II" 482 "Centro 3" 507 2019-05-15
+"136" "Santana Conroy" 588 "Centro 5" 422 2019-05-16
+"137" "Khalid Stokes II" 322 "Centro 1" 316 2019-05-17
+"138" "Khalid Stokes II" 210 "Centro 5" 195 2019-05-18
+"139" "Nathanael Waelchi" 22 "Centro 5" 325 2019-05-19
+"140" "Santana Conroy" 326 "Centro 4" 402 2019-05-20
+"141" "Mr. Kymani Welch" 264 "Centro 2" 445 2019-05-21
+"142" "Emiliano Skiles V" 539 "Centro 2" 511 2019-05-22
+"143" "Angel Towne" 562 "Centro 1" 453 2019-05-23
+"144" "Mr. Kymani Welch" 282 "Centro 4" 406 2019-05-24
+"145" "Nathanael Waelchi" 113 "Centro 2" 536 2019-05-25
+"146" "Nathanael Waelchi" 153 "Centro 2" 421 2019-05-26
+"147" "Vicky Schuppe" 123 "Centro 2" 87 2019-05-27
+"148" "Omar Lind" 96 "Centro 3" 513 2019-05-28
+"149" "Dr. Jeremie Kohler" 178 "Centro 5" 433 2019-05-29
+"150" "Mr. Kymani Welch" 127 "Centro 4" 550 2019-05-30
+"151" "Khalid Stokes II" 188 "Centro 5" 40 2019-05-31
+"152" "Santana Conroy" 548 "Centro 3" 75 2019-06-01
+"153" "Nathanael Waelchi" 95 "Centro 4" 302 2019-06-02
+"154" "Nathanael Waelchi" 541 "Centro 2" 583 2019-06-03
+"155" "Emiliano Skiles V" 451 "Centro 3" 579 2019-06-04
+"156" "Angel Towne" 231 "Centro 3" 16 2019-06-05
+"157" "Nathanael Waelchi" 579 "Centro 2" 174 2019-06-06
+"158" "Angel Towne" 47 "Centro 5" 221 2019-06-07
+"159" "Dr. Jeremie Kohler" 484 "Centro 1" 137 2019-06-08
+"160" "Vicky Schuppe" 542 "Centro 5" 524 2019-06-09
+"161" "Omar Lind" 233 "Centro 2" 484 2019-06-10
+"162" "Dr. Jeremie Kohler" 403 "Centro 4" 489 2019-06-11
+"163" "Angel Towne" 196 "Centro 2" 554 2019-06-12
+"164" "Angel Towne" 317 "Centro 3" 88 2019-06-13
+"165" "Khalid Stokes II" 253 "Centro 4" 526 2019-06-14
+"166" "Angel Towne" 597 "Centro 2" 401 2019-06-15
+"167" "Angel Towne" 97 "Centro 1" 182 2019-06-16
+"168" "Vicky Schuppe" 471 "Centro 4" 589 2019-06-17
+"169" "Dr. Jeremie Kohler" 439 "Centro 4" 23 2019-06-18
+"170" "Mr. Kymani Welch" 195 "Centro 3" 111 2019-06-19
+"171" "Harper Tromp-Miller" 282 "Centro 1" 241 2019-06-20
+"172" "Santana Conroy" 209 "Centro 1" 280 2019-06-21
+"173" "Harper Tromp-Miller" 74 "Centro 1" 81 2019-06-22
+"174" "Angel Towne" 469 "Centro 2" 80 2019-06-23
+"175" "Dr. Jeremie Kohler" 282 "Centro 3" 536 2019-06-24
+"176" "Harper Tromp-Miller" 288 "Centro 2" 439 2019-06-25
+"177" "Dr. Jeremie Kohler" 292 "Centro 5" 447 2019-06-26
+"178" "Vicky Schuppe" 149 "Centro 2" 357 2019-06-27
+"179" "Emiliano Skiles V" 529 "Centro 4" 317 2019-06-28
+"180" "Angel Towne" 571 "Centro 4" 402 2019-06-29
+"181" "Santana Conroy" 521 "Centro 2" 563 2019-06-30
+"182" "Santana Conroy" 297 "Centro 1" 281 2019-07-01
+"183" "Nathanael Waelchi" 427 "Centro 5" 446 2019-07-02
+"184" "Nathanael Waelchi" 563 "Centro 1" 428 2019-07-03
+"185" "Dr. Jeremie Kohler" 267 "Centro 5" 247 2019-07-04
+"186" "Omar Lind" 245 "Centro 3" 505 2019-07-05
+"187" "Nathanael Waelchi" 561 "Centro 5" 566 2019-07-06
+"188" "Vicky Schuppe" 413 "Centro 5" 95 2019-07-07
+"189" "Harper Tromp-Miller" 474 "Centro 3" 495 2019-07-08
+"190" "Harper Tromp-Miller" 390 "Centro 5" 225 2019-07-09
+"191" "Angel Towne" 115 "Centro 1" 41 2019-07-10
+"192" "Angel Towne" 95 "Centro 5" 193 2019-07-11
+"193" "Angel Towne" 563 "Centro 3" 539 2019-07-12
+"194" "Santana Conroy" 157 "Centro 2" 288 2019-07-13
+"195" "Harper Tromp-Miller" 475 "Centro 1" 122 2019-07-14
+"196" "Vicky Schuppe" 4 "Centro 5" 140 2019-07-15
+"197" "Harper Tromp-Miller" 339 "Centro 2" 0 2019-07-16
+"198" "Emiliano Skiles V" 39 "Centro 3" 169 2019-07-17
+"199" "Santana Conroy" 116 "Centro 4" 233 2019-07-18
+"200" "Nathanael Waelchi" 309 "Centro 2" 47 2019-07-19
+"201" "Mr. Kymani Welch" 278 "Centro 3" 560 2019-07-20
+"202" "Mr. Kymani Welch" 296 "Centro 3" 176 2019-07-21
+"203" "Mr. Kymani Welch" 487 "Centro 5" 104 2019-07-22
+"204" "Nathanael Waelchi" 107 "Centro 5" 551 2019-07-23
+"205" "Dr. Jeremie Kohler" 462 "Centro 4" 536 2019-07-24
+"206" "Vicky Schuppe" 446 "Centro 2" 321 2019-07-25
+"207" "Omar Lind" 493 "Centro 3" 446 2019-07-26
+"208" "Nathanael Waelchi" 271 "Centro 1" 98 2019-07-27
+"209" "Omar Lind" 356 "Centro 3" 314 2019-07-28
+"210" "Nathanael Waelchi" 95 "Centro 3" 371 2019-07-29
+"211" "Omar Lind" 7 "Centro 2" 169 2019-07-30
+"212" "Mr. Kymani Welch" 333 "Centro 4" 354 2019-07-31
+"213" "Nathanael Waelchi" 585 "Centro 5" 152 2019-08-01
+"214" "Harper Tromp-Miller" 265 "Centro 5" 383 2019-08-02
+"215" "Emiliano Skiles V" 569 "Centro 4" 351 2019-08-03
+"216" "Santana Conroy" 377 "Centro 2" 192 2019-08-04
+"217" "Mr. Kymani Welch" 273 "Centro 1" 464 2019-08-05
+"218" "Emiliano Skiles V" 540 "Centro 4" 458 2019-08-06
+"219" "Emiliano Skiles V" 303 "Centro 5" 232 2019-08-07
+"220" "Mr. Kymani Welch" 285 "Centro 5" 486 2019-08-08
+"221" "Emiliano Skiles V" 471 "Centro 4" 266 2019-08-09
+"222" "Santana Conroy" 387 "Centro 2" 290 2019-08-10
+"223" "Dr. Jeremie Kohler" 128 "Centro 4" 115 2019-08-11
+"224" "Santana Conroy" 273 "Centro 2" 88 2019-08-12
+"225" "Harper Tromp-Miller" 347 "Centro 5" 112 2019-08-13
+"226" "Omar Lind" 194 "Centro 5" 228 2019-08-14
+"227" "Harper Tromp-Miller" 64 "Centro 2" 481 2019-08-15
+"228" "Omar Lind" 534 "Centro 3" 135 2019-08-16
+"229" "Emiliano Skiles V" 152 "Centro 2" 218 2019-08-17
+"230" "Emiliano Skiles V" 560 "Centro 2" 475 2019-08-18
+"231" "Khalid Stokes II" 482 "Centro 5" 190 2019-08-19
+"232" "Dr. Jeremie Kohler" 519 "Centro 1" 465 2019-08-20
+"233" "Nathanael Waelchi" 439 "Centro 3" 391 2019-08-21
+"234" "Mr. Kymani Welch" 126 "Centro 4" 386 2019-08-22
+"235" "Dr. Jeremie Kohler" 160 "Centro 5" 32 2019-08-23
+"236" "Emiliano Skiles V" 269 "Centro 2" 218 2019-08-24
+"237" "Khalid Stokes II" 55 "Centro 4" 279 2019-08-25
+"238" "Mr. Kymani Welch" 391 "Centro 5" 337 2019-08-26
+"239" "Dr. Jeremie Kohler" 320 "Centro 1" 373 2019-08-27
+"240" "Omar Lind" 512 "Centro 3" 332 2019-08-28
+"241" "Santana Conroy" 428 "Centro 5" 429 2019-08-29
+"242" "Mr. Kymani Welch" 421 "Centro 3" 241 2019-08-30
+"243" "Harper Tromp-Miller" 142 "Centro 3" 584 2019-08-31
+"244" "Omar Lind" 556 "Centro 1" 202 2019-09-01
+"245" "Angel Towne" 245 "Centro 4" 105 2019-09-02
+"246" "Harper Tromp-Miller" 298 "Centro 1" 407 2019-09-03
+"247" "Khalid Stokes II" 392 "Centro 1" 66 2019-09-04
+"248" "Dr. Jeremie Kohler" 193 "Centro 3" 235 2019-09-05
+"249" "Mr. Kymani Welch" 235 "Centro 3" 97 2019-09-06
+"250" "Vicky Schuppe" 428 "Centro 4" 349 2019-09-07
+"251" "Mr. Kymani Welch" 562 "Centro 1" 282 2019-09-08
+"252" "Angel Towne" 147 "Centro 2" 590 2019-09-09
+"253" "Dr. Jeremie Kohler" 501 "Centro 4" 209 2019-09-10
+"254" "Dr. Jeremie Kohler" 407 "Centro 3" 30 2019-09-11
+"255" "Mr. Kymani Welch" 535 "Centro 5" 195 2019-09-12
+"256" "Emiliano Skiles V" 264 "Centro 4" 210 2019-09-13
+"257" "Nathanael Waelchi" 144 "Centro 5" 420 2019-09-14
+"258" "Santana Conroy" 504 "Centro 4" 133 2019-09-15
+"259" "Harper Tromp-Miller" 507 "Centro 3" 450 2019-09-16
+"260" "Omar Lind" 252 "Centro 4" 600 2019-09-17
+"261" "Vicky Schuppe" 251 "Centro 5" 252 2019-09-18
+"262" "Harper Tromp-Miller" 47 "Centro 4" 242 2019-09-19
+"263" "Santana Conroy" 145 "Centro 4" 329 2019-09-20
+"264" "Harper Tromp-Miller" 495 "Centro 2" 499 2019-09-21
+"265" "Nathanael Waelchi" 167 "Centro 1" 212 2019-09-22
+"266" "Omar Lind" 388 "Centro 4" 163 2019-09-23
+"267" "Angel Towne" 503 "Centro 4" 479 2019-09-24
+"268" "Omar Lind" 189 "Centro 1" 579 2019-09-25
+"269" "Harper Tromp-Miller" 242 "Centro 3" 150 2019-09-26
+"270" "Omar Lind" 297 "Centro 5" 153 2019-09-27
+"271" "Omar Lind" 445 "Centro 2" 276 2019-09-28
+"272" "Mr. Kymani Welch" 453 "Centro 4" 82 2019-09-29
+"273" "Omar Lind" 270 "Centro 2" 228 2019-09-30
+"274" "Vicky Schuppe" 372 "Centro 1" 542 2019-10-01
+"275" "Mr. Kymani Welch" 470 "Centro 3" 494 2019-10-02
+"276" "Dr. Jeremie Kohler" 166 "Centro 4" 131 2019-10-03
+"277" "Santana Conroy" 398 "Centro 3" 103 2019-10-04
+"278" "Angel Towne" 359 "Centro 4" 559 2019-10-05
+"279" "Vicky Schuppe" 145 "Centro 2" 137 2019-10-06
+"280" "Nathanael Waelchi" 282 "Centro 3" 287 2019-10-07
+"281" "Nathanael Waelchi" 402 "Centro 3" 41 2019-10-08
+"282" "Mr. Kymani Welch" 59 "Centro 2" 27 2019-10-09
+"283" "Omar Lind" 560 "Centro 1" 315 2019-10-10
+"284" "Harper Tromp-Miller" 297 "Centro 5" 535 2019-10-11
+"285" "Emiliano Skiles V" 579 "Centro 3" 56 2019-10-12
+"286" "Mr. Kymani Welch" 591 "Centro 1" 561 2019-10-13
+"287" "Khalid Stokes II" 534 "Centro 2" 313 2019-10-14
+"288" "Khalid Stokes II" 117 "Centro 1" 357 2019-10-15
+"289" "Nathanael Waelchi" 433 "Centro 3" 130 2019-10-16
+"290" "Vicky Schuppe" 321 "Centro 3" 361 2019-10-17
+"291" "Santana Conroy" 340 "Centro 4" 593 2019-10-18
+"292" "Nathanael Waelchi" 410 "Centro 3" 478 2019-10-19
+"293" "Vicky Schuppe" 579 "Centro 3" 406 2019-10-20
+"294" "Emiliano Skiles V" 326 "Centro 4" 213 2019-10-21
+"295" "Santana Conroy" 513 "Centro 1" 139 2019-10-22
+"296" "Nathanael Waelchi" 590 "Centro 5" 38 2019-10-23
+"297" "Santana Conroy" 63 "Centro 2" 278 2019-10-24
+"298" "Santana Conroy" 594 "Centro 5" 504 2019-10-25
+"299" "Omar Lind" 165 "Centro 1" 328 2019-10-26
+"300" "Harper Tromp-Miller" 5 "Centro 1" 353 2019-10-27
+"301" "Santana Conroy" 508 "Centro 5" 301 2019-10-28
+"302" "Angel Towne" 272 "Centro 2" 194 2019-10-29
+"303" "Mr. Kymani Welch" 73 "Centro 4" 551 2019-10-30
+"304" "Santana Conroy" 13 "Centro 4" 60 2019-10-31
+"305" "Nathanael Waelchi" 299 "Centro 5" 261 2019-11-01
+"306" "Nathanael Waelchi" 269 "Centro 1" 283 2019-11-02
+"307" "Vicky Schuppe" 254 "Centro 3" 13 2019-11-03
+"308" "Mr. Kymani Welch" 543 "Centro 4" 303 2019-11-04
+"309" "Angel Towne" 410 "Centro 2" 456 2019-11-05
+"310" "Vicky Schuppe" 475 "Centro 5" 252 2019-11-06
+"311" "Angel Towne" 197 "Centro 1" 171 2019-11-07
+"312" "Vicky Schuppe" 581 "Centro 5" 196 2019-11-08
+"313" "Angel Towne" 13 "Centro 5" 432 2019-11-09
+"314" "Harper Tromp-Miller" 181 "Centro 1" 339 2019-11-10
+"315" "Santana Conroy" 113 "Centro 3" 125 2019-11-11
+"316" "Mr. Kymani Welch" 273 "Centro 5" 154 2019-11-12
+"317" "Vicky Schuppe" 218 "Centro 1" 1 2019-11-13
+"318" "Santana Conroy" 206 "Centro 4" 579 2019-11-14
+"319" "Nathanael Waelchi" 137 "Centro 2" 75 2019-11-15
+"320" "Khalid Stokes II" 1 "Centro 5" 43 2019-11-16
+"321" "Santana Conroy" 27 "Centro 4" 292 2019-11-17
+"322" "Dr. Jeremie Kohler" 120 "Centro 1" 388 2019-11-18
+"323" "Nathanael Waelchi" 341 "Centro 5" 526 2019-11-19
+"324" "Santana Conroy" 219 "Centro 2" 367 2019-11-20
+"325" "Omar Lind" 173 "Centro 2" 15 2019-11-21
+"326" "Emiliano Skiles V" 68 "Centro 1" 13 2019-11-22
+"327" "Mr. Kymani Welch" 554 "Centro 4" 224 2019-11-23
+"328" "Dr. Jeremie Kohler" 13 "Centro 3" 169 2019-11-24
+"329" "Vicky Schuppe" 140 "Centro 3" 359 2019-11-25
+"330" "Angel Towne" 40 "Centro 3" 556 2019-11-26
+"331" "Vicky Schuppe" 526 "Centro 3" 552 2019-11-27
+"332" "Vicky Schuppe" 263 "Centro 3" 345 2019-11-28
+"333" "Emiliano Skiles V" 385 "Centro 2" 310 2019-11-29
+"334" "Nathanael Waelchi" 102 "Centro 2" 79 2019-11-30
+"335" "Dr. Jeremie Kohler" 0 "Centro 2" 88 2019-12-01
+"336" "Vicky Schuppe" 243 "Centro 2" 475 2019-12-02
+"337" "Dr. Jeremie Kohler" 1 "Centro 2" 352 2019-12-03
+"338" "Santana Conroy" 81 "Centro 1" 497 2019-12-04
+"339" "Dr. Jeremie Kohler" 282 "Centro 1" 355 2019-12-05
+"340" "Mr. Kymani Welch" 571 "Centro 3" 518 2019-12-06
+"341" "Angel Towne" 455 "Centro 4" 355 2019-12-07
+"342" "Emiliano Skiles V" 292 "Centro 4" 45 2019-12-08
+"343" "Omar Lind" 119 "Centro 1" 207 2019-12-09
+"344" "Santana Conroy" 598 "Centro 5" 327 2019-12-10
+"345" "Angel Towne" 55 "Centro 4" 37 2019-12-11
+"346" "Harper Tromp-Miller" 517 "Centro 1" 121 2019-12-12
+"347" "Angel Towne" 124 "Centro 1" 89 2019-12-13
+"348" "Harper Tromp-Miller" 239 "Centro 3" 189 2019-12-14
+"349" "Omar Lind" 165 "Centro 3" 376 2019-12-15
+"350" "Dr. Jeremie Kohler" 313 "Centro 3" 334 2019-12-16
+"351" "Vicky Schuppe" 200 "Centro 3" 121 2019-12-17
+"352" "Santana Conroy" 513 "Centro 2" 495 2019-12-18
+"353" "Omar Lind" 55 "Centro 4" 7 2019-12-19
+"354" "Mr. Kymani Welch" 582 "Centro 5" 591 2019-12-20
+"355" "Emiliano Skiles V" 328 "Centro 3" 409 2019-12-21
+"356" "Nathanael Waelchi" 246 "Centro 4" 50 2019-12-22
+"357" "Mr. Kymani Welch" 506 "Centro 4" 402 2019-12-23
+"358" "Mr. Kymani Welch" 455 "Centro 1" 555 2019-12-24
+"359" "Khalid Stokes II" 14 "Centro 2" 250 2019-12-25
+"360" "Santana Conroy" 438 "Centro 5" 565 2019-12-26
+"361" "Khalid Stokes II" 501 "Centro 2" 88 2019-12-27
+"362" "Nathanael Waelchi" 386 "Centro 5" 513 2019-12-28
+"363" "Dr. Jeremie Kohler" 566 "Centro 3" 345 2019-12-29
+"364" "Angel Towne" 552 "Centro 2" 359 2019-12-30
+"365" "Nathanael Waelchi" 78 "Centro 1" 205 2019-12-31

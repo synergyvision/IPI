@@ -511,53 +511,15 @@ shinyUI(
               tabItem(tabName = "prod_dp",
                       h2("Información detalle productor"),
                       
-                      box(width=12,title="Productores",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="fecha1_prod", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="fecha2_prod", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("centro_atencion_prod", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   selectInput("productores_prod", "Productores:",
-                                               choices = c("Productor 1","Productor 2","Productor 3","Productor 4"))
-                                   #)#final box
-                          ),
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("cuentas_esp_prod", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar_prod", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                      ) #final box
-                      ,
+                      #nuevos imputs
+                      htmlOutput("gc_prod_dp_opc"),  
+                      
                       #TABLA 1
                       fluidRow(
                         uiOutput("t1_prod")
                       ),
                       
-                      #TABLA 2
+                      #TABLA 2 - GRAFICO
                       fluidRow(
                         uiOutput("t2_prod")
                       ),
@@ -578,38 +540,9 @@ shinyUI(
 
               tabItem(tabName = "prod_fi",
                       h2("Información ficha intermediario"),
-                      
-                      box(width=12,title="Productores",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("prod_fi_a", "Asesor: ",
-                                             choices = c("20050-CARLOS ENRIQUE SILVERA","20051-JOSÉ CANALES","20052-EDUARDO CARDONA"))
-                                 
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="prod_fi_fh", label="Fecha hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),
-                          column(width = 4,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar_prod_fi1", "Ver Resumen",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          ),
-                          column(width = 4,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar_prod_fi2", "Ver PDF",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          ),
-                          column(width = 4,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("consultar_prod_fi3", "Cancelar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                      ), #final box
+                    
+                      #nuevos imputs
+                      htmlOutput("gc_prod_fi_opc"),  
                       
                       #TABLA 1
                       fluidRow(

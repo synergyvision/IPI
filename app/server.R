@@ -978,13 +978,13 @@ output$gc_ca_opc <- renderUI({
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gc_ca3", "Centro de Atención:",
-                         choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
+                         choices = c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
              #)#final box
       ),
       column(width = 6,
              #box( width = 6, background = "navy",
              selectInput("gc_ca4", "Cuentas Especiales:",
-                         choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
+                         choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
              #)#final box
       ),
       column(width = 6,
@@ -1024,21 +1024,21 @@ output$tabla1_gc_ca <- renderDataTable(
       
       a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca1.txt"), sep="")
       
-      # #filtro por fecha
-      # a$Fecha <- as.character(a$Fecha)
+       #filtro por fecha
+       a$Fecha <- as.character(a$Fecha)
       # # #print(head(a[,4]))
       # #print(str(a))
-      # lim1 <- which(a$Fecha==input$fecha1_ca)
-      # #  print(lim1)
-      # lim2 <- which(a$Fecha==input$fecha2_ca)
+       lim1 <- which(a$Fecha==input$gc_ca1)
+       #  print(lim1)
+       lim2 <- which(a$Fecha==input$gc_ca2)
       # # # print(lim2)
-      # a <- a[lim1:lim2,]
+       a <- a[lim1:lim2,]
       # 
-      # #filtro por ATENCION
-      # a <- a[a[,1]==input$centro_atencion_ca,]
-      # 
-      # #filtro por CUENTA ESPECIAL
-      # a <- a[a[,23]==input$cuentas_esp_ca,]
+       #filtro por ATENCION
+       a <- a[a[,1]==input$gc_ca3,]
+       
+       #filtro por CUENTA ESPECIAL
+       a <- a[a[,23]==input$gc_ca4,]
       # 
       
       return(a[,-c(22,23)])  
@@ -1074,25 +1074,25 @@ output$tabla2_gc_ca <- renderDataTable(
       
       a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca2.txt"), sep="")
       
-      # #filtro por fecha
-      # a$Fecha <- as.character(a$Fecha)
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
       # # #print(head(a[,4]))
       # #print(str(a))
-      # lim1 <- which(a$Fecha==input$fecha1_ca)
-      # #  print(lim1)
-      # lim2 <- which(a$Fecha==input$fecha2_ca)
+      lim1 <- which(a$Fecha==input$gc_ca1)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$gc_ca2)
       # # # print(lim2)
-      # a <- a[lim1:lim2,]
+      a <- a[lim1:lim2,]
       # 
-      # #filtro por ATENCION
-      # a <- a[a[,1]==input$centro_atencion_ca,]
-      # 
-      # #filtro por CUENTA ESPECIAL
-      # a <- a[a[,23]==input$cuentas_esp_ca,]
+      #filtro por ATENCION
+      a <- a[a[,22]==input$gc_ca3,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,23]==input$gc_ca4,]
       # 
       
-      return(a)  
-      
+      return(a[,-c(21,22,23)])  
+
     })#final isolate
     
   },rownames = FALSE,options = list(
@@ -1107,6 +1107,51 @@ output$tabla2_gc_ca <- renderDataTable(
 
 
 #PRODUCTORES
+#OPCIONES BOTONES
+output$gc_prod_dp_opc <- renderUI({ 
+  box(width=12,title="Productores",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="fecha1_prod", label="Desde:", language= "es",
+                       width = "100%")#final dateimput
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="fecha2_prod", label="Hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("centro_atencion_prod", "Centro de Atención:",
+                         choices =c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
+             #)#final box
+      ),column(width = 6,
+               #box( width = 6, background = "navy",
+               selectInput("productores_prod", "Productores:",
+                           choices = c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5"))
+               #)#final box
+      ),
+      column(width = 12,
+             #box( width = 6, background = "navy",
+             selectInput("cuentas_esp_prod", "Cuentas Especiales:",
+                         choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("consultar_prod", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+  ) #final box
+  
+})
+
 
 #tabla 1 PRODUCTORES
 
@@ -1126,15 +1171,29 @@ output$tabla1_prod <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 8))
-      names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
-                    "Siniestros Pagados","Siniestros Pendientes",
-                    "Siniestros Incurridos","Cantidad Siniestros",
-                    "Siniestralidad")
-      a[,1] <- c("Auto","Fianza","Patrimoniales","Personas","Salud","Totales:")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp1.txt"), sep="")
       
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      ##filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      lim1 <- which(a$Fecha==input$fecha1_prod)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$fecha2_prod)
+      # # # print(lim2)
+      a <- a[lim1:lim2,]
+      # 
+      #filtro por ATENCION
+      a <- a[a[,12]==input$centro_atencion_prod,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,10]==input$cuentas_esp_prod,]
+      
+      #filtro por productores 
+      a <- a[a[,11]==input$productores_prod,]
+      
+      return(a[,-c(9,10,11,12)])  
+      
       
     })#final isolate
     
@@ -1193,16 +1252,28 @@ output$tabla3_prod <- renderDataTable(
     input$consultar_prod
     #
     isolate({ 
-      a <- as.data.frame(matrix(0,nrow = 10,ncol = 20))
-      names(a) <- c("Código Productor","Nombre Productor",
-                    "Pólizas Auto","% Ppto Auto","Cartera Activa Auto",
-                    "Pólizas Fianza","% Ppto Fianza","Cartera Activa Fianza",
-                    "Pólizas Patrimoniales","% Ppto Patrimoniales","Cartera Activa Patrimoniales",
-                    "Pólizas Personas","% Ppto Personas","Cartera Activa Personas",
-                    "Pólizas Salud","% Ppto Salud","Cartera Activa Salud",
-                    "Pólizas General","% Ppto General","Cartera Activa General"
-      )
-      return(a) 
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp3.txt"), sep="")
+      
+      ##filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      lim1 <- which(a$Fecha==input$fecha1_prod)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$fecha2_prod)
+      # # # print(lim2)
+      a <- a[lim1:lim2,]
+      # 
+      #filtro por ATENCION
+      a <- a[a[,24]==input$centro_atencion_prod,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,22]==input$cuentas_esp_prod,]
+      
+      #filtro por productores 
+      a <- a[a[,23]==input$productores_prod,]
+      
+      return(a[,-c(21,22,23,24)]) 
       
       
     })#final isolate
@@ -1215,6 +1286,52 @@ output$tabla3_prod <- renderDataTable(
       "}")
   ))
 
+#PRODUCTORES 
+#FICHA INTERMEDIARIO
+#OPCIONES
+output$gc_prod_fi_opc <- renderUI({ 
+  box(width=12,title="Productores",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("prod_fi_a", "Asesor: ",
+                        # choices = c("20050-CARLOS ENRIQUE SILVERA","20051-JOSÉ CANALES","20052-EDUARDO CARDONA"))
+                        choices = asesor())
+                        
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="prod_fi_fh", label="Fecha hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),
+      column(width = 4,
+             #box( width = 6, background = "navy",
+             actionButton("consultar_prod_fi1", "Ver Resumen",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      ),
+      column(width = 4,
+             #box( width = 6, background = "navy",
+             actionButton("consultar_prod_fi2", "Ver PDF",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      ),
+      column(width = 4,
+             #box( width = 6, background = "navy",
+             actionButton("consultar_prod_fi3", "Cancelar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+  ) #final box
+  
+})
+
+#FUNCION QUE ME LEE LOS ASESORES DISPONIBLES
+
+asesor <- function(){
+  a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="")
+  
+  return(levels(as.factor(as.character(a[,1]))))
+}
 
 #tabla 1 PRODUCTORES - FICHA INTERMEDIARIO
 observeEvent(input$consultar_prod_fi1, {
@@ -1233,11 +1350,19 @@ output$tabla1_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 5))
-      names(a) <- c("Nombre","Tipo","Sucursal",
-                    "Código","Fecha")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="")
+      
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
 
-      #return(datatable(a, options = list(paging = FALSE)))
+      lim2 <- which(a$Fecha==input$prod_fi_fh)
+      # # # print(lim2)
+      a <- a[1:lim2,]
+      
+      #filtro por asesor
+      a <- a[a[,1]==input$prod_fi_a,]
+      
+      
       return(a)  
       
     })#final isolate
@@ -1267,15 +1392,18 @@ output$tabla2_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
-      names(a) <- c("Línea Negocio","Prima Cobrada","Prima Devengada",
-                    "Siniestros Pagados","Comisiones Bonos",
-                    "Siniestros Incurridos","Cantidad Siniestros",
-                    "% Siniestralidad","% Persistencia","Rentabilidad",
-                    "% Cumplimiento Presupuesto Inventario",
-                    "% Cumplimiento Presupuesto Primas Cobradas")
-
-      #return(datatable(a, options = list(paging = FALSE)))
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi2.txt"), sep="")
+      
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      
+      lim2 <- which(a$Fecha==input$prod_fi_fh)
+      # # # print(lim2)
+      a <- a[1:lim2,]
+      
+      #filtro por asesor
+      a <- a[a[,15]==input$prod_fi_a,]
+      
       return(a)  
       
     })#final isolate
