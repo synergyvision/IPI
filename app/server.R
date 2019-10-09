@@ -1433,13 +1433,18 @@ output$tabla3_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 11))
-      names(a) <- c("Cliente","Línea Negocio","Póliza","Prima Cobrada",
-                    "Fecha Suscipción","Vigencia Desde","Vigencia Hasta",
-                    "Prima Devengada","Siniestros Pagados","Siniestros Incurridos",
-                    "% Siniestralidad")
-
-      #return(datatable(a, options = list(paging = FALSE)))
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi3.txt"), sep="")
+      
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      
+      lim2 <- which(a$Fecha==input$prod_fi_fh)
+      # # # print(lim2)
+      a <- a[1:lim2,]
+      
+      #filtro por asesor
+      a <- a[a[,13]==input$prod_fi_a,]
+      
       return(a)  
       
     })#final isolate
@@ -1469,12 +1474,17 @@ output$tabla4_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 8))
-      names(a) <- c("Cliente","Póliza","Línea Negocio","Siniestro",
-                    "Fecha Declaración","Fecha Ocurrencia",
-                    "Total Pagado","Reserva")
-
-      #return(datatable(a, options = list(paging = FALSE)))
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi4.txt"), sep="")
+      
+      #filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      
+      lim2 <- which(a$Fecha==input$prod_fi_fh)
+      # # # print(lim2)
+      a <- a[1:lim2,]
+      
+      #filtro por asesor
+      a <- a[a[,10]==input$prod_fi_a,]
       return(a)  
       
     })#final isolate
@@ -1486,6 +1496,62 @@ output$tabla4_prod_fi <- renderDataTable(
       "$(this.api().table().header()).css({'background-color': '#04B404', 'color': '#fff'});",
       "}")
   ))
+
+
+#DETALLE PÓLIZAS 
+#BOTONES
+output$gc_dp_opc <- renderUI({ 
+  box(width=12,title="Detalle de Pólizas",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_dp_d", label="Desde:", language= "es",
+                       width = "100%")#final dateimput
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_dp_h", label="Hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dp_ca", "Centro de Atención:",
+                         choices = c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dp_p", "Productores:",
+                         choices = c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5"))
+             #)#final box
+      ),
+      column(width = 12,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dp_ce", "Cuentas Especiales:",
+                         choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gc_dp_consultar", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+      
+      
+      #)#final fluidrow
+      
+      
+      
+  ) # final box
+  
+})
+
+
 
 #tabla 1 DETALLE PÓLIZAS 
 observeEvent(input$gc_dp_consultar, {
@@ -1504,14 +1570,28 @@ output$tabla1_gc_dp <- renderDataTable(
     #
     isolate({ 
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 10))
-      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
-                    "Número Póliza","Prima Cobrada","Prima Devengada",
-                    "Comisión","Fecha Inicio Vigencia",
-                    "Fecha Fin Vigencia")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dp1.txt"), sep="")
       
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      ##filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      lim1 <- which(a$Fecha==input$gc_dp_d)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$gc_dp_h)
+      # # # print(lim2)
+      a <- a[lim1:lim2,]
+      # 
+      #filtro por ATENCION
+      a <- a[a[,1]==input$gc_dp_ca,]
+      
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,13]==input$gc_dp_ce,]
+      
+      #filtro por productores 
+      a <- a[a[,12]==input$gc_dp_p,]
+      
+      return(a[,-c(11,12,13)]) 
       
     })#final isolate
     

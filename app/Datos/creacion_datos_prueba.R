@@ -973,9 +973,29 @@ fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
 
 a$Fecha <- fecha
 
+#RELLENO LINEA DE NEGOCIO - RAMO
+ramo <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+ind <- ch_integer(365,1,5)
+a[,2] <- ramo[ind]
 
 
+#RELLENO ASESOR - NOMBRE
+a$asesor <- D
 
+
+#RELLENO COLUMNAS
+a[,1] <- ch_name(n = 365)
+a[,3] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+a[,5] <- fecha
+a[,6] <- fecha+10
+a[,7] <- fecha+20
+a[,8] <- ch_integer(n = 365, min = 0, max = 600)
+a[,9] <- ch_integer(n = 365, min = 0, max = 600)
+a[,10] <- ch_integer(n = 365, min = 0, max = 600)
+a[,11] <- ch_unif(n = 365, min = 0, max = 600)
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_fi3.txt"))
 
 
 #TABLA 4
@@ -983,5 +1003,92 @@ a <- as.data.frame(matrix(0,nrow = 365,ncol = 8))
 names(a) <- c("Cliente","Póliza","Línea Negocio","Siniestro",
               "Fecha Declaración","Fecha Ocurrencia",
               "Total Pagado","Reserva")
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#RELLENO LINEA DE NEGOCIO - RAMO
+ramo <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+ind <- ch_integer(365,1,5)
+a[,3] <- ramo[ind]
+
+
+#RELLENO ASESOR - NOMBRE
+a$asesor <- D
+
+#RELLENO COLUMNAS
+a[,1] <- ch_name(n = 365)
+a[,2] <- ch_integer(n = 365, min = 0, max = 600)
+a[,4] <- ch_integer(n = 365, min = 0, max = 600)
+a[,5] <- fecha
+a[,6] <- fecha+10
+a[,7] <- ch_integer(n = 365, min = 0, max = 600)
+a[,8] <- ch_integer(n = 365, min = 0, max = 600)
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_prod_fi4.txt"))
+
+#DETALLE PÓLIZAS
+#TABLA 1
+a <- as.data.frame(matrix(0,nrow = 365,ncol = 10))
+names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
+              "Número Póliza","Prima Cobrada","Prima Devengada",
+              "Comisión","Fecha Inicio Vigencia",
+              "Fecha Fin Vigencia")
+
+
+#RELLENO FECHA
+fecha <- seq.Date(as.Date("2019-01-01"),as.Date("2019-12-31"),by = "days")
+
+a$Fecha <- fecha
+
+#RELLENO LINEA DE NEGOCIO - RAMO
+ramo <- c("Auto","Fianzas","Patrimoniales","Personas","Salud")
+ind <- ch_integer(365,1,5)
+a[,2] <- ramo[ind]
+a[,3] <- ramo[ind]
+
+#CENTRO DE ATENCION - SUCURSAL
+ind3 <- ch_integer(365,1,5)
+centro <- c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5")
+
+a[,1] <- centro[ind3]
+
+#PRODUCTORES
+ind4 <- ch_integer(365,1,5)
+prod <- c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5")
+
+a$productor <- prod[ind4]
+
+#CUENTAS ESPECIALES
+ind5 <- ch_integer(365,1,5)
+cuentas <- c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5")
+
+a$cuentas_esp <- cuentas[ind5]
+
+#RELLENO COLUMNAS
+a[,4] <- ch_name(n = 365)
+a[,5] <- ch_integer(n = 365, min = 0, max = 600)
+a[,6] <- ch_integer(n = 365, min = 0, max = 600)
+a[,7] <- ch_integer(n = 365, min = 0, max = 600)
+a[,8] <- ch_integer(n = 365, min = 0, max = 600)
+a[,9] <- fecha+10
+a[,10] <- fecha+20
+
+
+write.table(x = a,file = paste0(getwd(),"/app/Datos/","data_gc_dp1.txt"))
+
+
+#DETALLE SINIESTROS
+
+
+#DETALLE CONSOLIDADO
+
+
+
+
+
+
 
 

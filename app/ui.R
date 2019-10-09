@@ -575,53 +575,8 @@ shinyUI(
               tabItem(tabName = "gc_dp",
                       h2("Información detalle póliza"),
                       
-                      box(width=12,title="Detalle de Pólizas",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_dp_d", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_dp_h", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_dp_ca", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                   #box( width = 6, background = "navy",
-                                   selectInput("gc_dp_p", "Productores:",
-                                               choices = c("Productor 1","Productor 2","Productor 3","Productor 4"))
-                                   #)#final box
-                          ),
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_dp_ce", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gc_dp_consultar", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ), # final box
+                      #nuevos imputs
+                      htmlOutput("gc_dp_opc"),  
                       
                       #TABLA 1
                       fluidRow(
