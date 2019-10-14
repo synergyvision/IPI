@@ -1603,6 +1603,62 @@ output$tabla1_gc_dp <- renderDataTable(
       "}")
   ))
 
+
+#DETALLE SINIESTROS
+#OPCIONES 
+output$gc_dsin_opc <- renderUI({ 
+  
+  box(width=12,title="Detalle de Siniestros",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_ds_d", label="Desde:", language= "es",
+                       width = "100%")#final dateimput
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_ds_h", label="Hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_ds_ca", "Centro de Atención:",
+                         choices = c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_ds_p", "Productores:",
+                         choices = c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5"))
+             #)#final box
+      ),
+      column(width = 12,
+             #box( width = 6, background = "navy",
+             selectInput("gc_ds_ce", "Cuentas Especiales:",
+                         choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gc_ds_consultar", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+      
+      
+      #)#final fluidrow
+      
+      
+      
+  ) # final box
+  
+})
+
+
 #tabla 1 DETALLE SINIESTROS 
 observeEvent(input$gc_ds_consultar, {
   output$t1_gc_ds <-  renderUI(
@@ -1619,15 +1675,29 @@ output$tabla1_gc_ds <- renderDataTable(
     input$gc_ds_consultar
     #
     isolate({ 
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dsin1.txt"), sep="")
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 10))
-      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
-                    "Centro de Atención Receptor","Número Póliza",
-                    "Número Siniestro","Siniestros Pagados",
-                    "Siniestros Pendientes","Siniestros Incurridos")
+      ##filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      lim1 <- which(a$Fecha==input$gc_ds_d)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$gc_ds_h)
+      # # # print(lim2)
+      a <- a[lim1:lim2,]
+      # 
+      #filtro por ATENCION
+      a <- a[a[,1]==input$gc_ds_ca,]
       
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,13]==input$gc_ds_ce,]
+      
+      #filtro por productores 
+      a <- a[a[,12]==input$gc_ds_p,]
+      
+      return(a[,-c(11,12,13)]) 
+
       
     })#final isolate
     
@@ -1639,6 +1709,59 @@ output$tabla1_gc_ds <- renderDataTable(
       "}")
   ))
 
+#DETALLE CONSOLIDADO
+#OPCIONES 
+output$gc_dcon_opc <- renderUI({ 
+  
+  box(width=12,title="Detalle Consolidado",status="primary",solidHeader=TRUE ,
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_dc_d", label="Desde:", language= "es",
+                       width = "100%")#final dateimput
+             #),#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             dateInput(inputId="gc_dc_h", label="Hasta:", language= "es",
+                       width = "100%")#final dateimput
+             #)#final box
+      ),#final column
+      #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
+      
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dc_ca", "Centro de Atención:",
+                         choices = c("Centro 1","Centro 2","Centro 3","Centro 4","Centro 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dc_p", "Productores:",
+                         choices = c("Productor 1","Productor 2","Productor 3","Productor 4","Productor 5"))
+             #)#final box
+      ),
+      column(width = 12,
+             #box( width = 6, background = "navy",
+             selectInput("gc_dc_ce", "Cuentas Especiales:",
+                         choices = c("Cuenta 1","Cuenta 2","Cuenta 3","Cuenta 4","Cuenta 5"))
+             #)#final box
+      ),
+      column(width = 6,
+             #box( width = 6, background = "navy",
+             actionButton("gc_dc_consultar", "Consultar",
+                          style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
+      )
+      
+      
+      #)#final fluidrow
+      
+      
+      
+  ) # final box
+  
+})
 
 #tabla 1 DETALLE CONSOLIDADO 
 observeEvent(input$gc_dc_consultar, {
@@ -1656,19 +1779,29 @@ output$tabla1_gc_dc <- renderDataTable(
     input$gc_dc_consultar
     #
     isolate({ 
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dcon1.txt"), sep="")
       
-      a <- as.data.frame(matrix(0,nrow = 6,ncol = 15))
-      names(a) <- c("Sucursal","Ramo","Línea Negocio","Nombre del Cliente",
-                    "Número Póliza","Prima Cobrada","Prima Devengada",
-                    "Siniestros Pagados","Siniestros Pendientes",
-                    "Siniestros Incurridos","Recuperaciones",
-                    "Comisiones e Incentivos Pagados","Gastos Directos del Ramo",
-                    "Resultado Técnico Antes de Gasto","Siniestralidad"
-                    )
+      ##filtro por fecha
+      a$Fecha <- as.character(a$Fecha)
+      # # #print(head(a[,4]))
+      # #print(str(a))
+      lim1 <- which(a$Fecha==input$gc_dc_d)
+      #  print(lim1)
+      lim2 <- which(a$Fecha==input$gc_dc_h)
+      # # # print(lim2)
+      a <- a[lim1:lim2,]
+      # 
+      #filtro por ATENCION
+      a <- a[a[,1]==input$gc_dc_ca,]
       
-      #return(datatable(a, options = list(paging = FALSE)))
-      return(a)  
+      #filtro por CUENTA ESPECIAL
+      a <- a[a[,18]==input$gc_dc_ce,]
       
+      #filtro por productores 
+      a <- a[a[,17]==input$gc_dc_p,]
+      
+      return(a[,-c(16,17,18)]) 
+
     })#final isolate
     
   },rownames = FALSE,options = list(

@@ -594,53 +594,9 @@ shinyUI(
               tabItem(tabName = "gc_ds",
                       h2("Información detalle siniestros"),
                       
-                      box(width=12,title="Detalle de Siniestros",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_ds_d", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_ds_h", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_ds_ca", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_ds_p", "Productores:",
-                                             choices = c("Productor 1","Productor 2","Productor 3","Productor 4"))
-                                 #)#final box
-                          ),
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_ds_ce", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gc_ds_consultar", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ), # final box
+                      #nuevos imputs
+                      htmlOutput("gc_dsin_opc"),  
+                      
                       
                       #TABLA 1
                       fluidRow(
@@ -656,53 +612,8 @@ shinyUI(
               tabItem(tabName = "gc_dc",
                       h2("Información detalle consolidado"),
                       
-                      box(width=12,title="Detalle Consolidado",status="primary",solidHeader=TRUE ,
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_dc_d", label="Desde:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #),#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')), #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 dateInput(inputId="gc_dc_h", label="Hasta:", language= "es",
-                                           width = "100%")#final dateimput
-                                 #)#final box
-                          ),#final column
-                          #box( width = 6,height = 2,title = "Fecha de valoración: ",verbatimTextOutput('p2')) #final box
-                          
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_dc_ca", "Centro de Atención:",
-                                             choices = c("UNIVERSAL DE SEGUROS, C.A","CENTRO 1","CENTRO 2","CENTRO 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_dc_p", "Productores:",
-                                             choices = c("Productor 1","Productor 2","Productor 3","Productor 4"))
-                                 #)#final box
-                          ),
-                          column(width = 12,
-                                 #box( width = 6, background = "navy",
-                                 selectInput("gc_dc_ce", "Cuentas Especiales:",
-                                             choices = c("Todas","Cuenta 1","Cuenta 2","Cuenta 3"))
-                                 #)#final box
-                          ),
-                          column(width = 6,
-                                 #box( width = 6, background = "navy",
-                                 actionButton("gc_dc_consultar", "Consultar",
-                                              style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-                          )
-                          
-                          
-                          #)#final fluidrow
-                          
-                          
-                          
-                      ), # final box
+                      #nuevos imputs
+                      htmlOutput("gc_dcon_opc"),  
                       
                       #TABLA 1
                       fluidRow(
