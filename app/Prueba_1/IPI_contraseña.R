@@ -43,11 +43,11 @@ options(OutDec = ",")
 # Encabezado Vision
 VisionHeader <- function(){tags$head(
   tags$link(rel = "stylesheet", type = "text/css", href = "app.css"),
-  tags$img(src="app/www/img/vision1.png" , id = "VisionLogo", width = 130 ),
+  tags$img(src="vision1.png" , id = "VisionLogo" ,width = '120' ),
   # singleton(includeScript("app/www/js/d3.js")),
   # singleton(includeScript("app/www/js/underscore.js")),
   # singleton(includeScript("app/www/js/jquery-ui.js")),
-   singleton(includeCSS("app/www/css/app.css"))
+   singleton(includeCSS("www/app.css"))
 )}
 
 ACERTITLE_TEXT<-"Acerca de VisionRisk™"
@@ -2070,4 +2070,4 @@ server <- function(input, output, session) {
   
   } #final server
 
-runApp(list(ui = ui, server = server))
+shinyApp(ui,server)
