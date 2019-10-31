@@ -597,7 +597,7 @@ shinyServer(function(input, output) {
     
     #
     isolate({ 
-      b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_tabla2.txt"), sep="")
+      b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_tabla2.txt"), sep="",encoding = "UTF-8")
       
   
     # names(b) <- c("Centro De Atención","Prima Cobrada Auto","% Ppto Auto","% Sin. Auto",
@@ -668,7 +668,7 @@ shinyServer(function(input, output) {
     isolate({ 
     #leo data de la carpeta datos
     #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
-    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="",encoding = "UTF-8")
       
     #veo filtros a aplicar
     # if(is.null(input$centro_atencion) &is.null(input$cuentas_esp)){
@@ -767,7 +767,7 @@ shinyServer(function(input, output) {
     #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
     #b[,2] <- as.factor(b[,2])
     #return(levels(b[,2]))
-    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+    b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="",encoding = "UTF-8")
     b[,1] <- as.factor(b[,1])
     return(levels(b[,1]))
   })
@@ -777,7 +777,7 @@ shinyServer(function(input, output) {
     # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
     # b[,3] <- as.factor(b[,3])
     # return(levels(b[,3]))
-     b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+     b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="",encoding = "UTF-8")
      b[,39] <- as.factor(b[,39])
      return(levels(b[,39]))
   })
@@ -795,7 +795,7 @@ shinyServer(function(input, output) {
         # f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
         # f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
         #                                           
-        b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="")
+        b <- read.csv(paste0(getwd(),"/Datos/data_consolidado_nueva.txt"), sep="",encoding = "UTF-8")
         b[,38] <- as.Date(b[,38])
         fechas <- range(b[,38])
         f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
@@ -873,7 +873,7 @@ output$tabla1_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln1.txt"), sep="",encoding = "UTF-8")
 
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -922,7 +922,7 @@ output$tabla2_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln2.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ln2.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1022,7 +1022,7 @@ output$tabla1_gc_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca1.txt"), sep="",encoding = "UTF-8")
       
        #filtro por fecha
        a$Fecha <- as.character(a$Fecha)
@@ -1072,7 +1072,7 @@ output$tabla2_gc_ca <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca2.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_ca2.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1171,7 +1171,7 @@ output$tabla1_prod <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp1.txt"), sep="",encoding = "UTF-8")
       
       ##filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1252,7 +1252,7 @@ output$tabla3_prod <- renderDataTable(
     input$consultar_prod
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp3.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_dp3.txt"), sep="",encoding = "UTF-8")
       
       ##filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1315,7 +1315,8 @@ output$gc_prod_fi_opc <- renderUI({
              #box( width = 6, background = "navy",
              actionButton("consultar_prod_fi2", "Ver PDF",
                           style="color: #fff; background-color: #04B404; border-color: #04B404") #)#final box
-      ),
+      )
+      ,
       column(width = 4,
              #box( width = 6, background = "navy",
              actionButton("consultar_prod_fi3", "Cancelar",
@@ -1328,7 +1329,7 @@ output$gc_prod_fi_opc <- renderUI({
 #FUNCION QUE ME LEE LOS ASESORES DISPONIBLES
 
 asesor <- function(){
-  a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="")
+  a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="",encoding = "UTF-8")
   
   return(levels(as.factor(as.character(a[,1]))))
 }
@@ -1350,7 +1351,7 @@ output$tabla1_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi1.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1392,7 +1393,7 @@ output$tabla2_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi2.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi2.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1433,7 +1434,7 @@ output$tabla3_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi3.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi3.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1474,7 +1475,7 @@ output$tabla4_prod_fi <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi4.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_prod_fi4.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1570,7 +1571,7 @@ output$tabla1_gc_dp <- renderDataTable(
     #
     isolate({ 
       
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dp1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dp1.txt"), sep="",encoding = "UTF-8")
       
       ##filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1675,7 +1676,7 @@ output$tabla1_gc_ds <- renderDataTable(
     input$gc_ds_consultar
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dsin1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dsin1.txt"), sep="",encoding = "UTF-8")
       
       ##filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1779,7 +1780,7 @@ output$tabla1_gc_dc <- renderDataTable(
     input$gc_dc_consultar
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dcon1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gc_dcon1.txt"), sep="",encoding = "UTF-8")
       
       ##filtro por fecha
       a$Fecha <- as.character(a$Fecha)
@@ -1870,7 +1871,7 @@ gt_rca_b1 <- reactive({
   #b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
   #b[,2] <- as.factor(b[,2])
   #return(levels(b[,2]))
-  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="",encoding = "UTF-8")
   b[,1] <- as.factor(b[,1])
   return(levels(b[,1]))
 })
@@ -1880,7 +1881,7 @@ gt_rca_b2 <- reactive({
   # b <- read.csv(paste0(getwd(),"/Datos/data_consolidado.txt"), sep="")
   # b[,3] <- as.factor(b[,3])
   # return(levels(b[,3]))
-  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+  b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="",encoding = "UTF-8")
   b[,14] <- as.factor(b[,14])
   return(levels(b[,14]))
 })
@@ -1898,7 +1899,7 @@ observeEvent(input$gt_ca_boton, {
       # f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
       # f2 <- paste(substr(fechas[2],9,10),substr(fechas[2],6,7),substr(fechas[2],1,4),sep = "/")
       #                                           
-      b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+      b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="",encoding = "UTF-8")
       b[,13] <- as.Date(b[,13])
       fechas <- range(b[,13])
       f1 <- paste(substr(fechas[1],9,10),substr(fechas[1],6,7),substr(fechas[1],1,4),sep = "/")
@@ -1943,7 +1944,7 @@ output$tabla1_gt_ca <- renderDataTable(
       # )
       
       #return(datatable(a, options = list(paging = FALSE)))
-    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="")
+    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca1.txt"), sep="",encoding = "UTF-8")
     
     #veo filtros a aplicar
   
@@ -2006,7 +2007,7 @@ output$tabla2_gt_ca <- renderDataTable(
     # )
     
     #return(datatable(a, options = list(paging = FALSE)))
-    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca2.txt"), sep="")
+    b <- read.csv(paste0(getwd(),"/Datos/data_gt_rca2.txt"), sep="",encoding = "UTF-8")
     
     #veo filtros a aplicar
     
@@ -2109,7 +2110,7 @@ output$tabla1_gt_ln <- renderDataTable(
     input$gt_rln_boton
     #
     isolate({ 
-    a <- read.csv(paste0(getwd(),"/Datos/data_gt_rln1.txt"), sep="")
+    a <- read.csv(paste0(getwd(),"/Datos/data_gt_rln1.txt"), sep="",encoding = "UTF-8")
     
     # a <- as.data.frame(matrix(0,nrow = 6,ncol = 12))
     # names(a) <- c("Centro Atención","Pólizas Nuevas","Pólizas Renovadas",
@@ -2171,7 +2172,7 @@ output$tabla2_gt_ln <- renderDataTable(
     input$gt_rln_boton
     #
     isolate({ 
-    a <- read.csv(paste0(getwd(),"/Datos/data_gt_rln2.txt"), sep="")
+    a <- read.csv(paste0(getwd(),"/Datos/data_gt_rln2.txt"), sep="",encoding = "UTF-8")
     
     # a <- as.data.frame(matrix(0,nrow = 6,ncol = 13))
     # names(a) <- c("Centro Atención","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
@@ -2296,7 +2297,7 @@ output$tabla1_gt_dln <- renderDataTable(
     input$gt_dln_boton
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gt_dln1.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gt_dln1.txt"), sep="",encoding = "UTF-8")
       
     # a <- as.data.frame(matrix(0,nrow = 4,ncol = 12))
     # names(a) <- c("Ramo","Pólizas Nuevas","Pólizas Renovadas","Cantidad de Asegurados",
@@ -2359,7 +2360,7 @@ output$tabla2_gt_dln <- renderDataTable(
     input$gt_dln_boton
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gt_dln2.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gt_dln2.txt"), sep="",encoding = "UTF-8")
       
     # a <- as.data.frame(matrix(0,nrow = 4,ncol = 13))
     # names(a) <- c("Ramo","(*) Siniestralidad Incurrida Real (%)","Siniestralidad Incurrida Presupuesto (%)",
@@ -2475,7 +2476,7 @@ output$gt_sin_opc <- renderUI({
 #creo funcion para extraer nombre de polizas
 n_poliza <- reactive({
   
-  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="",encoding = "UTF-8")
 
   return(levels(as.factor(as.character(a$Número.de.Póliza))))
   
@@ -2484,7 +2485,7 @@ n_poliza <- reactive({
 #creo funcion para extraer nombre de contratos
 con <- reactive({
   
-  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+  a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="",encoding = "UTF-8")
   
   return(levels(as.factor(as.character(a$Contrato))))
   
@@ -2509,7 +2510,7 @@ output$tabla2_gt_sin <- renderDataTable(
     input$gt_sin_boton1
     #
     isolate({ 
-      a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="")
+      a <- read.csv(paste0(getwd(),"/Datos/data_gt_sinpc.txt"), sep="",encoding = "UTF-8")
       
       #filtro por fecha
       #print(input$gt_sin_4)
