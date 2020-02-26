@@ -80,66 +80,66 @@ fluidPage(
         "states_map",
         height = 600
       )
-    ),
-    div(
-      class = "col-sm-offset-3 col-sm-9 col-lg-offset-0 col-lg-2",
-      wellPanel(
-        fluidRow(
-          column(
-            width = 12,
-              class = "text-center",
-              h3(
-                textOutput("sel_state_name")
-              )
-            ),
-            div(
-              class = "col-lg-12 col-sm-6",
-              DT::dataTableOutput("state_locations")
-            ),
-            div(
-              class = "col-lg-12 col-sm-6",
-              DT::dataTableOutput("state_meta_tbl")
-            )  
-          )
-       )
-    )
-  ),
-  fluidRow(
-    br(),
-    hr(),
-    column(
-      width = 6,
-      fluidRow(
-        column(
-          width = 12,
-          class = "text-center",
-          h2(
-            textOutput("hospitals_tbl_title")
-          )
-        ),
-        column(
-          width = 12,
-          DT::dataTableOutput("hospitals_tbl")
-        )
-      )
-    ),
-    column(
-      width = 6,
-      fluidRow(
-        column(
-          width = 12,
-          class = "text-center",
-          h2(
-            textOutput("single_hospital_tbl_title")
-          )
-        ),
-        column(
-          width = 12,
-          DT::dataTableOutput("single_hospital_tbl")
-        )
-      )
-    ),
-    br()
-  )
+    )#,
+    # div(
+    #   class = "col-sm-offset-3 col-sm-9 col-lg-offset-0 col-lg-2",
+    #   wellPanel(
+    #     fluidRow(
+    #       column(
+    #         width = 12,
+    #           class = "text-center",
+    #           h3(
+    #             textOutput("sel_state_name")
+    #           )
+    #         ),
+    #         div(
+    #           class = "col-lg-12 col-sm-6",
+    #           DT::dataTableOutput("state_locations")
+    #         ),
+    #         div(
+    #           class = "col-lg-12 col-sm-6",
+    #           DT::dataTableOutput("state_meta_tbl")
+    #         )  
+    #       )
+    #    )
+    # )
+  )#,
+  # fluidRow(
+  #   br(),
+  #   hr(),
+  #   column(
+  #     width = 6,
+  #     fluidRow(
+  #       column(
+  #         width = 12,
+  #         class = "text-center",
+  #         h2(
+  #           textOutput("hospitals_tbl_title")
+  #         )
+  #       ),
+  #       column(
+  #         width = 12,
+  #         DT::dataTableOutput("hospitals_tbl")
+  #       )
+  #     )
+  #   ),
+  #   column(
+  #     width = 6,
+  #     fluidRow(
+  #       column(
+  #         width = 12,
+  #         class = "text-center",
+  #         h2(
+  #           textOutput("single_hospital_tbl_title")
+  #         )
+  #       ),
+  #       column(
+  #         width = 12,
+  #         DT::dataTableOutput("single_hospital_tbl")
+  #       )
+  #     )
+  #   ),
+  #   br()
+  # )
 )
 

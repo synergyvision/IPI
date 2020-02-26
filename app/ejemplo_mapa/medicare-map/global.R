@@ -29,6 +29,8 @@ nation_n_providers <- unique(hospitals$provider_id) %>%
 
 # download data to draw map
 mapdata <- download_map_data("countries/us/us-all")
+#mapdata <- download_map_data("countries/ve/ve-all")
+
 
 # highcharter options 
 hcoptslang <- getOption("highcharter.lang")
