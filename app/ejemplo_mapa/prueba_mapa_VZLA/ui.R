@@ -1,5 +1,6 @@
 
 fluidPage(
+  #ENCABEZADO
   theme = shinytheme("flatly"),
   includeCSS("www/style.css"),
   tags$head(
@@ -24,33 +25,12 @@ fluidPage(
       windowTitle = "Medicare Spending"
     )
   ),
-  # absolutePanel(
-  #   draggable = TRUE,
-  #   top = 150,
-  #   right = 10,
-  #   width = 250,
-  #   wellPanel(
-  #     fluidRow(
-  #       column(
-  #         width = 12,
-  #         class = "text-center",
-  #         h3(
-  #           textOutput("sel_state_name")
-  #         )
-  #       ),
-  #       column(
-  #         width = 12,
-  #         DT::dataTableOutput("state_locations"),
-  #         DT::dataTableOutput("state_meta_tbl")
-  #       )  
-  #     )
-  #   )
-  # ),
+  #PANEL LATERAL DE SELECCION
   fluidRow(
     column(
       width = 3,
       wellPanel(
-        h3("Claim Filters", class = "text-center"),
+        h3("Filtros", class = "text-center"),
         br(),
         checkboxGroupInput(
           inputId = "period_filter",
@@ -74,6 +54,7 @@ fluidPage(
         )
       )
     ),
+    #GRAFICO
     div(
       class = "col-sm-9 col-lg-7",
       highchartOutput(
@@ -81,6 +62,8 @@ fluidPage(
         height = 600
       )
     ),
+    #TITULO QUE ME IMPORTA Y PAR DE TABLAS
+    #QUE ESTAN ATADAS A LA SELECCION QUE YO HAGA
     div(
       class = "col-sm-offset-3 col-sm-9 col-lg-offset-0 col-lg-2",
       wellPanel(
@@ -103,43 +86,7 @@ fluidPage(
           )
        )
     )
-  ),
-  fluidRow(
-    br(),
-    hr(),
-    column(
-      width = 6,
-      fluidRow(
-        column(
-          width = 12,
-          class = "text-center",
-          h2(
-            textOutput("hospitals_tbl_title")
-          )
-        ),
-        column(
-          width = 12,
-          DT::dataTableOutput("hospitals_tbl")
-        )
-      )
-    ),
-    column(
-      width = 6,
-      fluidRow(
-        column(
-          width = 12,
-          class = "text-center",
-          h2(
-            textOutput("single_hospital_tbl_title")
-          )
-        ),
-        column(
-          width = 12,
-          DT::dataTableOutput("single_hospital_tbl")
-        )
-      )
-    ),
-    br()
   )
+ 
 )
 
