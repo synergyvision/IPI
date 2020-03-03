@@ -132,6 +132,7 @@ shinyUI(
                 menuItem("En Certificación", icon = icon("file"),tabName = "ec",
                          menuSubItem("Resultado Técnico por Cliente", tabName = "ec_rtc", icon = icon(" "))
                 ),
+                menuItem("Mapa", icon = icon("globe-americas"),tabName = "map"),
 
                             menuItem("Acerca", icon = icon("exclamation-circle"), tabName = "acerca"))
 
@@ -1743,6 +1744,76 @@ shinyUI(
                           
                       ) # final box
                       
+              ),
+              
+              #////////////#
+              #/// MAPA ///#
+              #////////////#
+              
+              tabItem(tabName = "map",
+                      h2("Mapa!"),
+                      #PANEL LATERAL DE SELECCION
+                      fluidRow(
+                        column(
+                          width = 3,
+                          wellPanel(
+                            h3("Filtros", class = "text-center"),
+                            br(),
+                            checkboxGroupInput(
+                              inputId = "period_filter",
+                              label = "Hospital Visit Period",
+                              choices = c(
+                                "During Visit" = "during",                              
+                                "1 to 30 days After Visit" = "after_1_30",
+                                "1 to 3 days Before Visit" = "prior_1_3"),
+                              selected = c("during", "after_1_30", "prior_1_3")
+                            ),
+                            shinyWidgets::pickerInput(
+                              inputId = "type_filter", 
+                              label = "Claim Type", 
+                              choices = type_choices, 
+                              options = list(
+                                `actions-box` = TRUE,
+                                `selected-text-format`="count"
+                              ), 
+                              multiple = TRUE,
+                              selected = type_choices
+                            )
+                          )
+                        ),
+                        #GRAFICO
+                        div(
+                          class = "col-sm-9 col-lg-7",
+                          highchartOutput(
+                            "states_map",
+                            height = 600
+                          )
+                        ),
+                        #TITULO QUE ME IMPORTA Y PAR DE TABLAS
+                        #QUE ESTAN ATADAS A LA SELECCION QUE YO HAGA
+                        div(
+                          class = "col-sm-offset-3 col-sm-9 col-lg-offset-0 col-lg-2",
+                          wellPanel(
+                            fluidRow(
+                              column(
+                                width = 12,
+                                class = "text-center",
+                                h3(
+                                  textOutput("sel_state_name")
+                                )
+                              ),
+                              div(
+                                class = "col-lg-12 col-sm-6",
+                                DT::dataTableOutput("state_locations")
+                              ),
+                              div(
+                                class = "col-lg-12 col-sm-6",
+                                DT::dataTableOutput("state_meta_tbl")
+                              )
+                            )
+                          )
+                        )
+                      )
               ),
               
               #//////////////#

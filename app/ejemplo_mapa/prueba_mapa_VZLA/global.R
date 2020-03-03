@@ -8,14 +8,16 @@ library(shinythemes)
 library(tychobratools)
 
 # load data
-if (file.exists("spending-cleaned.RDS")) {
-  hospitals <- readRDS("spending-cleaned.RDS")
-  states <- readRDS("spending-state.RDS")
-} else {
+#if (file.exists("spending-cleaned.RDS")) {
+  #hospitals <- readRDS("spending-cleaned.RDS")
+  #states <- readRDS("spending-state.RDS")
+  hospitals <- read.csv("~/IPI/app/ejemplo_mapa/prueba_mapa_VZLA/data/hospitals_ven.txt", sep="")
+  states <- read.csv("~/IPI/app/ejemplo_mapa/prueba_mapa_VZLA/data/states_ven.txt", sep="")
+ # } else {
   # see "data-prep.R" file.  It will create the `dat` data frame
   # and load it in the global environment
-  source("data-prep.R")
-}
+  #source("data-prep.R")
+#}
 
 # choice options for inputs
 period_choices <- unique(states$period)

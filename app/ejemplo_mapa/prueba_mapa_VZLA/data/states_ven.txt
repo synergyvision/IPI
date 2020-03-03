@@ -1,0 +1,1051 @@
+"state" "period" "claim_type" "avg_state"
+"1" "ZU" "after_1_30" "Carrier" 904
+"2" "PO" "after_1_30" "Durable Medical Equipment" 73
+"3" "SU" "after_1_30" "Home Health Agency" 576
+"4" "LA" "after_1_30" "Hospice" 153
+"5" "DP" "after_1_30" "Inpatient" 1958
+"6" "CA" "after_1_30" "Outpatient" 915
+"7" "TA" "after_1_30" "Skilled Nursing Facility" 2909
+"8" "AM" "during" "Carrier" 1484
+"9" "ME" "during" "Durable Medical Equipment" 15
+"10" "AR" "during" "Home Health Agency" 0
+"11" "AP" "during" "Hospice" 0
+"12" "DP" "during" "Inpatient" 11010
+"13" "AP" "during" "Outpatient" 0
+"14" "TR" "during" "Skilled Nursing Facility" 0
+"15" "DA" "prior_1_3" "Carrier" 655
+"16" "NE" "prior_1_3" "Durable Medical Equipment" 7
+"17" "SU" "prior_1_3" "Home Health Agency" 7
+"18" "AR" "prior_1_3" "Hospice" 0
+"19" "DF" "prior_1_3" "Inpatient" 6
+"20" "CO" "prior_1_3" "Outpatient" 188
+"21" "CA" "prior_1_3" "Skilled Nursing Facility" 1
+"22" "AM" "after_1_30" "Carrier" 1142
+"23" "ME" "after_1_30" "Durable Medical Equipment" 103
+"24" "ME" "after_1_30" "Home Health Agency" 999
+"25" "TR" "after_1_30" "Hospice" 198
+"26" "NE" "after_1_30" "Inpatient" 3004
+"27" "GU" "after_1_30" "Outpatient" 705
+"28" "LA" "after_1_30" "Skilled Nursing Facility" 2630
+"29" "MI" "during" "Carrier" 1495
+"30" "TR" "during" "Durable Medical Equipment" 22
+"31" "DF" "during" "Home Health Agency" 0
+"32" "SU" "during" "Hospice" 0
+"33" "AR" "during" "Inpatient" 9801
+"34" "FA" "during" "Outpatient" 0
+"35" "NE" "during" "Skilled Nursing Facility" 0
+"36" "DP" "prior_1_3" "Carrier" 537
+"37" "DF" "prior_1_3" "Durable Medical Equipment" 8
+"38" "AM" "prior_1_3" "Home Health Agency" 16
+"39" "VA" "prior_1_3" "Hospice" 1
+"40" "ZU" "prior_1_3" "Inpatient" 7
+"41" "AP" "prior_1_3" "Outpatient" 108
+"42" "DA" "prior_1_3" "Skilled Nursing Facility" 2
+"43" "CO" "after_1_30" "Carrier" 1036
+"44" "DA" "after_1_30" "Durable Medical Equipment" 97
+"45" "BO" "after_1_30" "Home Health Agency" 734
+"46" "VA" "after_1_30" "Hospice" 152
+"47" "LA" "after_1_30" "Inpatient" 3717
+"48" "BA" "after_1_30" "Outpatient" 789
+"49" "NE" "after_1_30" "Skilled Nursing Facility" 2576
+"50" "AR" "during" "Carrier" 1341
+"51" "VA" "during" "Durable Medical Equipment" 28
+"52" "CA" "during" "Home Health Agency" 0
+"53" "AR" "during" "Hospice" 0
+"54" "CA" "during" "Inpatient" 10127
+"55" "DF" "during" "Outpatient" 0
+"56" "AM" "during" "Skilled Nursing Facility" 0
+"57" "AN" "prior_1_3" "Carrier" 562
+"58" "TR" "prior_1_3" "Durable Medical Equipment" 10
+"59" "DF" "prior_1_3" "Home Health Agency" 12
+"60" "LA" "prior_1_3" "Hospice" 1
+"61" "MI" "prior_1_3" "Inpatient" 9
+"62" "AM" "prior_1_3" "Outpatient" 179
+"63" "AR" "prior_1_3" "Skilled Nursing Facility" 2
+"64" "AR" "after_1_30" "Carrier" 1403
+"65" "FA" "after_1_30" "Durable Medical Equipment" 86
+"66" "VA" "after_1_30" "Home Health Agency" 715
+"67" "DF" "after_1_30" "Hospice" 172
+"68" "FA" "after_1_30" "Inpatient" 2886
+"69" "BO" "after_1_30" "Outpatient" 788
+"70" "ZU" "after_1_30" "Skilled Nursing Facility" 2112
+"71" "ZU" "during" "Carrier" 1839
+"72" "GU" "during" "Durable Medical Equipment" 27
+"73" "YA" "during" "Home Health Agency" 0
+"74" "GU" "during" "Hospice" 0
+"75" "AM" "during" "Inpatient" 11029
+"76" "GU" "during" "Outpatient" 0
+"77" "AM" "during" "Skilled Nursing Facility" 0
+"78" "AM" "prior_1_3" "Carrier" 673
+"79" "DA" "prior_1_3" "Durable Medical Equipment" 8
+"80" "SU" "prior_1_3" "Home Health Agency" 8
+"81" "YA" "prior_1_3" "Hospice" 1
+"82" "DF" "prior_1_3" "Inpatient" 5
+"83" "GU" "prior_1_3" "Outpatient" 152
+"84" "PO" "prior_1_3" "Skilled Nursing Facility" 1
+"85" "CA" "after_1_30" "Carrier" 1250
+"86" "BO" "after_1_30" "Durable Medical Equipment" 88
+"87" "ME" "after_1_30" "Home Health Agency" 849
+"88" "CO" "after_1_30" "Hospice" 156
+"89" "CO" "after_1_30" "Inpatient" 2641
+"90" "BA" "after_1_30" "Outpatient" 769
+"91" "BA" "after_1_30" "Skilled Nursing Facility" 3762
+"92" "TR" "during" "Carrier" 1651
+"93" "NE" "during" "Durable Medical Equipment" 17
+"94" "PO" "during" "Home Health Agency" 0
+"95" "AR" "during" "Hospice" 0
+"96" "AP" "during" "Inpatient" 10415
+"97" "BA" "during" "Outpatient" 0
+"98" "MO" "during" "Skilled Nursing Facility" 0
+"99" "DP" "prior_1_3" "Carrier" 585
+"100" "DF" "prior_1_3" "Durable Medical Equipment" 8
+"101" "CO" "prior_1_3" "Home Health Agency" 13
+"102" "VA" "prior_1_3" "Hospice" 0
+"103" "TA" "prior_1_3" "Inpatient" 4
+"104" "AP" "prior_1_3" "Outpatient" 93
+"105" "PO" "prior_1_3" "Skilled Nursing Facility" 3
+"106" "CO" "after_1_30" "Carrier" 1055
+"107" "AM" "after_1_30" "Durable Medical Equipment" 106
+"108" "AR" "after_1_30" "Home Health Agency" 765
+"109" "BA" "after_1_30" "Hospice" 131
+"110" "ME" "after_1_30" "Inpatient" 2254
+"111" "LA" "after_1_30" "Outpatient" 865
+"112" "MI" "after_1_30" "Skilled Nursing Facility" 3122
+"113" "DA" "during" "Carrier" 1652
+"114" "AM" "during" "Durable Medical Equipment" 21
+"115" "TA" "during" "Home Health Agency" 0
+"116" "CO" "during" "Hospice" 0
+"117" "VA" "during" "Inpatient" 11543
+"118" "TR" "during" "Outpatient" 0
+"119" "AR" "during" "Skilled Nursing Facility" 0
+"120" "DP" "prior_1_3" "Carrier" 603
+"121" "FA" "prior_1_3" "Durable Medical Equipment" 9
+"122" "BA" "prior_1_3" "Home Health Agency" 10
+"123" "BO" "prior_1_3" "Hospice" 0
+"124" "NE" "prior_1_3" "Inpatient" 6
+"125" "CA" "prior_1_3" "Outpatient" 238
+"126" "PO" "prior_1_3" "Skilled Nursing Facility" 2
+"127" "TA" "after_1_30" "Carrier" 1244
+"128" "AP" "after_1_30" "Durable Medical Equipment" 70
+"129" "DA" "after_1_30" "Home Health Agency" 1122
+"130" "SU" "after_1_30" "Hospice" 113
+"131" "DP" "after_1_30" "Inpatient" 2233
+"132" "AM" "after_1_30" "Outpatient" 853
+"133" "LA" "after_1_30" "Skilled Nursing Facility" 4136
+"134" "CA" "during" "Carrier" 1491
+"135" "FA" "during" "Durable Medical Equipment" 10
+"136" "CA" "during" "Home Health Agency" 0
+"137" "TA" "during" "Hospice" 0
+"138" "CO" "during" "Inpatient" 9698
+"139" "FA" "during" "Outpatient" 0
+"140" "DP" "during" "Skilled Nursing Facility" 0
+"141" "DA" "prior_1_3" "Carrier" 598
+"142" "AR" "prior_1_3" "Durable Medical Equipment" 6
+"143" "GU" "prior_1_3" "Home Health Agency" 19
+"144" "ZU" "prior_1_3" "Hospice" 0
+"145" "SU" "prior_1_3" "Inpatient" 3
+"146" "AN" "prior_1_3" "Outpatient" 91
+"147" "AR" "prior_1_3" "Skilled Nursing Facility" 3
+"148" "SU" "after_1_30" "Carrier" 1193
+"149" "CA" "after_1_30" "Durable Medical Equipment" 107
+"150" "YA" "after_1_30" "Home Health Agency" 781
+"151" "NU" "after_1_30" "Hospice" 182
+"152" "MO" "after_1_30" "Inpatient" 2943
+"153" "PO" "after_1_30" "Outpatient" 897
+"154" "AP" "after_1_30" "Skilled Nursing Facility" 3126
+"155" "VA" "during" "Carrier" 1745
+"156" "CA" "during" "Durable Medical Equipment" 22
+"157" "FA" "during" "Home Health Agency" 0
+"158" "LA" "during" "Hospice" 0
+"159" "ME" "during" "Inpatient" 10990
+"160" "DP" "during" "Outpatient" 0
+"161" "AP" "during" "Skilled Nursing Facility" 0
+"162" "DF" "prior_1_3" "Carrier" 575
+"163" "YA" "prior_1_3" "Durable Medical Equipment" 8
+"164" "GU" "prior_1_3" "Home Health Agency" 8
+"165" "YA" "prior_1_3" "Hospice" 1
+"166" "DA" "prior_1_3" "Inpatient" 14
+"167" "CA" "prior_1_3" "Outpatient" 115
+"168" "AM" "prior_1_3" "Skilled Nursing Facility" 2
+"169" "AN" "after_1_30" "Carrier" 1193
+"170" "AN" "after_1_30" "Durable Medical Equipment" 107
+"171" "BA" "after_1_30" "Home Health Agency" 781
+"172" "NE" "after_1_30" "Hospice" 182
+"173" "LA" "after_1_30" "Inpatient" 2943
+"174" "TR" "after_1_30" "Outpatient" 897
+"175" "MI" "after_1_30" "Skilled Nursing Facility" 3126
+"176" "NE" "during" "Carrier" 1745
+"177" "BA" "during" "Durable Medical Equipment" 22
+"178" "LA" "during" "Home Health Agency" 0
+"179" "AR" "during" "Hospice" 0
+"180" "BO" "during" "Inpatient" 10990
+"181" "MI" "during" "Outpatient" 0
+"182" "TA" "during" "Skilled Nursing Facility" 0
+"183" "TA" "prior_1_3" "Carrier" 575
+"184" "YA" "prior_1_3" "Durable Medical Equipment" 8
+"185" "BA" "prior_1_3" "Home Health Agency" 8
+"186" "LA" "prior_1_3" "Hospice" 1
+"187" "PO" "prior_1_3" "Inpatient" 14
+"188" "NE" "prior_1_3" "Outpatient" 115
+"189" "PO" "prior_1_3" "Skilled Nursing Facility" 2
+"190" "LA" "after_1_30" "Carrier" 1415
+"191" "ZU" "after_1_30" "Durable Medical Equipment" 93
+"192" "CA" "after_1_30" "Home Health Agency" 1040
+"193" "SU" "after_1_30" "Hospice" 185
+"194" "MI" "after_1_30" "Inpatient" 2949
+"195" "AR" "after_1_30" "Outpatient" 672
+"196" "GU" "after_1_30" "Skilled Nursing Facility" 3391
+"197" "GU" "during" "Carrier" 1711
+"198" "SU" "during" "Durable Medical Equipment" 19
+"199" "BA" "during" "Home Health Agency" 0
+"200" "MI" "during" "Hospice" 0
+"201" "YA" "during" "Inpatient" 9800
+"202" "BA" "during" "Outpatient" 0
+"203" "DA" "during" "Skilled Nursing Facility" 0
+"204" "AM" "prior_1_3" "Carrier" 604
+"205" "MI" "prior_1_3" "Durable Medical Equipment" 8
+"206" "AR" "prior_1_3" "Home Health Agency" 19
+"207" "DP" "prior_1_3" "Hospice" 1
+"208" "MI" "prior_1_3" "Inpatient" 6
+"209" "MI" "prior_1_3" "Outpatient" 72
+"210" "CA" "prior_1_3" "Skilled Nursing Facility" 2
+"211" "BA" "after_1_30" "Carrier" 1212
+"212" "MI" "after_1_30" "Durable Medical Equipment" 93
+"213" "CO" "after_1_30" "Home Health Agency" 805
+"214" "DA" "after_1_30" "Hospice" 191
+"215" "NE" "after_1_30" "Inpatient" 2829
+"216" "DP" "after_1_30" "Outpatient" 963
+"217" "CO" "after_1_30" "Skilled Nursing Facility" 2545
+"218" "PO" "during" "Carrier" 1500
+"219" "TA" "during" "Durable Medical Equipment" 20
+"220" "ZU" "during" "Home Health Agency" 0
+"221" "AP" "during" "Hospice" 0
+"222" "CO" "during" "Inpatient" 10093
+"223" "TR" "during" "Outpatient" 0
+"224" "NE" "during" "Skilled Nursing Facility" 0
+"225" "SU" "prior_1_3" "Carrier" 576
+"226" "TR" "prior_1_3" "Durable Medical Equipment" 8
+"227" "AP" "prior_1_3" "Home Health Agency" 12
+"228" "TA" "prior_1_3" "Hospice" 1
+"229" "SU" "prior_1_3" "Inpatient" 6
+"230" "AN" "prior_1_3" "Outpatient" 119
+"231" "BO" "prior_1_3" "Skilled Nursing Facility" 2
+"232" "DF" "after_1_30" "Carrier" 901
+"233" "TR" "after_1_30" "Durable Medical Equipment" 50
+"234" "CA" "after_1_30" "Home Health Agency" 411
+"235" "LA" "after_1_30" "Hospice" 202
+"236" "FA" "after_1_30" "Inpatient" 2169
+"237" "AN" "after_1_30" "Outpatient" 962
+"238" "NE" "after_1_30" "Skilled Nursing Facility" 3312
+"239" "PO" "during" "Carrier" 1474
+"240" "NU" "during" "Durable Medical Equipment" 13
+"241" "GU" "during" "Home Health Agency" 0
+"242" "BA" "during" "Hospice" 0
+"243" "FA" "during" "Inpatient" 10708
+"244" "YA" "during" "Outpatient" 0
+"245" "DF" "during" "Skilled Nursing Facility" 0
+"246" "DF" "prior_1_3" "Carrier" 706
+"247" "NE" "prior_1_3" "Durable Medical Equipment" 3
+"248" "TR" "prior_1_3" "Home Health Agency" 6
+"249" "DP" "prior_1_3" "Hospice" 0
+"250" "NE" "prior_1_3" "Inpatient" 4
+"251" "CO" "prior_1_3" "Outpatient" 140
+"252" "DP" "prior_1_3" "Skilled Nursing Facility" 1
+"253" "ME" "after_1_30" "Carrier" 903
+"254" "DF" "after_1_30" "Durable Medical Equipment" 76
+"255" "DF" "after_1_30" "Home Health Agency" 494
+"256" "MO" "after_1_30" "Hospice" 146
+"257" "NU" "after_1_30" "Inpatient" 2048
+"258" "MI" "after_1_30" "Outpatient" 1016
+"259" "DA" "after_1_30" "Skilled Nursing Facility" 2964
+"260" "NU" "during" "Carrier" 1396
+"261" "AN" "during" "Durable Medical Equipment" 22
+"262" "SU" "during" "Home Health Agency" 0
+"263" "TA" "during" "Hospice" 0
+"264" "MO" "during" "Inpatient" 10244
+"265" "MO" "during" "Outpatient" 0
+"266" "FA" "during" "Skilled Nursing Facility" 0
+"267" "MI" "prior_1_3" "Carrier" 524
+"268" "PO" "prior_1_3" "Durable Medical Equipment" 7
+"269" "AP" "prior_1_3" "Home Health Agency" 6
+"270" "DP" "prior_1_3" "Hospice" 0
+"271" "DA" "prior_1_3" "Inpatient" 7
+"272" "VA" "prior_1_3" "Outpatient" 323
+"273" "DA" "prior_1_3" "Skilled Nursing Facility" 2
+"274" "LA" "after_1_30" "Carrier" 711
+"275" "BA" "after_1_30" "Durable Medical Equipment" 80
+"276" "CA" "after_1_30" "Home Health Agency" 860
+"277" "DA" "after_1_30" "Hospice" 173
+"278" "FA" "after_1_30" "Inpatient" 2165
+"279" "GU" "after_1_30" "Outpatient" 1042
+"280" "YA" "after_1_30" "Skilled Nursing Facility" 2752
+"281" "MI" "during" "Carrier" 1406
+"282" "SU" "during" "Durable Medical Equipment" 19
+"283" "ME" "during" "Home Health Agency" 0
+"284" "DA" "during" "Hospice" 0
+"285" "AP" "during" "Inpatient" 11061
+"286" "SU" "during" "Outpatient" 0
+"287" "DA" "during" "Skilled Nursing Facility" 0
+"288" "AP" "prior_1_3" "Carrier" 655
+"289" "DP" "prior_1_3" "Durable Medical Equipment" 7
+"290" "DP" "prior_1_3" "Home Health Agency" 11
+"291" "AP" "prior_1_3" "Hospice" 1
+"292" "DA" "prior_1_3" "Inpatient" 5
+"293" "ZU" "prior_1_3" "Outpatient" 309
+"294" "NE" "prior_1_3" "Skilled Nursing Facility" 2
+"295" "PO" "after_1_30" "Carrier" 1262
+"296" "DA" "after_1_30" "Durable Medical Equipment" 87
+"297" "CA" "after_1_30" "Home Health Agency" 774
+"298" "NE" "after_1_30" "Hospice" 124
+"299" "AR" "after_1_30" "Inpatient" 2709
+"300" "CO" "after_1_30" "Outpatient" 918
+"301" "ME" "after_1_30" "Skilled Nursing Facility" 3763
+"302" "DP" "during" "Carrier" 1595
+"303" "AN" "during" "Durable Medical Equipment" 20
+"304" "FA" "during" "Home Health Agency" 0
+"305" "NE" "during" "Hospice" 0
+"306" "AN" "during" "Inpatient" 9812
+"307" "ZU" "during" "Outpatient" 0
+"308" "BA" "during" "Skilled Nursing Facility" 0
+"309" "DA" "prior_1_3" "Carrier" 564
+"310" "BO" "prior_1_3" "Durable Medical Equipment" 7
+"311" "AP" "prior_1_3" "Home Health Agency" 11
+"312" "FA" "prior_1_3" "Hospice" 0
+"313" "PO" "prior_1_3" "Inpatient" 6
+"314" "FA" "prior_1_3" "Outpatient" 125
+"315" "ME" "prior_1_3" "Skilled Nursing Facility" 3
+"316" "FA" "after_1_30" "Carrier" 1063
+"317" "TA" "after_1_30" "Durable Medical Equipment" 87
+"318" "BA" "after_1_30" "Home Health Agency" 594
+"319" "BO" "after_1_30" "Hospice" 125
+"320" "YA" "after_1_30" "Inpatient" 2834
+"321" "LA" "after_1_30" "Outpatient" 1006
+"322" "YA" "after_1_30" "Skilled Nursing Facility" 3749
+"323" "DA" "during" "Carrier" 1453
+"324" "AR" "during" "Durable Medical Equipment" 18
+"325" "MI" "during" "Home Health Agency" 0
+"326" "TR" "during" "Hospice" 0
+"327" "DA" "during" "Inpatient" 10092
+"328" "MI" "during" "Outpatient" 0
+"329" "TR" "during" "Skilled Nursing Facility" 0
+"330" "YA" "prior_1_3" "Carrier" 535
+"331" "NE" "prior_1_3" "Durable Medical Equipment" 8
+"332" "CO" "prior_1_3" "Home Health Agency" 9
+"333" "FA" "prior_1_3" "Hospice" 0
+"334" "AN" "prior_1_3" "Inpatient" 6
+"335" "BO" "prior_1_3" "Outpatient" 201
+"336" "AM" "prior_1_3" "Skilled Nursing Facility" 2
+"337" "AP" "after_1_30" "Carrier" 984
+"338" "ME" "after_1_30" "Durable Medical Equipment" 101
+"339" "SU" "after_1_30" "Home Health Agency" 654
+"340" "VA" "after_1_30" "Hospice" 134
+"341" "CO" "after_1_30" "Inpatient" 2731
+"342" "PO" "after_1_30" "Outpatient" 912
+"343" "CA" "after_1_30" "Skilled Nursing Facility" 3095
+"344" "DA" "during" "Carrier" 1540
+"345" "CO" "during" "Durable Medical Equipment" 19
+"346" "AR" "during" "Home Health Agency" 0
+"347" "MI" "during" "Hospice" 0
+"348" "CA" "during" "Inpatient" 10544
+"349" "ME" "during" "Outpatient" 0
+"350" "DA" "during" "Skilled Nursing Facility" 0
+"351" "SU" "prior_1_3" "Carrier" 538
+"352" "ZU" "prior_1_3" "Durable Medical Equipment" 8
+"353" "NU" "prior_1_3" "Home Health Agency" 10
+"354" "FA" "prior_1_3" "Hospice" 0
+"355" "PO" "prior_1_3" "Inpatient" 8
+"356" "AR" "prior_1_3" "Outpatient" 186
+"357" "AN" "prior_1_3" "Skilled Nursing Facility" 2
+"358" "BO" "after_1_30" "Carrier" 1034
+"359" "AR" "after_1_30" "Durable Medical Equipment" 107
+"360" "AM" "after_1_30" "Home Health Agency" 794
+"361" "AR" "after_1_30" "Hospice" 131
+"362" "AN" "after_1_30" "Inpatient" 2928
+"363" "DF" "after_1_30" "Outpatient" 880
+"364" "FA" "after_1_30" "Skilled Nursing Facility" 3097
+"365" "DP" "during" "Carrier" 1418
+"366" "BA" "during" "Durable Medical Equipment" 25
+"367" "ME" "during" "Home Health Agency" 0
+"368" "YA" "during" "Hospice" 0
+"369" "YA" "during" "Inpatient" 9857
+"370" "DA" "during" "Outpatient" 0
+"371" "CO" "during" "Skilled Nursing Facility" 0
+"372" "ME" "prior_1_3" "Carrier" 617
+"373" "NE" "prior_1_3" "Durable Medical Equipment" 10
+"374" "ZU" "prior_1_3" "Home Health Agency" 13
+"375" "TA" "prior_1_3" "Hospice" 0
+"376" "CA" "prior_1_3" "Inpatient" 10
+"377" "SU" "prior_1_3" "Outpatient" 158
+"378" "MO" "prior_1_3" "Skilled Nursing Facility" 3
+"379" "AR" "after_1_30" "Carrier" 1092
+"380" "VA" "after_1_30" "Durable Medical Equipment" 117
+"381" "MO" "after_1_30" "Home Health Agency" 923
+"382" "CO" "after_1_30" "Hospice" 201
+"383" "MI" "after_1_30" "Inpatient" 4269
+"384" "BA" "after_1_30" "Outpatient" 1007
+"385" "AN" "after_1_30" "Skilled Nursing Facility" 2621
+"386" "BA" "during" "Carrier" 1446
+"387" "DA" "during" "Durable Medical Equipment" 27
+"388" "TA" "during" "Home Health Agency" 0
+"389" "AR" "during" "Hospice" 0
+"390" "CO" "during" "Inpatient" 10015
+"391" "AM" "during" "Outpatient" 0
+"392" "AN" "during" "Skilled Nursing Facility" 0
+"393" "YA" "prior_1_3" "Carrier" 575
+"394" "GU" "prior_1_3" "Durable Medical Equipment" 9
+"395" "DP" "prior_1_3" "Home Health Agency" 20
+"396" "ME" "prior_1_3" "Hospice" 1
+"397" "LA" "prior_1_3" "Inpatient" 8
+"398" "BA" "prior_1_3" "Outpatient" 160
+"399" "DF" "prior_1_3" "Skilled Nursing Facility" 3
+"400" "FA" "after_1_30" "Carrier" 1190
+"401" "FA" "after_1_30" "Durable Medical Equipment" 71
+"402" "ME" "after_1_30" "Home Health Agency" 1192
+"403" "AR" "after_1_30" "Hospice" 113
+"404" "SU" "after_1_30" "Inpatient" 2752
+"405" "NU" "after_1_30" "Outpatient" 843
+"406" "GU" "after_1_30" "Skilled Nursing Facility" 3003
+"407" "ME" "during" "Carrier" 1378
+"408" "BA" "during" "Durable Medical Equipment" 10
+"409" "AN" "during" "Home Health Agency" 0
+"410" "CA" "during" "Hospice" 0
+"411" "FA" "during" "Inpatient" 9480
+"412" "AP" "during" "Outpatient" 0
+"413" "BA" "during" "Skilled Nursing Facility" 0
+"414" "DP" "prior_1_3" "Carrier" 599
+"415" "BO" "prior_1_3" "Durable Medical Equipment" 6
+"416" "AR" "prior_1_3" "Home Health Agency" 17
+"417" "NE" "prior_1_3" "Hospice" 0
+"418" "AR" "prior_1_3" "Inpatient" 8
+"419" "DA" "prior_1_3" "Outpatient" 127
+"420" "VA" "prior_1_3" "Skilled Nursing Facility" 2
+"421" "BA" "after_1_30" "Carrier" 834
+"422" "CO" "after_1_30" "Durable Medical Equipment" 65
+"423" "DF" "after_1_30" "Home Health Agency" 991
+"424" "AP" "after_1_30" "Hospice" 138
+"425" "DF" "after_1_30" "Inpatient" 2441
+"426" "DP" "after_1_30" "Outpatient" 971
+"427" "PO" "after_1_30" "Skilled Nursing Facility" 2837
+"428" "PO" "during" "Carrier" 1341
+"429" "ME" "during" "Durable Medical Equipment" 13
+"430" "FA" "during" "Home Health Agency" 0
+"431" "LA" "during" "Hospice" 0
+"432" "DP" "during" "Inpatient" 10120
+"433" "YA" "during" "Outpatient" 0
+"434" "AP" "during" "Skilled Nursing Facility" 0
+"435" "DP" "prior_1_3" "Carrier" 572
+"436" "AR" "prior_1_3" "Durable Medical Equipment" 6
+"437" "TA" "prior_1_3" "Home Health Agency" 13
+"438" "SU" "prior_1_3" "Hospice" 1
+"439" "GU" "prior_1_3" "Inpatient" 15
+"440" "LA" "prior_1_3" "Outpatient" 305
+"441" "AN" "prior_1_3" "Skilled Nursing Facility" 2
+"442" "NE" "after_1_30" "Carrier" 1180
+"443" "YA" "after_1_30" "Durable Medical Equipment" 89
+"444" "NE" "after_1_30" "Home Health Agency" 803
+"445" "TR" "after_1_30" "Hospice" 134
+"446" "PO" "after_1_30" "Inpatient" 2683
+"447" "DF" "after_1_30" "Outpatient" 874
+"448" "CO" "after_1_30" "Skilled Nursing Facility" 3017
+"449" "MO" "during" "Carrier" 1569
+"450" "TR" "during" "Durable Medical Equipment" 19
+"451" "YA" "during" "Home Health Agency" 0
+"452" "YA" "during" "Hospice" 0
+"453" "AN" "during" "Inpatient" 9980
+"454" "TR" "during" "Outpatient" 0
+"455" "SU" "during" "Skilled Nursing Facility" 0
+"456" "MI" "prior_1_3" "Carrier" 548
+"457" "LA" "prior_1_3" "Durable Medical Equipment" 8
+"458" "SU" "prior_1_3" "Home Health Agency" 11
+"459" "GU" "prior_1_3" "Hospice" 0
+"460" "GU" "prior_1_3" "Inpatient" 5
+"461" "CO" "prior_1_3" "Outpatient" 144
+"462" "CO" "prior_1_3" "Skilled Nursing Facility" 2
+"463" "CO" "after_1_30" "Carrier" 915
+"464" "DA" "after_1_30" "Durable Medical Equipment" 79
+"465" "AP" "after_1_30" "Home Health Agency" 476
+"466" "CA" "after_1_30" "Hospice" 145
+"467" "DP" "after_1_30" "Inpatient" 2162
+"468" "CO" "after_1_30" "Outpatient" 1051
+"469" "FA" "after_1_30" "Skilled Nursing Facility" 2837
+"470" "DA" "during" "Carrier" 1514
+"471" "LA" "during" "Durable Medical Equipment" 14
+"472" "YA" "during" "Home Health Agency" 0
+"473" "ME" "during" "Hospice" 0
+"474" "MI" "during" "Inpatient" 10956
+"475" "AN" "during" "Outpatient" 0
+"476" "SU" "during" "Skilled Nursing Facility" 0
+"477" "FA" "prior_1_3" "Carrier" 506
+"478" "AR" "prior_1_3" "Durable Medical Equipment" 7
+"479" "DA" "prior_1_3" "Home Health Agency" 7
+"480" "AN" "prior_1_3" "Hospice" 0
+"481" "DA" "prior_1_3" "Inpatient" 6
+"482" "MI" "prior_1_3" "Outpatient" 360
+"483" "BA" "prior_1_3" "Skilled Nursing Facility" 2
+"484" "PO" "after_1_30" "Carrier" 977
+"485" "MO" "after_1_30" "Durable Medical Equipment" 92
+"486" "BO" "after_1_30" "Home Health Agency" 686
+"487" "ZU" "after_1_30" "Hospice" 149
+"488" "DA" "after_1_30" "Inpatient" 2953
+"489" "SU" "after_1_30" "Outpatient" 1018
+"490" "BA" "after_1_30" "Skilled Nursing Facility" 2852
+"491" "DP" "during" "Carrier" 1449
+"492" "NE" "during" "Durable Medical Equipment" 23
+"493" "SU" "during" "Home Health Agency" 0
+"494" "TA" "during" "Hospice" 0
+"495" "ZU" "during" "Inpatient" 10289
+"496" "LA" "during" "Outpatient" 0
+"497" "FA" "during" "Skilled Nursing Facility" 0
+"498" "TA" "prior_1_3" "Carrier" 573
+"499" "ME" "prior_1_3" "Durable Medical Equipment" 8
+"500" "DP" "prior_1_3" "Home Health Agency" 8
+"501" "TR" "prior_1_3" "Hospice" 0
+"502" "SU" "prior_1_3" "Inpatient" 8
+"503" "DF" "prior_1_3" "Outpatient" 233
+"504" "AR" "prior_1_3" "Skilled Nursing Facility" 2
+"505" "AM" "after_1_30" "Carrier" 971
+"506" "NU" "after_1_30" "Durable Medical Equipment" 102
+"507" "BA" "after_1_30" "Home Health Agency" 898
+"508" "AP" "after_1_30" "Hospice" 193
+"509" "GU" "after_1_30" "Inpatient" 2831
+"510" "DF" "after_1_30" "Outpatient" 1026
+"511" "MI" "after_1_30" "Skilled Nursing Facility" 3341
+"512" "AP" "during" "Carrier" 1305
+"513" "ME" "during" "Durable Medical Equipment" 20
+"514" "NE" "during" "Home Health Agency" 0
+"515" "PO" "during" "Hospice" 0
+"516" "AR" "during" "Inpatient" 9439
+"517" "ZU" "during" "Outpatient" 0
+"518" "LA" "during" "Skilled Nursing Facility" 0
+"519" "TR" "prior_1_3" "Carrier" 543
+"520" "ME" "prior_1_3" "Durable Medical Equipment" 8
+"521" "AP" "prior_1_3" "Home Health Agency" 17
+"522" "SU" "prior_1_3" "Hospice" 1
+"523" "DF" "prior_1_3" "Inpatient" 4
+"524" "AM" "prior_1_3" "Outpatient" 221
+"525" "CA" "prior_1_3" "Skilled Nursing Facility" 3
+"526" "YA" "after_1_30" "Carrier" 656
+"527" "SU" "after_1_30" "Durable Medical Equipment" 59
+"528" "CA" "after_1_30" "Home Health Agency" 356
+"529" "VA" "after_1_30" "Hospice" 150
+"530" "MI" "after_1_30" "Inpatient" 1880
+"531" "FA" "after_1_30" "Outpatient" 1114
+"532" "DA" "after_1_30" "Skilled Nursing Facility" 2674
+"533" "BA" "during" "Carrier" 1497
+"534" "LA" "during" "Durable Medical Equipment" 14
+"535" "DP" "during" "Home Health Agency" 0
+"536" "YA" "during" "Hospice" 0
+"537" "PO" "during" "Inpatient" 11167
+"538" "AP" "during" "Outpatient" 0
+"539" "DF" "during" "Skilled Nursing Facility" 0
+"540" "DP" "prior_1_3" "Carrier" 535
+"541" "MI" "prior_1_3" "Durable Medical Equipment" 8
+"542" "AM" "prior_1_3" "Home Health Agency" 7
+"543" "TR" "prior_1_3" "Hospice" 0
+"544" "CA" "prior_1_3" "Inpatient" 7
+"545" "ME" "prior_1_3" "Outpatient" 417
+"546" "TA" "prior_1_3" "Skilled Nursing Facility" 1
+"547" "BO" "after_1_30" "Carrier" 1000
+"548" "MO" "after_1_30" "Durable Medical Equipment" 94
+"549" "FA" "after_1_30" "Home Health Agency" 810
+"550" "ZU" "after_1_30" "Hospice" 159
+"551" "MI" "after_1_30" "Inpatient" 2294
+"552" "ZU" "after_1_30" "Outpatient" 898
+"553" "MO" "after_1_30" "Skilled Nursing Facility" 2937
+"554" "GU" "during" "Carrier" 1438
+"555" "AN" "during" "Durable Medical Equipment" 23
+"556" "MI" "during" "Home Health Agency" 0
+"557" "LA" "during" "Hospice" 0
+"558" "SU" "during" "Inpatient" 10149
+"559" "DP" "during" "Outpatient" 0
+"560" "MI" "during" "Skilled Nursing Facility" 0
+"561" "BO" "prior_1_3" "Carrier" 564
+"562" "VA" "prior_1_3" "Durable Medical Equipment" 8
+"563" "BA" "prior_1_3" "Home Health Agency" 11
+"564" "AM" "prior_1_3" "Hospice" 1
+"565" "ZU" "prior_1_3" "Inpatient" 9
+"566" "AN" "prior_1_3" "Outpatient" 178
+"567" "DF" "prior_1_3" "Skilled Nursing Facility" 2
+"568" "GU" "after_1_30" "Carrier" 721
+"569" "LA" "after_1_30" "Durable Medical Equipment" 68
+"570" "DF" "after_1_30" "Home Health Agency" 376
+"571" "AR" "after_1_30" "Hospice" 105
+"572" "GU" "after_1_30" "Inpatient" 1971
+"573" "TR" "after_1_30" "Outpatient" 1334
+"574" "FA" "after_1_30" "Skilled Nursing Facility" 3230
+"575" "FA" "during" "Carrier" 1497
+"576" "CO" "during" "Durable Medical Equipment" 16
+"577" "AM" "during" "Home Health Agency" 0
+"578" "TA" "during" "Hospice" 0
+"579" "CO" "during" "Inpatient" 11054
+"580" "TA" "during" "Outpatient" 0
+"581" "AP" "during" "Skilled Nursing Facility" 0
+"582" "AM" "prior_1_3" "Carrier" 532
+"583" "AN" "prior_1_3" "Durable Medical Equipment" 6
+"584" "VA" "prior_1_3" "Home Health Agency" 3
+"585" "BO" "prior_1_3" "Hospice" 0
+"586" "MO" "prior_1_3" "Inpatient" 14
+"587" "TA" "prior_1_3" "Outpatient" 518
+"588" "TA" "prior_1_3" "Skilled Nursing Facility" 2
+"589" "NE" "after_1_30" "Carrier" 945
+"590" "CA" "after_1_30" "Durable Medical Equipment" 79
+"591" "DA" "after_1_30" "Home Health Agency" 591
+"592" "DF" "after_1_30" "Hospice" 120
+"593" "FA" "after_1_30" "Inpatient" 2326
+"594" "GU" "after_1_30" "Outpatient" 966
+"595" "BA" "after_1_30" "Skilled Nursing Facility" 3667
+"596" "GU" "during" "Carrier" 1593
+"597" "CA" "during" "Durable Medical Equipment" 20
+"598" "CA" "during" "Home Health Agency" 0
+"599" "FA" "during" "Hospice" 0
+"600" "VA" "during" "Inpatient" 10926
+"601" "GU" "during" "Outpatient" 0
+"602" "LA" "during" "Skilled Nursing Facility" 0
+"603" "FA" "prior_1_3" "Carrier" 509
+"604" "LA" "prior_1_3" "Durable Medical Equipment" 6
+"605" "TR" "prior_1_3" "Home Health Agency" 6
+"606" "MI" "prior_1_3" "Hospice" 0
+"607" "AP" "prior_1_3" "Inpatient" 6
+"608" "NU" "prior_1_3" "Outpatient" 309
+"609" "ZU" "prior_1_3" "Skilled Nursing Facility" 2
+"610" "AR" "after_1_30" "Carrier" 829
+"611" "BA" "after_1_30" "Durable Medical Equipment" 63
+"612" "PO" "after_1_30" "Home Health Agency" 1009
+"613" "YA" "after_1_30" "Hospice" 128
+"614" "NU" "after_1_30" "Inpatient" 2423
+"615" "PO" "after_1_30" "Outpatient" 903
+"616" "AR" "after_1_30" "Skilled Nursing Facility" 3271
+"617" "BA" "during" "Carrier" 1277
+"618" "BO" "during" "Durable Medical Equipment" 11
+"619" "YA" "during" "Home Health Agency" 0
+"620" "FA" "during" "Hospice" 0
+"621" "TR" "during" "Inpatient" 10001
+"622" "BO" "during" "Outpatient" 0
+"623" "TA" "during" "Skilled Nursing Facility" 0
+"624" "BA" "prior_1_3" "Carrier" 535
+"625" "DP" "prior_1_3" "Durable Medical Equipment" 6
+"626" "SU" "prior_1_3" "Home Health Agency" 14
+"627" "NE" "prior_1_3" "Hospice" 1
+"628" "DP" "prior_1_3" "Inpatient" 10
+"629" "CA" "prior_1_3" "Outpatient" 212
+"630" "PO" "prior_1_3" "Skilled Nursing Facility" 3
+"631" "TA" "after_1_30" "Carrier" 1535
+"632" "CA" "after_1_30" "Durable Medical Equipment" 76
+"633" "LA" "after_1_30" "Home Health Agency" 707
+"634" "MI" "after_1_30" "Hospice" 116
+"635" "PO" "after_1_30" "Inpatient" 2835
+"636" "TA" "after_1_30" "Outpatient" 804
+"637" "BO" "after_1_30" "Skilled Nursing Facility" 4512
+"638" "MO" "during" "Carrier" 1828
+"639" "AN" "during" "Durable Medical Equipment" 15
+"640" "CO" "during" "Home Health Agency" 0
+"641" "DP" "during" "Hospice" 0
+"642" "GU" "during" "Inpatient" 9558
+"643" "CA" "during" "Outpatient" 0
+"644" "TR" "during" "Skilled Nursing Facility" 0
+"645" "AM" "prior_1_3" "Carrier" 530
+"646" "CA" "prior_1_3" "Durable Medical Equipment" 7
+"647" "AN" "prior_1_3" "Home Health Agency" 9
+"648" "BA" "prior_1_3" "Hospice" 0
+"649" "BO" "prior_1_3" "Inpatient" 6
+"650" "CA" "prior_1_3" "Outpatient" 124
+"651" "DP" "prior_1_3" "Skilled Nursing Facility" 3
+"652" "BA" "after_1_30" "Carrier" 950
+"653" "YA" "after_1_30" "Durable Medical Equipment" 74
+"654" "AP" "after_1_30" "Home Health Agency" 714
+"655" "BA" "after_1_30" "Hospice" 169
+"656" "TA" "after_1_30" "Inpatient" 2850
+"657" "PO" "after_1_30" "Outpatient" 903
+"658" "VA" "after_1_30" "Skilled Nursing Facility" 2378
+"659" "FA" "during" "Carrier" 1285
+"660" "GU" "during" "Durable Medical Equipment" 15
+"661" "FA" "during" "Home Health Agency" 0
+"662" "CA" "during" "Hospice" 0
+"663" "CO" "during" "Inpatient" 10029
+"664" "ZU" "during" "Outpatient" 0
+"665" "SU" "during" "Skilled Nursing Facility" 0
+"666" "PO" "prior_1_3" "Carrier" 725
+"667" "MI" "prior_1_3" "Durable Medical Equipment" 6
+"668" "NE" "prior_1_3" "Home Health Agency" 9
+"669" "TA" "prior_1_3" "Hospice" 1
+"670" "DF" "prior_1_3" "Inpatient" 8
+"671" "MI" "prior_1_3" "Outpatient" 252
+"672" "ME" "prior_1_3" "Skilled Nursing Facility" 1
+"673" "FA" "after_1_30" "Carrier" 1557
+"674" "ME" "after_1_30" "Durable Medical Equipment" 82
+"675" "SU" "after_1_30" "Home Health Agency" 822
+"676" "TR" "after_1_30" "Hospice" 144
+"677" "ZU" "after_1_30" "Inpatient" 4675
+"678" "DF" "after_1_30" "Outpatient" 634
+"679" "AR" "after_1_30" "Skilled Nursing Facility" 2183
+"680" "DP" "during" "Carrier" 1663
+"681" "CO" "during" "Durable Medical Equipment" 14
+"682" "ME" "during" "Home Health Agency" 0
+"683" "AP" "during" "Hospice" 0
+"684" "AM" "during" "Inpatient" 10252
+"685" "LA" "during" "Outpatient" 0
+"686" "ME" "during" "Skilled Nursing Facility" 0
+"687" "AP" "prior_1_3" "Carrier" 771
+"688" "TA" "prior_1_3" "Durable Medical Equipment" 8
+"689" "AR" "prior_1_3" "Home Health Agency" 17
+"690" "BA" "prior_1_3" "Hospice" 0
+"691" "AR" "prior_1_3" "Inpatient" 7
+"692" "CO" "prior_1_3" "Outpatient" 172
+"693" "NE" "prior_1_3" "Skilled Nursing Facility" 1
+"694" "MO" "after_1_30" "Carrier" 1250
+"695" "TA" "after_1_30" "Durable Medical Equipment" 78
+"696" "NU" "after_1_30" "Home Health Agency" 750
+"697" "YA" "after_1_30" "Hospice" 83
+"698" "DF" "after_1_30" "Inpatient" 2377
+"699" "DP" "after_1_30" "Outpatient" 747
+"700" "SU" "after_1_30" "Skilled Nursing Facility" 3983
+"701" "DP" "during" "Carrier" 1617
+"702" "AN" "during" "Durable Medical Equipment" 15
+"703" "PO" "during" "Home Health Agency" 0
+"704" "ME" "during" "Hospice" 0
+"705" "PO" "during" "Inpatient" 9880
+"706" "FA" "during" "Outpatient" 0
+"707" "TR" "during" "Skilled Nursing Facility" 0
+"708" "NU" "prior_1_3" "Carrier" 523
+"709" "DF" "prior_1_3" "Durable Medical Equipment" 7
+"710" "GU" "prior_1_3" "Home Health Agency" 9
+"711" "NE" "prior_1_3" "Hospice" 0
+"712" "YA" "prior_1_3" "Inpatient" 5
+"713" "DP" "prior_1_3" "Outpatient" 105
+"714" "DA" "prior_1_3" "Skilled Nursing Facility" 3
+"715" "YA" "after_1_30" "Carrier" 1109
+"716" "YA" "after_1_30" "Durable Medical Equipment" 87
+"717" "AP" "after_1_30" "Home Health Agency" 796
+"718" "NU" "after_1_30" "Hospice" 153
+"719" "GU" "after_1_30" "Inpatient" 2833
+"720" "NE" "after_1_30" "Outpatient" 902
+"721" "CA" "after_1_30" "Skilled Nursing Facility" 3631
+"722" "NU" "during" "Carrier" 1526
+"723" "FA" "during" "Durable Medical Equipment" 18
+"724" "DA" "during" "Home Health Agency" 0
+"725" "ME" "during" "Hospice" 0
+"726" "CO" "during" "Inpatient" 10091
+"727" "CA" "during" "Outpatient" 0
+"728" "AP" "during" "Skilled Nursing Facility" 0
+"729" "AP" "prior_1_3" "Carrier" 597
+"730" "NE" "prior_1_3" "Durable Medical Equipment" 7
+"731" "CO" "prior_1_3" "Home Health Agency" 12
+"732" "DP" "prior_1_3" "Hospice" 0
+"733" "CA" "prior_1_3" "Inpatient" 11
+"734" "GU" "prior_1_3" "Outpatient" 165
+"735" "BA" "prior_1_3" "Skilled Nursing Facility" 2
+"736" "CA" "after_1_30" "Carrier" 950
+"737" "DF" "after_1_30" "Durable Medical Equipment" 99
+"738" "DA" "after_1_30" "Home Health Agency" 920
+"739" "BO" "after_1_30" "Hospice" 165
+"740" "BA" "after_1_30" "Inpatient" 3254
+"741" "VA" "after_1_30" "Outpatient" 843
+"742" "YA" "after_1_30" "Skilled Nursing Facility" 2818
+"743" "AR" "during" "Carrier" 1369
+"744" "LA" "during" "Durable Medical Equipment" 33
+"745" "AM" "during" "Home Health Agency" 0
+"746" "PO" "during" "Hospice" 0
+"747" "AM" "during" "Inpatient" 10318
+"748" "LA" "during" "Outpatient" 0
+"749" "BO" "during" "Skilled Nursing Facility" 0
+"750" "NU" "prior_1_3" "Carrier" 613
+"751" "AN" "prior_1_3" "Durable Medical Equipment" 9
+"752" "TR" "prior_1_3" "Home Health Agency" 19
+"753" "AM" "prior_1_3" "Hospice" 1
+"754" "NE" "prior_1_3" "Inpatient" 9
+"755" "NU" "prior_1_3" "Outpatient" 227
+"756" "AM" "prior_1_3" "Skilled Nursing Facility" 3
+"757" "BA" "after_1_30" "Carrier" 853
+"758" "AN" "after_1_30" "Durable Medical Equipment" 76
+"759" "AN" "after_1_30" "Home Health Agency" 558
+"760" "SU" "after_1_30" "Hospice" 168
+"761" "TA" "after_1_30" "Inpatient" 1750
+"762" "DA" "after_1_30" "Outpatient" 875
+"763" "TR" "after_1_30" "Skilled Nursing Facility" 2510
+"764" "SU" "during" "Carrier" 1462
+"765" "PO" "during" "Durable Medical Equipment" 14
+"766" "TR" "during" "Home Health Agency" 0
+"767" "PO" "during" "Hospice" 0
+"768" "AP" "during" "Inpatient" 11189
+"769" "DA" "during" "Outpatient" 0
+"770" "AP" "during" "Skilled Nursing Facility" 0
+"771" "DF" "prior_1_3" "Carrier" 654
+"772" "TA" "prior_1_3" "Durable Medical Equipment" 9
+"773" "MO" "prior_1_3" "Home Health Agency" 8
+"774" "PO" "prior_1_3" "Hospice" 0
+"775" "BO" "prior_1_3" "Inpatient" 4
+"776" "AN" "prior_1_3" "Outpatient" 230
+"777" "LA" "prior_1_3" "Skilled Nursing Facility" 1
+"778" "CO" "after_1_30" "Carrier" 1163
+"779" "NE" "after_1_30" "Durable Medical Equipment" 86
+"780" "CA" "after_1_30" "Home Health Agency" 910
+"781" "AP" "after_1_30" "Hospice" 131
+"782" "AP" "after_1_30" "Inpatient" 3249
+"783" "DP" "after_1_30" "Outpatient" 839
+"784" "ME" "after_1_30" "Skilled Nursing Facility" 2974
+"785" "FA" "during" "Carrier" 1543
+"786" "GU" "during" "Durable Medical Equipment" 18
+"787" "ME" "during" "Home Health Agency" 0
+"788" "ZU" "during" "Hospice" 0
+"789" "NE" "during" "Inpatient" 9844
+"790" "MI" "during" "Outpatient" 0
+"791" "DA" "during" "Skilled Nursing Facility" 0
+"792" "CA" "prior_1_3" "Carrier" 571
+"793" "BO" "prior_1_3" "Durable Medical Equipment" 7
+"794" "TR" "prior_1_3" "Home Health Agency" 12
+"795" "CO" "prior_1_3" "Hospice" 0
+"796" "MI" "prior_1_3" "Inpatient" 7
+"797" "DA" "prior_1_3" "Outpatient" 117
+"798" "ME" "prior_1_3" "Skilled Nursing Facility" 2
+"799" "NE" "after_1_30" "Carrier" 1186
+"800" "ZU" "after_1_30" "Durable Medical Equipment" 82
+"801" "AP" "after_1_30" "Home Health Agency" 1119
+"802" "LA" "after_1_30" "Hospice" 119
+"803" "AN" "after_1_30" "Inpatient" 2421
+"804" "YA" "after_1_30" "Outpatient" 778
+"805" "AM" "after_1_30" "Skilled Nursing Facility" 3634
+"806" "DP" "during" "Carrier" 1273
+"807" "AN" "during" "Durable Medical Equipment" 11
+"808" "AP" "during" "Home Health Agency" 0
+"809" "GU" "during" "Hospice" 0
+"810" "PO" "during" "Inpatient" 9260
+"811" "TR" "during" "Outpatient" 0
+"812" "SU" "during" "Skilled Nursing Facility" 0
+"813" "NE" "prior_1_3" "Carrier" 627
+"814" "BA" "prior_1_3" "Durable Medical Equipment" 5
+"815" "DF" "prior_1_3" "Home Health Agency" 17
+"816" "AR" "prior_1_3" "Hospice" 0
+"817" "AR" "prior_1_3" "Inpatient" 8
+"818" "GU" "prior_1_3" "Outpatient" 132
+"819" "BO" "prior_1_3" "Skilled Nursing Facility" 2
+"820" "AN" "after_1_30" "Carrier" 1167
+"821" "NE" "after_1_30" "Durable Medical Equipment" 102
+"822" "DA" "after_1_30" "Home Health Agency" 905
+"823" "AR" "after_1_30" "Hospice" 179
+"824" "MI" "after_1_30" "Inpatient" 2977
+"825" "DA" "after_1_30" "Outpatient" 863
+"826" "AN" "after_1_30" "Skilled Nursing Facility" 2595
+"827" "AP" "during" "Carrier" 1434
+"828" "TR" "during" "Durable Medical Equipment" 20
+"829" "NU" "during" "Home Health Agency" 0
+"830" "BA" "during" "Hospice" 0
+"831" "YA" "during" "Inpatient" 10246
+"832" "DP" "during" "Outpatient" 0
+"833" "VA" "during" "Skilled Nursing Facility" 0
+"834" "MI" "prior_1_3" "Carrier" 555
+"835" "MI" "prior_1_3" "Durable Medical Equipment" 9
+"836" "VA" "prior_1_3" "Home Health Agency" 12
+"837" "ME" "prior_1_3" "Hospice" 1
+"838" "BA" "prior_1_3" "Inpatient" 7
+"839" "CO" "prior_1_3" "Outpatient" 126
+"840" "TR" "prior_1_3" "Skilled Nursing Facility" 2
+"841" "BA" "after_1_30" "Carrier" 721
+"842" "GU" "after_1_30" "Durable Medical Equipment" 68
+"843" "NE" "after_1_30" "Home Health Agency" 376
+"844" "SU" "after_1_30" "Hospice" 105
+"845" "MI" "after_1_30" "Inpatient" 1971
+"846" "AR" "after_1_30" "Outpatient" 1334
+"847" "DF" "after_1_30" "Skilled Nursing Facility" 3230
+"848" "ZU" "during" "Carrier" 1497
+"849" "YA" "during" "Durable Medical Equipment" 16
+"850" "SU" "during" "Home Health Agency" 0
+"851" "DA" "during" "Hospice" 0
+"852" "VA" "during" "Inpatient" 11054
+"853" "BO" "during" "Outpatient" 0
+"854" "LA" "during" "Skilled Nursing Facility" 0
+"855" "VA" "prior_1_3" "Carrier" 532
+"856" "TA" "prior_1_3" "Durable Medical Equipment" 6
+"857" "DP" "prior_1_3" "Home Health Agency" 3
+"858" "CA" "prior_1_3" "Hospice" 0
+"859" "DP" "prior_1_3" "Inpatient" 14
+"860" "SU" "prior_1_3" "Outpatient" 518
+"861" "SU" "prior_1_3" "Skilled Nursing Facility" 2
+"862" "AR" "after_1_30" "Carrier" 1174
+"863" "FA" "after_1_30" "Durable Medical Equipment" 98
+"864" "CO" "after_1_30" "Home Health Agency" 789
+"865" "FA" "after_1_30" "Hospice" 133
+"866" "CA" "after_1_30" "Inpatient" 3024
+"867" "PO" "after_1_30" "Outpatient" 809
+"868" "SU" "after_1_30" "Skilled Nursing Facility" 3265
+"869" "NE" "during" "Carrier" 1487
+"870" "AR" "during" "Durable Medical Equipment" 23
+"871" "TA" "during" "Home Health Agency" 0
+"872" "AM" "during" "Hospice" 0
+"873" "SU" "during" "Inpatient" 10278
+"874" "BO" "during" "Outpatient" 0
+"875" "CO" "during" "Skilled Nursing Facility" 0
+"876" "LA" "prior_1_3" "Carrier" 681
+"877" "VA" "prior_1_3" "Durable Medical Equipment" 9
+"878" "ZU" "prior_1_3" "Home Health Agency" 15
+"879" "TR" "prior_1_3" "Hospice" 0
+"880" "TA" "prior_1_3" "Inpatient" 9
+"881" "DP" "prior_1_3" "Outpatient" 159
+"882" "DP" "prior_1_3" "Skilled Nursing Facility" 2
+"883" "YA" "after_1_30" "Carrier" 1398
+"884" "MI" "after_1_30" "Durable Medical Equipment" 96
+"885" "DP" "after_1_30" "Home Health Agency" 879
+"886" "AR" "after_1_30" "Hospice" 175
+"887" "BO" "after_1_30" "Inpatient" 4185
+"888" "MO" "after_1_30" "Outpatient" 837
+"889" "MO" "after_1_30" "Skilled Nursing Facility" 2979
+"890" "DP" "during" "Carrier" 1596
+"891" "AN" "during" "Durable Medical Equipment" 23
+"892" "TR" "during" "Home Health Agency" 0
+"893" "GU" "during" "Hospice" 0
+"894" "MO" "during" "Inpatient" 10339
+"895" "BA" "during" "Outpatient" 0
+"896" "TR" "during" "Skilled Nursing Facility" 0
+"897" "NE" "prior_1_3" "Carrier" 661
+"898" "PO" "prior_1_3" "Durable Medical Equipment" 8
+"899" "PO" "prior_1_3" "Home Health Agency" 18
+"900" "AN" "prior_1_3" "Hospice" 1
+"901" "NU" "prior_1_3" "Inpatient" 7
+"902" "CA" "prior_1_3" "Outpatient" 140
+"903" "DF" "prior_1_3" "Skilled Nursing Facility" 3
+"904" "NE" "after_1_30" "Carrier" 881
+"905" "DA" "after_1_30" "Durable Medical Equipment" 127
+"906" "AN" "after_1_30" "Home Health Agency" 1022
+"907" "TR" "after_1_30" "Hospice" 149
+"908" "BA" "after_1_30" "Inpatient" 2294
+"909" "AP" "after_1_30" "Outpatient" 888
+"910" "CO" "after_1_30" "Skilled Nursing Facility" 3640
+"911" "DP" "during" "Carrier" 1453
+"912" "FA" "during" "Durable Medical Equipment" 23
+"913" "AN" "during" "Home Health Agency" 0
+"914" "PO" "during" "Hospice" 0
+"915" "NE" "during" "Inpatient" 11598
+"916" "CA" "during" "Outpatient" 0
+"917" "LA" "during" "Skilled Nursing Facility" 0
+"918" "DP" "prior_1_3" "Carrier" 569
+"919" "MI" "prior_1_3" "Durable Medical Equipment" 9
+"920" "GU" "prior_1_3" "Home Health Agency" 11
+"921" "AR" "prior_1_3" "Hospice" 0
+"922" "PO" "prior_1_3" "Inpatient" 6
+"923" "BA" "prior_1_3" "Outpatient" 268
+"924" "MO" "prior_1_3" "Skilled Nursing Facility" 1
+"925" "AM" "after_1_30" "Carrier" 1109
+"926" "DP" "after_1_30" "Durable Medical Equipment" 81
+"927" "AP" "after_1_30" "Home Health Agency" 917
+"928" "AP" "after_1_30" "Hospice" 161
+"929" "NU" "after_1_30" "Inpatient" 2456
+"930" "NU" "after_1_30" "Outpatient" 785
+"931" "DF" "after_1_30" "Skilled Nursing Facility" 2932
+"932" "MI" "during" "Carrier" 1462
+"933" "ZU" "during" "Durable Medical Equipment" 16
+"934" "PO" "during" "Home Health Agency" 0
+"935" "NE" "during" "Hospice" 0
+"936" "AP" "during" "Inpatient" 10041
+"937" "GU" "during" "Outpatient" 0
+"938" "LA" "during" "Skilled Nursing Facility" 0
+"939" "MI" "prior_1_3" "Carrier" 571
+"940" "NU" "prior_1_3" "Durable Medical Equipment" 7
+"941" "BO" "prior_1_3" "Home Health Agency" 12
+"942" "YA" "prior_1_3" "Hospice" 0
+"943" "AP" "prior_1_3" "Inpatient" 7
+"944" "BA" "prior_1_3" "Outpatient" 120
+"945" "GU" "prior_1_3" "Skilled Nursing Facility" 2
+"946" "TR" "after_1_30" "Carrier" 829
+"947" "NU" "after_1_30" "Durable Medical Equipment" 63
+"948" "VA" "after_1_30" "Home Health Agency" 1009
+"949" "AR" "after_1_30" "Hospice" 128
+"950" "CO" "after_1_30" "Inpatient" 2423
+"951" "AM" "after_1_30" "Outpatient" 903
+"952" "AR" "after_1_30" "Skilled Nursing Facility" 3271
+"953" "NE" "during" "Carrier" 1277
+"954" "ZU" "during" "Durable Medical Equipment" 11
+"955" "ME" "during" "Home Health Agency" 0
+"956" "ZU" "during" "Hospice" 0
+"957" "DF" "during" "Inpatient" 10001
+"958" "DF" "during" "Outpatient" 0
+"959" "CA" "during" "Skilled Nursing Facility" 0
+"960" "YA" "prior_1_3" "Carrier" 535
+"961" "DF" "prior_1_3" "Durable Medical Equipment" 6
+"962" "AR" "prior_1_3" "Home Health Agency" 14
+"963" "GU" "prior_1_3" "Hospice" 1
+"964" "LA" "prior_1_3" "Inpatient" 10
+"965" "AP" "prior_1_3" "Outpatient" 212
+"966" "YA" "prior_1_3" "Skilled Nursing Facility" 3
+"967" "TA" "after_1_30" "Carrier" 904
+"968" "CA" "after_1_30" "Durable Medical Equipment" 73
+"969" "VA" "after_1_30" "Home Health Agency" 576
+"970" "AM" "after_1_30" "Hospice" 153
+"971" "LA" "after_1_30" "Inpatient" 1958
+"972" "AM" "after_1_30" "Outpatient" 915
+"973" "VA" "after_1_30" "Skilled Nursing Facility" 2909
+"974" "PO" "during" "Carrier" 1484
+"975" "CA" "during" "Durable Medical Equipment" 15
+"976" "TA" "during" "Home Health Agency" 0
+"977" "DF" "during" "Hospice" 0
+"978" "ME" "during" "Inpatient" 11010
+"979" "BO" "during" "Outpatient" 0
+"980" "AN" "during" "Skilled Nursing Facility" 0
+"981" "DP" "prior_1_3" "Carrier" 655
+"982" "CO" "prior_1_3" "Durable Medical Equipment" 7
+"983" "CO" "prior_1_3" "Home Health Agency" 7
+"984" "ZU" "prior_1_3" "Hospice" 0
+"985" "ZU" "prior_1_3" "Inpatient" 6
+"986" "TA" "prior_1_3" "Outpatient" 188
+"987" "YA" "prior_1_3" "Skilled Nursing Facility" 1
+"988" "GU" "after_1_30" "Carrier" 870
+"989" "DF" "after_1_30" "Durable Medical Equipment" 78
+"990" "GU" "after_1_30" "Home Health Agency" 552
+"991" "AM" "after_1_30" "Hospice" 171
+"992" "DA" "after_1_30" "Inpatient" 2185
+"993" "BA" "after_1_30" "Outpatient" 1097
+"994" "CO" "after_1_30" "Skilled Nursing Facility" 3092
+"995" "BO" "during" "Carrier" 1467
+"996" "DP" "during" "Durable Medical Equipment" 20
+"997" "VA" "during" "Home Health Agency" 0
+"998" "PO" "during" "Hospice" 0
+"999" "DA" "during" "Inpatient" 10350
+"1000" "YA" "during" "Outpatient" 0
+"1001" "CA" "during" "Skilled Nursing Facility" 0
+"1002" "ME" "prior_1_3" "Carrier" 516
+"1003" "ZU" "prior_1_3" "Durable Medical Equipment" 6
+"1004" "FA" "prior_1_3" "Home Health Agency" 8
+"1005" "CA" "prior_1_3" "Hospice" 0
+"1006" "BO" "prior_1_3" "Inpatient" 6
+"1007" "FA" "prior_1_3" "Outpatient" 221
+"1008" "NU" "prior_1_3" "Skilled Nursing Facility" 2
+"1009" "TR" "after_1_30" "Carrier" 1061
+"1010" "DA" "after_1_30" "Durable Medical Equipment" 103
+"1011" "BA" "after_1_30" "Home Health Agency" 786
+"1012" "ZU" "after_1_30" "Hospice" 122
+"1013" "AM" "after_1_30" "Inpatient" 3258
+"1014" "BO" "after_1_30" "Outpatient" 949
+"1015" "AR" "after_1_30" "Skilled Nursing Facility" 2369
+"1016" "MO" "during" "Carrier" 1368
+"1017" "DP" "during" "Durable Medical Equipment" 30
+"1018" "NE" "during" "Home Health Agency" 0
+"1019" "MO" "during" "Hospice" 0
+"1020" "SU" "during" "Inpatient" 9691
+"1021" "MI" "during" "Outpatient" 0
+"1022" "BA" "during" "Skilled Nursing Facility" 0
+"1023" "NU" "prior_1_3" "Carrier" 641
+"1024" "DA" "prior_1_3" "Durable Medical Equipment" 8
+"1025" "TR" "prior_1_3" "Home Health Agency" 10
+"1026" "ZU" "prior_1_3" "Hospice" 2
+"1027" "SU" "prior_1_3" "Inpatient" 12
+"1028" "TR" "prior_1_3" "Outpatient" 195
+"1029" "ZU" "prior_1_3" "Skilled Nursing Facility" 2
+"1030" "LA" "after_1_30" "Carrier" 898
+"1031" "NU" "after_1_30" "Durable Medical Equipment" 90
+"1032" "TA" "after_1_30" "Home Health Agency" 423
+"1033" "AM" "after_1_30" "Hospice" 94
+"1034" "ZU" "after_1_30" "Inpatient" 2539
+"1035" "ME" "after_1_30" "Outpatient" 844
+"1036" "PO" "after_1_30" "Skilled Nursing Facility" 2864
+"1037" "MI" "during" "Carrier" 1151
+"1038" "CO" "during" "Durable Medical Equipment" 20
+"1039" "BO" "during" "Home Health Agency" 0
+"1040" "AR" "during" "Hospice" 0
+"1041" "AP" "during" "Inpatient" 9781
+"1042" "MO" "during" "Outpatient" 0
+"1043" "LA" "during" "Skilled Nursing Facility" 0
+"1044" "TR" "prior_1_3" "Carrier" 674
+"1045" "ME" "prior_1_3" "Durable Medical Equipment" 10
+"1046" "CA" "prior_1_3" "Home Health Agency" 9
+"1047" "FA" "prior_1_3" "Hospice" 0
+"1048" "AR" "prior_1_3" "Inpatient" 6
+"1049" "DA" "prior_1_3" "Outpatient" 258
+"1050" "MO" "prior_1_3" "Skilled Nursing Facility" 2
